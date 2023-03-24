@@ -1,7 +1,7 @@
 # Đề tài: Book_Tutor
 
 # Thành viên
-- A Tiến
+- A Tiến (Leader)
 - Phan Thanh Lực
 - Hồ Văn Đi
 - Võ Thị Thúy Hà
