@@ -8,7 +8,7 @@
 - ZoRum Thị Phượng
 
 # Công nghệ sử dụng
-- web FontEnd:    HTML5, CSS, JavaScript.
+- web FontEnd:    HTML5, CSS, SCSS, JavaScript.
 - web BackEnd:    Php.
 - Cơ sở dữ liệu:  MySQL.
 
