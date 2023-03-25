@@ -1,0 +1,119 @@
+* {
+  font-family: Georgia;
+}
+
+.container__tap__bar {
+  margin-top: -7px;
+  display: flex;
+  background: #FFFFFF;
+}
+.container__tap__bar .__modol {
+  display: flex;
+  font-size: 20px;
+  width: 165px;
+  height: 60px;
+  text-align: center;
+  background: #22baa0;
+  color: #fff;
+  justify-content: center;
+  align-items: center;
+  margin-left: -7px;
+}
+.container__tap__bar .fa-solid {
+  display: flex;
+  margin-left: 20px;
+  font-size: 20px;
+  justify-content: center;
+  align-items: center;
+}
+.container__tap__bar .__modol__icon {
+  display: flex;
+  margin-left: 1000px;
+}
+.container__tap__bar .__icon {
+  display: flex;
+  padding: 15px;
+  font-size: 20px;
+  justify-content: center;
+  align-items: center;
+}
+.container__tap__bar .__icon .fa-envelope {
+  margin-left: 7px;
+}
+.container__tap__bar .__icon .fa-right-from-bracket {
+  margin-left: 7px;
+}
+.container__tap__bar .__icon img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+}
+
+.container__menu_icon {
+  margin-top: -10px;
+  width: 165px;
+  min-height: 300px;
+  background: #34425A;
+  display: grid;
+  grid-template-columns: 2fr 4fr;
+  margin-left: -7px;
+}
+.container__menu_icon .__Profile {
+  width: 160px;
+  height: 192px;
+}
+.container__menu_icon .__menu_icon {
+  display: block;
+  text-align: center;
+  padding-top: 20px;
+  background: #34425A;
+  font-size: 20px;
+  color: #FFFFFF;
+}
+.container__menu_icon .__menu_icon img {
+  vertical-align: middle;
+  width: 60px;
+  height: 60px;
+  border-radius: 50px;
+}
+.container__menu_icon .__menu_icon .__menu__ {
+  width: 160px;
+  height: 84px;
+}
+.container__menu_icon .container__show_detail {
+  margin-left: 5px;
+}
+.container__menu_icon .container__show_detail .__detail_home_ {
+  background: #E9edf2;
+  width: 1352px;
+  height: 98px;
+  display: flex;
+  align-items: center;
+}
+.container__menu_icon .container__show_detail .__quantity_four_div {
+  display: flex;
+  background: #f1f4f9;
+}
+.container__menu_icon .container__show_detail .__quantity_four_div .__four_div {
+  margin-top: 20px;
+  margin-left: 23px;
+  width: 308px;
+  height: 133px;
+  background: #FFFFFF;
+}
+.container__menu_icon .container__show_detail .__quantity_four_div .__four_div i {
+  display: flex;
+  font-size: 30px;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  margin-top: 5px;
+}
+.container__menu_icon .container__show_detail .__quantity_four_div .__four_div p {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+/*# sourceMappingURL=admin.css.map */
