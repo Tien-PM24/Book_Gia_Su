@@ -16,6 +16,7 @@ body{
     background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
     padding: 35px;
 }
+
 .container{
     min-height: calc(100vh - 40px * 2);
     display: grid;
