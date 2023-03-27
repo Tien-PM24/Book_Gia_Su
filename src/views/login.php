@@ -29,7 +29,7 @@
                         <button type="submit">SIGN IN</button>
                     </div>
                     <div class="login-form-footer">
-                    <a href="#">
+                    <a href="https://www.facebook.com">
                         <img src="https://www.verfvanniveau.nl/wp-content/uploads/2019/08/logo-social-fb-facebook-icon.png" alt="" width="30">Facebook login
                     </a>
                     <a href="#">
@@ -39,7 +39,7 @@
                 </div>            
             </div>
             <div class="login-right">
-                <img class="img-right" src="../../images/background-login.png" alt="">
+                <img class="img-right" src="https://unnombrex.neocities.org/Cobay/alumnos.gif" alt="">
             </div>
         </div>
     </body>

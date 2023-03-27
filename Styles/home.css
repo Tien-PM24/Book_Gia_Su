@@ -1,6 +1,14 @@
 body {
     background-image: linear-gradient(to bottom right, #FFCCCC, #66FFFF);
 }
+
+.container {
+    overflow: hidden;
+}
+img {
+    width: 230px;
+}
+
 h2{
     color: #3399FF;
 }
@@ -23,4 +31,8 @@ button:hover {
     color: #7ec9fa;
     box-shadow: 0 0 15px #0197fc;
     text-shadow: 0 0 15px #0197fc;
+}
+
+.col-md-3 {
+    margin-top: 20px;
 }

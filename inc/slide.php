@@ -4,6 +4,7 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/jquery.flexslider-min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/jquery.flexslider-min.js"></script>
+<link rel="stylesheet" href="../styles/inc_styles/style_slide.css">
   <script>
     $(document).ready(function(){
       $('.slider').flexslider({
@@ -16,21 +17,56 @@
   </script>
 </head>
 
-<div class="header_bottom">
-		
-        <div class="header_bottom_right_images">
-            <!-- FlexSlider -->               
-            <section class="slider">
-                    <div class="flexslider">
-                    <ul class="slides">
-                        <li><img src="https://tse2.mm.bing.net/th?id=OIP.t6pca7g4KUhJzfLGNJ5sMQAAAA&pid=Api&P=0" alt=""/></li>
-                        <li><img src="https://tse3.mm.bing.net/th?id=OIP.XdrauvQekKNPC2lDMizNwQHaEU&pid=Api&P=0" alt=""/></li>
-                        <li><img src="https://tse1.mm.bing.net/th?id=OIP.3gHk87l_J0xZJMCa7VxelgHaFP&pid=Api&P=0" alt=""/></li>
-                        <li><img src="https://tse4.mm.bing.net/th?id=OIP.X_a01h2vWPCe2sP82U-APgHaEV&pid=Api&P=0" alt=""/></li>
-                    </ul>
-                    </div>
-            </section>
-            <!-- FlexSlider -->
-	    </div>
-	  <div class="clear"></div>
-  </div>	
+<body>
+<div class="container">
+  <div class="header-left">
+    <div class="item">
+      <div class="item-left"><img src="../images/math.jpg" alt="" width="150"></div>
+      <div class="item-right">
+        <h3>Toán Học</h3>
+        <p>Các khóa học về <span>Toán</span></p>
+        <button type="submit">Tham gia</button type="submit">
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="item-left"><img src="../images/chemistry1.jpg" alt="" width="150"></div>
+      <div class="item-right">
+        <h3>Hóa Học</h3>
+        <p>Các khóa học về <span>Hóa</span></p>
+        <button type="submit">Tham gia</button type="submit">
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="item-left"><img src="../images/physics2.jpg" alt="" width="150"></div>
+      <div class="item-right">
+        <h3>Vật Lý</h3>
+        <p>Các khóa học về <span>Lý</span></p>
+        <button type="submit" >Tham gia</button type="submit">
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="item-left"><img src="../images/english1.jpg" alt="" width="150"></div>
+      <div class="item-right">
+        <h3>Tiếng Anh</h3>
+        <p>Các khóa học về <span>English</span></p>
+        <button type="submit">Tham gia</button type="submit">
+      </div>
+    </div>
+	</div>
+  <div class="header-right">              
+    <section class="slider">
+            <div class="flexslider">
+            <ul class="slides">
+                <li><img src="../images/background-slide5.jpg" alt="" width="860" height="520"/></li>
+                <li><img src="../images/background-slide3.jpg" alt="" width="860" height="520"/></li>
+                <li><img src="../images/background-slide.jpg" alt="" width="860" height="520"/></li>
+                <li><img src="../images/background-slide4.jpg" alt="" width="860" height="520"/></li>
+            </ul>
+            </div>
+    </section>
+	</div>
+</div>
+</body>
