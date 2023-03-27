@@ -1,0 +1,29 @@
+.container{
+    background-color: rgb(51, 189, 143);
+    width: 100%;
+}
+.footer .content-footer{
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.contact-top{
+    display: flex;
+    flex-direction: row; /* Sắp xếp các item theo chiều ngang */
+}
+a {
+    margin-left: 65px;
+}
+
+.footer-left{
+    margin-left: 50px;
+}
+
+.footer-right {
+    display: grid;
+    grid-template-columns: 70% 30%;
+}
+
+.footer-right .left-item {
+    margin-top: 30px;
+}
