@@ -15,7 +15,7 @@
     <nav class="navbar navbar-default">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="#"><img src="https://tse4.mm.bing.net/th?id=OIP.UIl5PdH-asehiLGe3yppwgHaEs&pid=Api&P=0" alt="" width="100"></a>
+                <a class="navbar-brand" href="#"> <img src="../../../images/logo (1).png" alt="" width="50"></a>
             </div>
             <ul class="nav navbar-nav">
                 <li><a href="#">Trang chủ</a></li>
@@ -30,6 +30,7 @@
     <div class="container">
         <h2>Một số khóa học nổi bật</h2>
         <?php
+        if(isset($_GET['id'])){
         $servername = "localhost";
         $username = "root";
         $password = "";
@@ -40,7 +41,6 @@
         }
         $sql = "SELECT * FROM course";
         $result = mysqli_query($conn, $sql);
-
 
         $sql1 = "SELECT COUNT(ID_student) AS total_students FROM stu_course WHERE ID_course = 1;";
         $result1 = mysqli_query($conn, $sql1);
@@ -62,7 +62,7 @@
         }
         // Đóng kết nối đến cơ sở dữ liệu
         mysqli_close($conn);
-        ?>
+    }?>
     </div>
    
 </body>
