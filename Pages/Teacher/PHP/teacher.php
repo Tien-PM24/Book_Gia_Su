@@ -4,6 +4,7 @@
   <title>Book tutor</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../../../Styles/inc_styles/style_header.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -20,6 +21,7 @@
       <li><a href="course.php">Khóa học</a></li>
       <li><a href="#">Học sinh</a></li>
       <li><a href="#">Liên hệ</a></li>
+      <a href="" class="personal-file"><img src="../../../images/people.png" alt="" width="50"></a>
     </ul>
   </div>
 </nav>
@@ -74,7 +76,8 @@
              mysqli_close($conn);
             ?>
     </div>
-</div>   
+</div>
+
 </body>
 </html>
 </body>
