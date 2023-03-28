@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../../../Styles/inc_styles/style_header.css">
     <title>Document</title>
 </head>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
 <body>
     <nav class="navbar navbar-default">
         <div class="container-fluid">
@@ -23,7 +23,7 @@
                 <li><a href="course.php">Khóa học</a></li>
                 <li><a href="#">Học sinh</a></li>
                 <li><a href="#">Liên hệ</a></li>
-                <a href=""></a>
+                <a href="" class="personal-file"><img src="../../../images/people.png" alt="" width="50"></a>
             </ul>
         </div>
     </nav>
@@ -40,8 +40,8 @@
         }
         $sql = "SELECT * FROM course";
         $result = mysqli_query($conn, $sql);
-        
-        
+
+
         $sql1 = "SELECT COUNT(ID_student) AS total_students FROM stu_course WHERE ID_course = 1;";
         $result1 = mysqli_query($conn, $sql1);
 
@@ -53,10 +53,9 @@
                 echo "<p><strong>Tên khóa học:</strong> " . $row["Name"] . "</p>";
                 echo "<p><strong>Giá:</strong> " . $row["Price"] . "</p>";
                 echo "<p><strong>Mô tả:</strong> " . $row["Body"] . "</p>";
-                echo "<p><strong>Số học sinh đăng ký:</strong><a href='Hocsinh.php?id=".$row["ID_course"]."'> " . $row1["total_students"] . "</a></p>";
+                echo "<p><strong>Số học sinh đăng ký:</strong><a href='Hocsinh.php?id=" . $row["ID_course"] . "'> " . $row1["total_students"] . "</a></p>";
                 echo "<button type='button' class='btn btn-danger' name='btn'>Add</button>";
                 echo "</div>";
-
             }
         } else {
             echo "Không có kết quả";
@@ -65,6 +64,7 @@
         mysqli_close($conn);
         ?>
     </div>
+   
 </body>
 
 </html>
