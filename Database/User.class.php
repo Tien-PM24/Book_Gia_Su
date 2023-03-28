@@ -6,7 +6,6 @@ abstract class User extends Database{
     protected $Address;
     protected $Email;
     protected $Password;
-
    abstract public function setUser($Name,$Job_title,$Address,$Email,$Password);
    abstract  public function Search();
    abstract  public function Login($Name, $Job_title, $Address, $Email, $Password);
@@ -14,8 +13,6 @@ abstract class User extends Database{
    abstract  public function Singin();
    abstract  public function Reset_passwork();
 }
-
-
 class Student extends User{
     public function setUser($Name, $Job_title, $Address, $Email, $Password)
     {
@@ -37,11 +34,9 @@ class Student extends User{
         // $this->Phone_number=$Phone_number;
         $this->Email=$Email;
         $this->Password=$Password;
-
         $sql="INSERT INTO student(Full_name,Email,Password,Job_title,Address) values (?,?,?,?,?)";
         $stm=$this->Ketnoi()->prepare($sql);
         $stm->execute([$Name,$Job_title,$Email,$Password,$Address]);
-
     }
     public function Logout(){
 

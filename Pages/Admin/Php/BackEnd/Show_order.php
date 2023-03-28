@@ -1,10 +1,11 @@
 <?php
 include "../../../../Database/Admin.class.php";
-$course = new Admin();
-$row = $course->Show_Course();
 
+$oder=new Admin();
 
+$order=$oder->getOrder();
 ?>
+
 <!doctype html>
 <html lang="en">
 
@@ -20,7 +21,9 @@ $row = $course->Show_Course();
     img {
       width: 50px;
       height: 50px;
+      border-radius: 50px;
     }
+
     .table_position {
       position: absolute;
       min-height: 3px;
@@ -38,25 +41,24 @@ $row = $course->Show_Course();
     <table>
       <thead>
         <tr>
-      <th scope="col">STT</th>
-      <th scope="col">Name</th>
-      <th scope="col">Price</th>
-      <th scope="col">Image</th>
-      <th scope="col">Teacher</th>
-      <th scope="col">Action</th>
+          <th scope="col">STT</th>
+          <th scope="col">Teacher</th>
+          <th scope="col">Image</th>
+          <th scope="col">Student</th>
+          <th scope="col">Image</th>
         </tr>
       </thead>
       <tbody>
         <?php
         $i = 1;
-        foreach ($row as $course) {
+        foreach ($order as $oder){
         ?>
           <tr>
-            <td><?php echo $i ?></td>
-            <td><?php echo $course['Name'] ?></td>
-            <td><?php echo $course['Price'] ?></td>
-            <td><img src="<?php echo $course['Image'] ?>" alt=""></td>
-            <td><?php echo $course['Full_name'] ?></td>
+            <th scope="row"><?php echo $i ?></th>
+            <td><?php echo $oder['teacher_name'] ?></td>
+            <td><img src="<?php echo $oder['teacher_image'] ?>" alt=""></td>
+            <td><?php echo $oder['student_name'] ?></td>
+            <td><img src="<?php echo $oder['student_image'] ?>" alt=""></td>
             <td>Xóa</td>
           </tr>
         <?php
@@ -72,6 +74,5 @@ $row = $course->Show_Course();
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
 </html>
-
-
