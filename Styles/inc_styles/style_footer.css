@@ -1,7 +1,17 @@
-.container{
-    background-color: rgb(51, 189, 143);
-    width: 100%;
+*{
+    margin: 0;
+    padding: 0;
 }
+#footer{
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+}
+@media  (min-width: 768px) {
+    .footer {
+        max-width: 100vw;}
+}
+
 .footer .content-footer{
     display: grid;
     grid-template-columns: 50% 50%;
