@@ -30,6 +30,17 @@ class Student extends User{
     public function Search(){
 
     }
+    public function Display(){
+        $sql = "SELECT * FROM sudent";
+        $stm =$this->Ketnoi()->query($sql);
+        $Student=array();
+
+        while ($row=$stm->fetch()) {
+            $Student[]=$row;
+        }
+        return $Student;
+
+    }
     public function Login($Name,$Job_title,$Email,$Password,$Address){
         $this->Name=$Name;
         $this->Job_title=$Job_title;

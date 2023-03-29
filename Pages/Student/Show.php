@@ -1,31 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
-
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="show.css">
+  <link rel="stylesheet" href="../../Styles/Student/Show.css">
+  <link rel="stylesheet" href="../../Styles/inc_styles/style_footer.css">
+
+ 
   <title>trang cá nhân của học sinh</title>
 </head>
 <body>
   <header>
-
-
   </header>
 
-
+<br>
+<br>
   <body>
-    <div class="container-fluid">
+    <div class="container-fluid" style="padding-top: 30px;">
       <div class="row">
         <div class="col-sm-1"></div>
         <div class="col-sm-5">
-          <p id="sb">Thông tin cá nhân của bạn</p>
-
+          <h4 id="sb" class="sb" style="font: size 45px;" >Thông tin cá nhân của bạn</h4>
 
           <div>
             <i class="bi bi-person">
@@ -70,39 +67,98 @@
               </svg>
             </i>
           </div>
-         
         </div>
-        <div class class="col-sm-5">
-          <img src="" alt="" id="img-student" name="img_student">
+      
+        <div  class="col-sm-5" >
+          <h4 name="avt" class="avt">Avatar</h4>
+          
+          <img style="width:250px; height: 250px;;"
+          src="https://i1.wp.com/hocphp.net/wp-content/uploads/2021/01/oop-php.png?fit=1000%2C500&ssl=1" alt="" id="img-student" name="img_student">
           </div>
 
-
-        <div class="row">
-          <div class="col-sm-1"></div>
-          <div class="col-sm-10">
-            <div class="col-sm-3">
-
-
-            </div>
-            <div class="col-sm-3">
-
-
-            </div>
-            <div class="col-sm-3">
-
-
-            </div>
-          </div>
-          <div class="col-sm-1"></div>
-
-
         </div>
+    </div>
+
+      </div>
+      <br>
+      <br>
+      <br>
+      <div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10">
+      <div class="row">
+        <div class="col-sm-3">
+          <img style="width: 250px; height: 250px;" src="https://i1.wp.com/hocphp.net/wp-content/uploads/2021/01/oop-php.png?fit=1000%2C500&ssl=1" alt="">
+          <div>
+            <p>Đây là môn học tuyệt vời</p>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <img style="width: 250px; height: 250px; margin-left: 20px;" src="https://i1.wp.com/hocphp.net/wp-content/uploads/2021/01/oop-php.png?fit=1000%2C500&ssl=1" alt="">
+          <div>
+            <p>Đây là môn học tuyệt vời</p>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <img style="width: 250px; height: 250px;" src="https://i1.wp.com/hocphp.net/wp-content/uploads/2021/01/oop-php.png?fit=1000%2C500&ssl=1" alt="">
+          <div>
+            <p>Đây là môn học tuyệt vời</p>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <img style="width: 250px; height: 250px;" src="https://i1.wp.com/hocphp.net/wp-content/uploads/2021/01/oop-php.png?fit=1000%2C500&ssl=1" alt="">
+          <div>
+            <p>Đây là môn học tuyệt vời</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-1"></div>
+  </div>
+</div>
+
   </body>
 
 
   <footer>
-    
-
+  <div class="container">
+    <div class="footer">	
+        <div class="content-footer">
+            <div class="footer-left">
+                <h3>Dịch vụ gia sư KingDom</h3>
+                <p><img src="../images/location.png" alt="" width="30"> Địa chỉ: 101b Lê Hữu Trác, Phước Mỹ, Sơn Trà, Đà Nẵng</p>
+                <p><img src="../images/gmail.png" alt="" width="30"> Email: TienPM24@gmail.com</p>
+                <p><img src="../images/call.png" alt="" width="30"> Hỗ trợ học sinh: 0988888888 (Lực)</p>
+                <p><img src="../images/call.png" alt="" width="30"> Hỗ trợ gia sư: 0988888888 (Tiến PM)</p>
+            </div>
+            <div class="footer-right">
+                <div class="right-content">
+                    <br>
+                    <br>
+                    <h3>Thời gian làm việc</h3>
+                    <p>Thứ 2: 8h00-21h00</p>
+                    <p>Thứ 3: 8h00-21h00</p>
+                    <p>Thứ 4: 8h00-21h00</p>
+                    <p>Thứ 5: 8h00-21h00</p>
+                    <p>Thứ 6: 8h00-21h00</p>
+                </div>
+                <div class="left-item">
+                    <img src="../images/payment.png" alt="" >
+                    <img src="../images/Bank.png" alt="" >
+                </div>        
+            </div>
+        </div>
+    </div>			
+    <div class="contact_top">
+        <a>Flow us:</a> 
+        <a href="https://www.facebook.com"><img src="../images/Facebook.png" alt="" width="30"> Facebook</a>
+        <a href="https://www.tiktok.com"><img src="../images/Tiktok.png" alt="" width="30"> Tiktok</a>
+        <a href="skype:yourusername?chat"><img src="../images/Skype.png" alt="" width="30"> Skype</a>
+        <a href="https://www.youtube.com"><img src="../images/Youtube.png" alt="" width="30"> Youtube</a>
+  </div>
+  </br>
+    </div>
   </footer>
 </body>
 

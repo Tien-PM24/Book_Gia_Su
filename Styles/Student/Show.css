@@ -1,0 +1,22 @@
+.sb:hover
+{ color: #27D3BF};
+.col-sm-3{
+    front-size: 25px;
+}
+#header{
+    font-size:20px ;
+    background-color: #27D3BF;
+    padding-left: -30px;
+}
+.avt{
+    font-size: 25px;
+
+}
+.avt:hover{color: #27D3BF;}
+
+.hinhanh{
+    width: 100px;
+    height: 100px;
+   
+}
+
