@@ -2,12 +2,13 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="../../styles/home.css">   
+    <link rel="stylesheet" href="styles/home.css">   
 </style>
 
 <body>
 <div class="container">
-    <h2>Khóa học <span>Tiếng Anh</span></h2><br>
+    <br><br>
+    <h2>Khóa học <span>Tiếng Anh</span></h2>
     <div class="row">
         <div class="col-md-3">
             <img src="https://tse1.mm.bing.net/th?id=OIP.dWjSu9PP-VHqdAnQdiEwjgHaKF&pid=Api&P=0" alt="">
@@ -25,9 +26,9 @@
             <img src="https://tse1.mm.bing.net/th?id=OIP.dWjSu9PP-VHqdAnQdiEwjgHaKF&pid=Api&P=0" alt="">
             <button class="btn btn-success"><b>Xem thêm</b></button>
         </div>
-    </div><br>
+    </div><br><br>
 
-    <h2>Khóa học <span>Toán</span></h2><br>
+    <h2>Khóa học <span>Toán</span></h2>
     <div class="row">
         <div class="col-md-3">
             <img src="https://i.pinimg.com/736x/48/df/78/48df78fac06947b1487d8ff4891e4ad9.jpg" alt="">

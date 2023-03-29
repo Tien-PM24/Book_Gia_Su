@@ -16,7 +16,7 @@ if (isset($_POST["btn"])) {
   $taikhoan = $_POST["tk"];
   $matkhau = $_POST["mk"];
   $ten = $_POST["name"];
-  $check_ma = "select*from student where Email='$taikhoan'";
+  $check_ma = "SELECT * FROM student where Email='$taikhoan'";
   $ketqua = mysqli_query($ketnoi, $check_ma);
   $dem = mysqli_num_rows($ketqua);
   if ($dem > 0) {

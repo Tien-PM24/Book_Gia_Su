@@ -36,3 +36,7 @@ button:hover {
 .col-md-3 {
     margin-top: 20px;
 }
+
+.col-md-4 {
+    left: 45px;
+}

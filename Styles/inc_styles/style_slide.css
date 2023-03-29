@@ -2,14 +2,9 @@
     --primary-color: #FF99FF;
     --second-color: #9900CC;
 }
-body {
-    width: auto;
-    font-family: sans-serif;
-}
 .container {
     overflow: hidden;
     display: grid;
-    grid-template-columns: 50% 50%;
 }
 
 .header-left {
@@ -20,6 +15,7 @@ body {
 
 .header-left .item .item-left {
     text-align: center;
+    margin-top: 10px;
 }
 
 
@@ -58,11 +54,11 @@ button:hover {
 }
 h3 {
     color: rgb(36, 116, 163);
-    font-size: 32px;
+    font-size: 30px;
 }
 p {
     color: var(--primary-color);
-    margin-top: 15px;
+    margin-top: -20px;
     font-size: 16px;
 }
 span {
@@ -70,13 +66,7 @@ span {
 }
 
 
-.flex-container a:active,
-.flexslider a:active,
-.flex-container a:focus,
-.flexslider a:focus  {outline: none;}
-.slides,
-.flex-control-nav,
-.flex-direction-nav {margin: 0; padding: 0; list-style: none;} 
+
 
 .flexslider {margin: 0; padding: 0;}
 .flexslider .slides > li {display: none; transition: hidden;} /* Hide the slides before the JS is loaded. Avoids image jumping */
@@ -103,7 +93,7 @@ html[xmlns] .slides {display: block;}
 
 .flex-control-nav { position: absolute; bottom:10px; text-align: center;right:0;}
 .flex-control-nav li {display:inline-block; zoom: 1; *display: inline;padding:0.2em;}
-.flex-control-paging li a {width: 8px; height: 8px; display:inline-block;  background:white; cursor: pointer; text-indent: -9999px; -webkit-border-radius: 20px; -moz-border-radius: 20px; -o-border-radius: 20px; border-radius: 20px; box-shadow: inset 0 0 3px rgba(0,0,0,0.3); border:solid;}
+.flex-control-paging li a {width: 8px; height: 8px; display:inline-block;  background:white; cursor: pointer; text-indent: 9999px; -webkit-border-radius: 20px; -moz-border-radius: 20px; -o-border-radius: 20px; border-radius: 20px; box-shadow: inset 0 0 3px rgba(0,0,0,0.3); border:solid;}
 .flex-control-paging li a:hover { background:wheat; }
 .flex-control-paging li a.flex-active { background:red; cursor: default; }
 

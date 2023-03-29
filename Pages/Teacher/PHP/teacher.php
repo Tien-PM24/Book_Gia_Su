@@ -10,7 +10,8 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-<nav class="navbar navbar-default">
+<?php include "../../../inc/header.php"?>
+<!--<nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="#"><img src="https://tse4.mm.bing.net/th?id=OIP.UIl5PdH-asehiLGe3yppwgHaEs&pid=Api&P=0" alt="" width="100"></a>
@@ -24,7 +25,7 @@
       <a href="" class="personal-file"><img src="../../../images/people.png" alt="" width="50"></a>
     </ul>
   </div>
-</nav>
+</nav>-->
     <div class="container">
      <h2>Thông tin cá nhân</h2>
         <?php
