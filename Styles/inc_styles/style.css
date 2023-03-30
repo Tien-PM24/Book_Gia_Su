@@ -1,7 +1,75 @@
-:root {
-    --primary-color: #FF99FF;
-    --second-color: #9900CC;
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    outline: none;
+    border: none;
+    list-style: none;
+    scroll-behavior: smooth;
+    max-width: 100%;
 }
+
+:root {
+    --primary: #0071bc;
+    --warning: #ffc107;
+    --danger: #dc3545;
+    --success: #28a745;
+    --main-color: #17a2b8;
+    --light: #f8f9fa;
+    --dark: #343a40;
+    --gray: #6c757d;
+    --first: #131086;
+    --second: #b621f3;
+    --third: #FFF7D9;
+    --next: #FFCC98;
+    --Then: #53CCEC;
+    --Finaly: #FFE6B6;
+}
+
+/*header start*/
+.header {
+    display: flex;
+    height: 100px;
+    background-color: var(--next);
+    border-bottom: 1px solid var(--main-color);
+}
+
+.container-fluid .navbar-brand img{
+    margin-top: -26px;
+}
+
+.header-navbar-nav {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    margin-left: 200px;
+}
+.header-navbar-nav li {
+    margin-top: -115px;
+    font-size: 1.8rem;
+    margin-left: 50px;
+}
+
+.header-navbar-nav li a img {
+    margin-left: 15px;
+    border: solid;
+    border-radius: 100%;
+    border-width: 2px;
+    width: 65px;
+    background-color: var(--third);
+
+}
+
+
+.header-navbar-nav li:not(.personal-profile):hover{
+    margin-top: -130px;
+}
+
+
+/*slider start
+
 .container {
     overflow: hidden;
     display: grid;
@@ -69,7 +137,7 @@ span {
 
 
 .flexslider {margin: 0; padding: 0;}
-.flexslider .slides > li {display: none; transition: hidden;} /* Hide the slides before the JS is loaded. Avoids image jumping */
+.flexslider .slides > li {display: none; transition: hidden;}
 .flexslider .slides img {width: 100%; display: block;min-height:310px;}
 .flex-pauseplay span {text-transform: capitalize;}
 
@@ -84,7 +152,7 @@ html[xmlns] .slides {display: block;}
 .loading .flex-viewport {max-height: 300px;}
 .flexslider .slides {zoom: 1;}
 .carousel li {margin-right: 5px}
-/* Direction Nav */
+
 .flex-direction-nav a {width: 34px; height: 48px; margin: -20px 0 0; display: block; background: red; position: absolute; top:46%; cursor: pointer; text-indent: -9999px; opacity: 0; transition: all .3s ease;}
 .flex-direction-nav .flex-next {background-position: 100% 0; right:0px; }
 .flex-direction-nav .flex-prev {left: 0px;}
@@ -102,7 +170,7 @@ html[xmlns] .slides {display: block;}
 .flex-control-thumbs img {width: 100%; display: block; opacity: .7; cursor: pointer;}
 .flex-control-thumbs img:hover {opacity: 1;}
 .flex-control-thumbs .active {opacity: 1; cursor: default;}
-/*----flexslider1---*/
+
 .flexslider1 ol.flex-control-nav{
 	width: auto;
 	position: absolute;
@@ -144,3 +212,121 @@ html[xmlns] .slides {display: block;}
 
 
 
+
+
+
+body {
+    background-image: linear-gradient(to bottom right, #FFCCCC, #66FFFF);
+}
+
+.container {
+    overflow: hidden;
+}
+img {
+    width: 230px;
+}
+
+h2{
+    color: #3399FF;
+}
+span{
+    color: #9933CC;
+}
+
+/*.container{
+    background-image: url("");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+button{
+    width: 220px;
+    margin-top: 30px;
+}
+
+button:hover {
+    color: #7ec9fa;
+    box-shadow: 0 0 15px #0197fc;
+    text-shadow: 0 0 15px #0197fc;
+}
+
+.col-md-3 {
+    margin-top: 20px;
+}
+
+.col-md-4 {
+    left: 45px;
+}
+
+
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;600&display=swap");
+
+:root {
+    --primary-color: #131086;
+    --secondary-color: #b621f3;
+}
+
+body {
+    font-family: sans-serif;
+    font-size: 23px;
+    width: auto;
+}
+
+.container{
+    background-color: rgb(51, 189, 143);
+    width: 100%;
+}
+.footer .content-footer{
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.contact-top{
+    display: flex;
+    flex-direction: row; /* Sắp xếp các item theo chiều ngang 
+}
+a {
+    margin-left: 65px;
+    text-decoration: none;
+    color: aliceblue;
+}
+
+p {
+    color: aliceblue;
+    letter-spacing: 0.8px;
+}
+h3 {
+    color: var(--primary-color);
+}
+span {
+    color: var(--secondary-color);
+}
+
+
+.footer-left{
+    margin-left: 50px;
+}
+
+.footer-right {
+    display: grid;
+    grid-template-columns: 70% 30%;
+}
+
+.footer-right .left-item {
+    margin-top: 30px;
+}
+.footer-right .right-content {
+    justify-content: center;
+    color: white;
+    margin-left: 50px;
+}
+
+
+/* Reponsive*/
+
+@media only screen and (max-width: 768px) {
+  }
+@media only screen and (max-width:1350px) {
+    
+}

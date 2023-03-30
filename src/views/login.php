@@ -33,7 +33,7 @@
                         <img src="https://www.verfvanniveau.nl/wp-content/uploads/2019/08/logo-social-fb-facebook-icon.png" alt="" width="30">Facebook login
                     </a>
                     <a href="#">
-                        <img src="../../images/GG.png" alt="" width="30">Google login
+                        <img src="../../Asstet/images/GG.png" alt="" width="30">Google login
                     </a><br>
                 </div>
                 </div>            
