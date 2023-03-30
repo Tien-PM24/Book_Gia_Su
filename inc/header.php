@@ -7,6 +7,10 @@
   <link rel="stylesheet" href="./Asstet/bootstrap-4.0.0-dist/css/bootstrap.min.css">
   <script src="./Asstet/bootstrap-4.0.0-dist/js/jquery.min.js"></script>
   <script src="./Asstet/bootstrap-4.0.0-dist/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/flexslider.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/jquery.flexslider-min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/jquery.flexslider-min.js"></script>
   <link rel="stylesheet" href="./styles/inc_styles/style.css">
 </head>
 <body>
@@ -26,4 +30,4 @@
         </ul>
       </div>
     </nav>
-</section>
+  </section>
