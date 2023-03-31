@@ -3,7 +3,7 @@ body {
     
 }
 .navbar-default{
-    background-color:#D2B48C;
+    background-color:#B6DDDA;
 }
 .navbar-header{
     margin-bottom: 40px; 
@@ -34,5 +34,4 @@ li:hover {
 .personal-file img{
     margin-left: 60px;
     margin-top:16px;
-    background-color: black;
 }
