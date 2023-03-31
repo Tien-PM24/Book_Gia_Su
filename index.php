@@ -1,6 +1,3 @@
-<head>
-    <link rel="stylesheet" href="C:\xampp\htdocs\Book_Gia_Su\styles\inc_styles\style_footer.css">
-</head>
 
 <?php 
     require_once './inc/header.php';
