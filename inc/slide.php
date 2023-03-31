@@ -54,14 +54,14 @@
 	</div>
   <div class="slider-right">              
     <section class="slider">
-            <div class="flexslider">
-            <ul class="slides">
-                <li><img src="./Asstet/images/slider1.jpg" alt="" /></li>
-                <li><img src="./Asstet/images/slider1.jpg" alt="" /></li>
-                <li><img src="./Asstet/images/slider1.jpg" alt="" /></li>
-                <li><img src="./Asstet/images/slider1.jpg" alt="" /></li>
-            </ul>
-            </div>
+      <div class="flexslider">
+        <ul class="slides">
+            <li><img src="./Asstet/images/slider1.jpg" alt="" /></li>
+            <li><img src="./Asstet/images/slider1.jpg" alt="" /></li>
+            <li><img src="./Asstet/images/slider1.jpg" alt="" /></li>
+            <li><img src="./Asstet/images/slider1.jpg" alt="" /></li>
+        </ul>
+      </div>
     </section>
 	</div>
 </div>
