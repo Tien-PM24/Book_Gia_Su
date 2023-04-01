@@ -1,5 +1,5 @@
 <?php
-include "./Database.class.php";
+include "Database.class.php";
 abstract class User extends Database{
     protected $Name;
     protected $Job_title;
@@ -28,11 +28,10 @@ class Student extends User{
 
     }
     public function Search(){
-
     }
     public function Display(){
         $sql = "SELECT * FROM sudent";
-        $stm =$this->Ketnoi()->query($sql);
+        $stm =$this->Ketnoi()->prepare($sql);
         $Student=array();
 
         while ($row=$stm->fetch()) {
