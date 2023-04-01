@@ -120,3 +120,30 @@
   .fui-card-profile-1 .card-btn--secondary:hover::before {
     transform: scaleX(1) skewX(35deg);
   }
+
+.grid-container{
+    padding-top: 20px;
+    margin-left: 60px;
+    margin-right: 40px;
+}
+#image{
+  height: 10%;
+  width: 10%;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ccc;
+}
+.card img {
+  width: 100%;
+  height: auto;
+}
+.card-content {
+  padding: 10px;
+}
