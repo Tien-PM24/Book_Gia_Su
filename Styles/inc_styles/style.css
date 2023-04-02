@@ -3,7 +3,7 @@
     margin: 0;
     box-sizing: border-box;
     text-decoration: none;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     outline: none;
     border: none;
     list-style: none;
@@ -28,48 +28,75 @@
     --Finaly: #FFE6B6;
 }
 
-/*header start*/
-.header {
-    display: flex;
-    height: 100px;
+header {
     background-color: var(--next);
-    border-bottom: 1px solid var(--main-color);
+
 }
 
-.container-fluid .navbar-brand img{
-    margin-top: -26px;
-}
-
-.header-navbar-nav {
+.container-header {
     display: flex;
+    text-align: center;
+    justify-content: center;
     align-items: center;
+    gap: 70px;
+}
+
+nav .menu {
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+nav .menu a {
+    font-size: 1.4rem;
+    color: var(--first);
     font-weight: bold;
-    margin-left: 200px;
-}
-.header-navbar-nav li {
-    margin-top: -115px;
-    font-size: 1.8rem;
-    margin-left: 50px;
 }
 
-.header-navbar-nav li a img {
-    margin-left: 15px;
-    border: solid;
-    border-radius: 100%;
-    border-width: 2px;
-    width: 65px;
-    background-color: var(--third);
-
+nav a {
+    text-decoration: none;
 }
 
-.header-navbar-nav li:not(.personal-profile):hover{
-    margin-top: -130px;
+
+.search-item .search-item input {
+    padding: 8px;
+    font-size: 1rem;
+    border: 1px solid var(--gray);
+    border-radius: 5px;
+    float: left;
+    width: 82%;
+    background: #f1f1f1;
 }
+
+.search-item .search-item button {
+    padding: 9px;
+    font-size: 1.3rem;
+    border: 1px solid var(--gray);
+    border-radius: 5px;
+    width: 18%;
+    background: var(--main-color);
+}
+
+.tap-right .personal-profile {
+    display: flex;
+    margin-right: 20px;
+    width: 100%;
+    border: 3px solid var(--main-color);
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    height: 40px;
+    background-color: var(--gray);
+}
+
+
 
 
 /*slider start*/
 
-/*.slider-container {
+/*/*.slider-container {
     display: grid;
     grid-template-columns: 50% 50%;
 }
@@ -146,7 +173,7 @@ button[type="submit"]:hover {
 .slides li img {
     width: 100%;
 }*/
-
+*/
 
 
 
@@ -227,79 +254,10 @@ html[xmlns] .slides {display: block;}
 }
 
 
-/*Home page*/
-
-.home .course-item:not(h2) {
-    float: left;
-    margin-left: 30px;
-    margin-top: 15px;
-    text-align: center;
-}
-
-.home h2 {
-    margin-left: 56px;
-    color: var(--first);
-}
-
-.home .row .col-md-3 {
-    margin-top: 40px;
-}
-
-.home span {
-    color: var(--second);
-}
-
-.home .row .col-md-3 img{
-    height: 320px;
-    width: 230px;
-    text-align: center;
-}
-
-.home .information-teacher {
-    text-align: center;
-    justify-content: center;
-}
-
-.home .information-teacher .row .col-md-4 img {
-    height: 340px;
-    margin-left: 30px;
-    border-radius: 5%;
-}
-
-.home .row img:hover {
-    transform: scale(1.1);
-}
-
-.item-button {
-    position: relative;
-    z-index: 1000;
-    color: var(--main-color);
-    background-color: var(--next);
-    height: 45px;
-    width: 220px;
-    margin-left: 10px;
-    font-size: 1.4rem;
-    margin-top: -120px;
-    transform: scaley(0);
-    transition: opacity 0.5s ease-in-out;
-}
-
-.row .col-md-3 img {
-    justify-content: center;
-    text-align: center;
-  }
-
-  .col-md-3:hover img {
-    transform: scaley(1);
-  }
-
-  
-
 /*Start footer*/
 
 .footer {
     background-color: var(--light);
-    margin-top: 30px;
 }
 .footer .content-footer{
     display: grid;
