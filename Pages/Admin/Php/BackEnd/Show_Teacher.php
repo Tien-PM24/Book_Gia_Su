@@ -1,8 +1,8 @@
 <?php
-include "../../../../Database/Admin.class.php";
+// include "../../../../Database/Admin.class.php";
 
 $student=new Admin();
-$row_teacher=$student->Show_Teacher();
+$row=$student->showTeacher();
 
 ?>
     <style>
@@ -15,7 +15,7 @@ $row_teacher=$student->Show_Teacher();
             position: absolute;
             min-height: 3px;
             left: 20%;
-            top: 45%;
+            top: 20%;
         }
         /* .table_position_1{
             position: relative;
@@ -51,7 +51,7 @@ $row_teacher=$student->Show_Teacher();
       <tbody>
       <?php
         $i=1;
-        foreach ($row_teacher as $student) {
+        foreach ($row as $student) {
             ?>
         <tr>
         <th scope="row"><?php echo $i ?></th>

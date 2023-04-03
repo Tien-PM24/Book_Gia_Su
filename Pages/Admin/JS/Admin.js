@@ -1,3 +1,4 @@
+
 function Change_Page() {
     window.location.href="../../../Admin/Php/FrontEnd/Home.php";
 }
@@ -15,3 +16,4 @@ function Change_Page_Course(){
 function Change_Page_Order(){
     window.location.href="../../../Admin/Php/FrontEnd/Oders.php";
 }
+

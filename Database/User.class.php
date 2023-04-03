@@ -1,5 +1,5 @@
 <?php
-include "./Database.class.php";
+include "Database.class.php";
 abstract class User extends Database{
     protected $Name;
     protected $Job_title;
@@ -7,7 +7,7 @@ abstract class User extends Database{
     protected $Email;
     protected $Password;
    abstract public function setUser($Name,$Job_title,$Address,$Email,$Password);
-   abstract  public function Search();
+   abstract  public function Search($A);
    abstract  public function Login($Name, $Job_title, $Address, $Email, $Password);
    abstract  public function Logout();
    abstract  public function Singin();
@@ -24,7 +24,7 @@ class Student extends User{
         $this->Password=$Password;
 
     }
-    public function Search(){
+    public function Search($C){
 
     }
     public function Login($Name,$Job_title,$Email,$Password,$Address){
@@ -35,7 +35,7 @@ class Student extends User{
         $this->Email=$Email;
         $this->Password=$Password;
         $sql="INSERT INTO student(Full_name,Email,Password,Job_title,Address) values (?,?,?,?,?)";
-        $stm=$this->Ketnoi()->prepare($sql);
+        $stm=$this->Connect()->prepare($sql);
         $stm->execute([$Name,$Job_title,$Email,$Password,$Address]);
     }
     public function Logout(){
@@ -59,9 +59,18 @@ class Teacher extends User{
         $this->Email=$Email;
         $this->Password=$Password;
     }
-    public function Search(){
+    public function Search($Name_Course){
+        $sql="SELECT Name from course where Name like ? ";
+        $stm=$this->Connect()->prepare($sql);
+        $stm->execute(["%$Name_Course%"]);
+        $Ket_Qua=array();
+        while ($row=$stm->fetch()) {
+            $Ket_Qua[]=$row;
+        }
+        return $Ket_Qua;
 
     }
+
     public function Login($Name, $Job_title, $Email, $Password, $Address){
         $this->Name=$Name;
         $this->Job_title=$Job_title;
@@ -70,7 +79,7 @@ class Teacher extends User{
         $this->Email=$Email;
         $this->Password=$Password;
         $sql="INSERT INTO teacher(Full_name,Email,Password,Job_title,Address) values (?,?,?,?,?)";
-        $stm=$this->Ketnoi()->prepare($sql);
+        $stm=$this->Connect()->prepare($sql);
         $stm->execute([$Name,$Job_title,$Email,$Password,$Address]);
     }
     
@@ -85,7 +94,7 @@ class Teacher extends User{
     }
     public function Insert_course($Name,$Price,$Body,$Image){
         $sql="INSERT INTO course(Name,Price,Body,Image) values (?,?,?,?)";
-        $stm=$this->Ketnoi()->prepare($sql);
+        $stm=$this->Connect()->prepare($sql);
         $stm->execute([$Name,$Price,$Body,$Image]);
     }
     public function Update_course(){
@@ -98,4 +107,3 @@ class Teacher extends User{
 
     }
    }
-?>

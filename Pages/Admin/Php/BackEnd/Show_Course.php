@@ -1,7 +1,7 @@
 <?php
-include "../../../../Database/Admin.class.php";
+// include "../../../../Database/Admin.class.php";
 $course = new Admin();
-$row = $course->Show_Course();
+$row = $course->showCourse();
 
 
 ?>
@@ -25,7 +25,7 @@ $row = $course->Show_Course();
       position: absolute;
       min-height: 3px;
       left: 20%;
-      top: 45%;
+      top: 20%;
     }
     table{
       width: 985px;

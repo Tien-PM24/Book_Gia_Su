@@ -4,6 +4,5 @@
 ?>
 <script>
     var Home = document.querySelector(".__menu_Order__");
-    Home.style.background = "red";
-
+    Home.style.background = "#ECC30B";
 </script>

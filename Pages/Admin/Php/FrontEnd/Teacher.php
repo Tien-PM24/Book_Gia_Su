@@ -1,14 +1,17 @@
 <?php
   include "./Admin.php";
-include "../BackEnd/Show_Teacher.php";
+include_once "../BackEnd/Show_Teacher.php";
 
 
-  $student=new Admin();
-  $student->Delete_teacher();
-
+ 
+  if(isset($_GET['delete'])){
+    $delete=$_GET['delete'];
+    $student=new Admin();
+    $student->deleteTeacher();
+  }
 
 ?>
 <script>
     var User = document.querySelector(".__menu_User__");
-    User.style.background = "red";
+    User.style.background = "#ECC30B";
 </script>

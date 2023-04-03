@@ -1,11 +1,11 @@
 <?php
-include "../../../../Database/Admin.class.php";
-
+// include "../../../../Database/Admin.class.php";
 $count = new Admin();
 
-$teacher = $count->Count_Teacher();
-$student = $count->Count_Student();
-$course = $count->Count_Course();
+$teacher = $count->countTeacher();
+$student = $count->countStudent();
+$course = $count->countCourse();
+$order = $count->countOrder();
 ?>
 <!doctype html>
 <html lang="en">
@@ -43,18 +43,18 @@ $course = $count->Count_Course();
             labels: ['Teacher', 'Student', 'Course', "Order"],
             datasets: [{
               label: 'Sales',
-              data: [<?php echo $teacher; ?>, <?php echo $student; ?>, <?php echo $course; ?>],
+              data: [<?php echo $teacher; ?>, <?php echo $student; ?>, <?php echo $course; ?>,<?php echo $order; ?>],
               backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
+                'yellow',
+                'yellow',
+                'yellow',
+                'yellow',
               ],
               borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
+                'yellow',
+                'yellow',
+                'yellow',
+                'yellow',
               ],
               borderWidth: 1
             }]
@@ -81,64 +81,3 @@ $course = $count->Count_Course();
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </html>
-
-
-
-
-
-
-
-
-
-
-<!-- <!DOCTYPE html>
-<html>
-
-<head>
-    <title>Home</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-   
-</head>
-
-<body>
-    <div class="container_chart">
-
-   
-    <canvas id="myChart"></canvas>
-    <script>
-        var ctx = document.getElementById('myChart').getContext('2d');
-        var myChart = new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: ['Teacher', 'Student', 'Course', "Order"],
-                datasets: [{
-                    label: 'Count',
-                    data: [<?php echo $teacher; ?>, <?php echo $student; ?>, <?php echo $course; ?>],
-                    backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)'
-                    ],
-                    borderColor: [
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)'
-                    ],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero: true
-                        }
-                    }]
-                }
-            }
-        });
-    </script>
-    </div>
-</body>
-
-</html> -->

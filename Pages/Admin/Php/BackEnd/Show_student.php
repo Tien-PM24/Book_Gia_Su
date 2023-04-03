@@ -1,8 +1,8 @@
 <?php
-include "../../../../Database/Admin.class.php";
+// include "../../../../Database/Admin.class.php";
 
 $student = new Admin();
-$row_stu = $student->Show_Student();
+$row_stu = $student->showStudent();
 ?>
 
 <!doctype html>
@@ -27,7 +27,7 @@ $row_stu = $student->Show_Student();
       position: absolute;
       min-height: 3px;
       left: 20%;
-      top: 45%;
+      top: 20%;
     }
   </style>
 </head>

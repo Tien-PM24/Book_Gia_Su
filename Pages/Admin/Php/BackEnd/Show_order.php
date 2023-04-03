@@ -1,5 +1,5 @@
 <?php
-include "../../../../Database/Admin.class.php";
+// include "../../../../Database/Admin.class.php";
 
 $oder=new Admin();
 
@@ -28,7 +28,7 @@ $order=$oder->getOrder();
       position: absolute;
       min-height: 3px;
       left: 20%;
-      top: 45%;
+      top: 20%;
     }
     table{
       width: 985px;
