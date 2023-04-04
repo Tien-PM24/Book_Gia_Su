@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,30 +8,6 @@
   <!-- <link rel="stylesheet" href="logn_up.js"> -->
   <title>Document</title>
 </head>
-
-<?php
-include './Database/conn.php';
-if (isset($_POST["btn"])) {
-  $taikhoan = $_POST["tk"];
-  $matkhau = $_POST["mk"];
-  $ten = $_POST["name"];
-  $check_ma = "select*from student where Email='$taikhoan'";
-  $ketqua = mysqli_query($ketnoi, $check_ma);
-  $dem = mysqli_num_rows($ketqua);
-  if ($dem > 0) {
-    echo "<script> alert('Tài khoản đã tôn tại') </script>";
-  } else {
-    $sql = "INSERT INTO student (Full_name, Email, Passwork) values ('$ten', '$taikhoan', '$matkhau')";
-    if (mysqli_query($ketnoi, $sql)) {
-      echo "Thêm dữ liệu thành công";
-      header("location: login.php");
-    } else {
-      echo "Thêm dữ liệu thất bại";
-    }
-  }
-}
-?>
-
 
 <body>
   <div class="container">
@@ -83,5 +58,33 @@ if (isset($_POST["btn"])) {
     </div>
   </div>
 </body>
+
+
+<?php
+include './Database/conn.php';
+if (isset($_POST["btn"])) {
+  $taikhoan = $_POST["tk"];
+  $matkhau = $_POST["mk"];
+  $ten = $_POST["name"];
+  $check_ma = "select*from student where Email='$taikhoan'";
+  $ketqua = mysqli_query($ketnoi, $check_ma);
+  $email_pattern = '/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/';
+  $dem = mysqli_num_rows($ketqua);
+  if (preg_match($email_pattern,$taikhoan)) {
+    echo "<script> alert('Địa chỉ email không hợp lệ') </script>";
+    if ($dem > 0) {
+      echo "<script> alert('Tài khoản đã tôn tại') </script>";
+    } else {
+      $sql = "INSERT INTO student (Full_name, Email, Passwork) values ('$ten', '$taikhoan', '$matkhau')";
+      if (mysqli_query($ketnoi, $sql)) {
+        echo "Thêm dữ liệu thành công";
+        header("location: login.php");
+      } else {
+        echo "Thêm dữ liệu thất bại";
+      }
+    }
+  }
+}
+?>
 
 </html>
