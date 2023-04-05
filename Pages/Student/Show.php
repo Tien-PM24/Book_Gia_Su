@@ -39,7 +39,7 @@
                 // Duyệt qua các bản ghi của kết quả và show thông tin giáo viên
                 while($row = mysqli_fetch_assoc($result)) {
                     echo "<div class='card-avatar'>";
-                    echo '<img src="'.$row['Image'] . '"/>';
+                    echo '<img name="image" src="'.$row['Image'] . '"/>';
                     echo "</div>";
                 
                 }
@@ -70,9 +70,9 @@
                 // Duyệt qua các bản ghi của kết quả và show thông tin giáo viên
                 while($row = mysqli_fetch_assoc($result)) {
                     echo '<div class="card-body">';
-                    echo "<p>" . $row["Full_name"] . "</p>";
-                    echo '<p>'.$row["Email"].'</p>';
-                    echo '<p>'.$row["Address"].'</p>';
+                    echo "<p name='email'>" . $row["Full_name"] . "</p>";
+                    echo '<p name="email">'.$row["Email"].'</p>';
+                    echo '<p name="address">'.$row["Address"].'</p>';
                     // echo '<p>'.$row["Job_title"].'</p>';
                 }
                
@@ -81,9 +81,11 @@
             };
         ?>
         <div class="card-button-wrap">
-            <button class="card-btn card-btn--secondary">
-            Sửa
+        <a href="edit.php?ID_student=1">
+            <button class="card-btn card-btn--secondary" data-id="<?php echo $row['ID_student']; ?>">
+                Sửa
             </button>
+        </a>
             <button class="card-btn card-btn--primary">
             Xóa
             </button>
@@ -113,11 +115,13 @@
         while($row = mysqli_fetch_assoc($result)) {
             echo '<div class="grid-container">';
             echo '<div class="card">';
-            echo '<img src="'.$row['Image'] . '"/>';
+            echo '<a href="course_detail.php?id=' . $row["ID_course"] . '"><img src="'.$row['Image'] . '"/></a>';
+
+            // echo '<img src="'.$row['Image'] . '"/>';
             echo '<div class="card-content">';
-            echo '<p>'.$row["Body"].'</p>';
+            // echo '<p>'.$row["Body"].'</p>';
             echo '<p>'.$row["Name"].'</p>';
-            echo '<p>'.$row["Price"].'</p>';
+            // echo '<p>'.$row["Price"].'</p>';
             echo "</div>";
             echo "</div>";
             echo "</div>";
