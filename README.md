@@ -39,8 +39,9 @@
     - View profile
     
    # Admin interface:
-     - Manage CRUD of courses
-     - Manage CRUD of users
+     - Manage Course,User,Oder
+     - Delete Teacher
+     - Edit user profile
    
    # Run project
      - Using XAMPP's Apache web server to run the website
