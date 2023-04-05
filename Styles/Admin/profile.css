@@ -1,0 +1,127 @@
+.fui-card-profile-1 {
+  border-radius: 12px;
+  overflow: hidden;
+  width: 1100px;
+  position: absolute;
+  left: 20%;
+  top: 20%;
+}
+.fui-card-profile-1 .background-wrap {
+  height: 400px;
+  position: relative;
+}
+.fui-card-profile-1 .card-image-cover {
+  width: 1100px;
+  height: 300px;
+}
+.fui-card-profile-1 .card-image-cover img {
+  width: 1100px;
+  height: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.fui-card-profile-1 .card-avatar {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 150px;
+  height: 150px;
+  border-radius: 100rem;
+  background: #fff;
+  padding: 8px;
+}
+.fui-card-profile-1 .card-avatar img {
+  width: 140px;
+  height: 140px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 100rem;
+}
+.fui-card-profile-1 .card-body {
+  display: flex;
+  padding: 50px 20px 20px;
+  text-align: center;
+  flex-direction: column;
+  gap: 4px;
+}
+.fui-card-profile-1 .card-body .card-name {
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 5px;
+}
+.fui-card-profile-1 .card-body .card-desc {
+  color: #78588f;
+}
+.fui-card-profile-1 .card-body .card-button-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+.fui-card-profile-1 .card-body .card-button-wrap .card-btn {
+  display: inline-block;
+  padding-inline: 36px;
+  height: 36px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  text-transform: capitalize;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  position: relative;
+  isolation: isolate;
+  overflow: auto;
+}
+.fui-card-profile-1 .card-body .card-button-wrap .card-btn--primary {
+  background-color: #1dc071;
+  color: white;
+}
+.fui-card-profile-1 .card-body .card-button-wrap .card-btn--primary:hover::before {
+  left: auto;
+  right: 0;
+  width: 100px;
+}
+.fui-card-profile-1 .card-body .card-button-wrap .card-btn--primary::before {
+  content: "";
+  position: fixed;
+  left: 0;
+  right: auto;
+  top: 0;
+  height: 100%;
+  width: 0;
+  background-color: #fff;
+  opacity: 0.1;
+  z-index: -1;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.fui-card-profile-1 .card-body .card-button-wrap .card-btn--secondary {
+  border: 1px solid #1dc071;
+  color: #1dc071;
+  text-decoration: none;
+  outline: 2px solid #fff;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.6s;
+}
+.fui-card-profile-1 .card-body .card-button-wrap .card-btn--secondary:hover {
+  color: #fff;
+}
+.fui-card-profile-1 .card-body .card-button-wrap .card-btn--secondary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -50px;
+  width: 150%;
+  height: 100%;
+  background-color: #1dc071;
+  transform: scaleX(0) skewX(35deg);
+  transform-origin: left;
+  z-index: -1;
+  transition: transform 0.6s;
+}
+.fui-card-profile-1 .card-body .card-button-wrap .card-btn--secondary:hover::before {
+  transform: scaleX(1) skewX(35deg);
+}/*# sourceMappingURL=profile.css.map */
