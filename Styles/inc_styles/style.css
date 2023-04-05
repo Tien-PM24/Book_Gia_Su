@@ -50,32 +50,34 @@ nav .menu {
 }
 nav .menu a {
     font-size: 1.4rem;
-    color: var(--first);
+    color: var(--main-color);
     font-weight: bold;
 }
 
-nav a {
+nav a:hover {
     text-decoration: none;
+    color: var(--danger);
 }
 
 
-.search-item .search-item input {
+.search-item input {
     padding: 8px;
     font-size: 1rem;
     border: 1px solid var(--gray);
-    border-radius: 5px;
+    border-radius: 12px 0 0 12px;
     float: left;
     width: 82%;
-    background: #f1f1f1;
+    background: var(--light);
 }
 
 .search-item .search-item button {
-    padding: 9px;
+    padding: 10px;
     font-size: 1.3rem;
     border: 1px solid var(--gray);
-    border-radius: 5px;
+    border-radius: 0 12px 12px 0;
     width: 18%;
-    background: var(--main-color);
+    color: var(--Finaly);
+    background: var(--primary);
 }
 
 .tap-right .personal-profile {
@@ -88,7 +90,15 @@ nav a {
     align-items: center;
     gap: 10px;
     height: 40px;
-    background-color: var(--gray);
+    background-color: var(--dark);
+}
+
+.tap-right .personal-profile a {
+    color: var(--light);
+}
+
+.tap-right .personal-profile a:hover {
+    text-decoration: none;
 }
 
 
