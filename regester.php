@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./Styles/login_resgeter/regester.css">
-  <!-- <link rel="stylesheet" href="logn_up.js"> -->
-  <title>Document</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Regester</title>
 </head>
 
 <body>
@@ -15,7 +15,6 @@
       <div class="sign-in" id="sign-in">
         <h1>BOOK GIA SƯ</h1>
         <p>Tạo tài khoản ngày để có thể book gia sư mà bạn yêu thích</p>
-        <!-- <button class="switch-button" id="slide-right-button">ĐĂNG NHẬP</button> -->
         <img src="./Asset/Picture/Course/learn online.jpg" alt="lỗi">
       </div>
 
@@ -46,10 +45,12 @@
           <input type="text" name="name" placeholder="Tên" />
           <input type="email" name="tk" placeholder="Email" />
           <input type="password" name="mk" placeholder="Mật khẩu" />
+          <input type="text" name="cv" placeholder="Chức vụ" />
+          <input type="text" name="dc" placeholder="Địa Chỉ" />
           <br>
-          <select name="select" class="option">
-            <option>Học sinh</option>
-            <option>Giáo viên</option>
+          <select name="user_type" class="option">
+            <option value="student" >Học sinh</option>
+            <option value="teacher">Giáo viên</option>
           </select>
           <!-- <input type="email" name="select" placeholder="Email" /> -->
           <button class="control-button up" name="btn">ĐĂNG KÝ</button>
@@ -62,29 +63,43 @@
 
 <?php
 include './Database/conn.php';
+$sql = "";
 if (isset($_POST["btn"])) {
   $taikhoan = $_POST["tk"];
   $matkhau = $_POST["mk"];
   $ten = $_POST["name"];
-  $check_ma = "select*from student where Email='$taikhoan'";
-  $ketqua = mysqli_query($ketnoi, $check_ma);
-  $email_pattern = '/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/';
-  $dem = mysqli_num_rows($ketqua);
-  if (preg_match($email_pattern,$taikhoan)) {
+  $cv = $_POST["cv"];
+  $dc = $_POST["dc"];
+
+  $check_email = "SELECT * FROM teacher WHERE Email='$taikhoan' UNION SELECT * FROM student WHERE Email='$taikhoan'";
+  $result = mysqli_query($ketnoi, $check_email);
+  $count = mysqli_num_rows($result);
+
+  if (empty($taikhoan) || empty($matkhau) || empty($ten) || empty($cv) || empty($dc)) {
+    echo "<script> alert('Vui lòng nhập đầy đủ thông tin') </script>";
+    return; //Thoát khỏi hàm và không thực hiện lệnh bên dưới
+  }
+
+  if ($count > 0) {
+    echo "<script> alert('Tài khoản đã tồn tại') </script>";
+    //một biểu thức chính trong PHP được sử dụng để xác thực xem một chuỗi có khớp với định dạng của một địa chỉ email hợp lệ hay không
+  } elseif (!preg_match('/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/', $taikhoan)) { //[a-zA-Z0-9._%+-] đại diện tên người dùng [a-zA-Z0-9.-] Điều này đại diện cho phần tên miền của địa chỉ email
     echo "<script> alert('Địa chỉ email không hợp lệ') </script>";
-    if ($dem > 0) {
-      echo "<script> alert('Tài khoản đã tôn tại') </script>";
+  } elseif (isset($_POST["user_type"]) && $_POST["user_type"] == "teacher") {
+    $sql = "INSERT INTO teacher (Full_name, Email, Password, Job_title, Address) values ('$ten', '$taikhoan', '$matkhau','$cv', '$dc')";
+  } else {
+    $sql = "INSERT INTO student (Full_name, Email, Password, Job_title, Address) values ('$ten', '$taikhoan', '$matkhau','$cv', '$dc')";
+  }
+  if (!empty($sql)) {     //Điều này sẽ đảm bảo rằng truy vấn chỉ được thực thi nếu $sql không trống và sẽ ngăn thông báo lỗi xảy ra. tại vì nếu $sql trống thì sẽ báo lỗi
+    if (mysqli_query($ketnoi, $sql)) {
+      header('location: login.php');
     } else {
-      $sql = "INSERT INTO student (Full_name, Email, Passwork) values ('$ten', '$taikhoan', '$matkhau')";
-      if (mysqli_query($ketnoi, $sql)) {
-        echo "Thêm dữ liệu thành công";
-        header("location: login.php");
-      } else {
-        echo "Thêm dữ liệu thất bại";
-      }
+      echo "Thêm dữ liệu thất bại";
     }
   }
 }
+
 ?>
+
 
 </html>
