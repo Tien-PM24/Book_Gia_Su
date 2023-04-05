@@ -6,9 +6,36 @@
   <link rel="stylesheet" href="./Styles/login_resgeter/regester.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-
   <title>Regester</title>
 </head>
+
+<<<<<<< HEAD
+<?php
+include './Database/conn.php';
+if (isset($_POST["btn"])) {
+  $taikhoan = $_POST["tk"];
+  $matkhau = $_POST["mk"];
+  $ten = $_POST["name"];
+  $check_ma = "SELECT * FROM student where Email='$taikhoan'";
+  $ketqua = mysqli_query($ketnoi, $check_ma);
+  $dem = mysqli_num_rows($ketqua);
+  if ($dem > 0) {
+    echo "<script> alert('Tài khoản đã tôn tại') </script>";
+  } else {
+    $sql = "INSERT INTO student (Full_name, Email, Passwork) values ('$ten', '$taikhoan', '$matkhau')";
+    if (mysqli_query($ketnoi, $sql)) {
+      echo "Thêm dữ liệu thành công";
+      header("location: login.php");
+    } else {
+      echo "Thêm dữ liệu thất bại";
+    }
+  }
+}
+?>
+
+
+=======
+>>>>>>> di_update2
 <body>
   <div class="container">
     <div class="overlay" id="overlay">
@@ -70,6 +97,7 @@ if (isset($_POST["btn"])) {
   $ten = $_POST["name"];
   $cv = $_POST["cv"];
   $dc = $_POST["dc"];
+
   $check_email = "SELECT * FROM teacher WHERE Email='$taikhoan' UNION SELECT * FROM student WHERE Email='$taikhoan'";
   $result = mysqli_query($ketnoi, $check_email);
   $count = mysqli_num_rows($result);
@@ -78,6 +106,7 @@ if (isset($_POST["btn"])) {
     echo "<script> alert('Vui lòng nhập đầy đủ thông tin') </script>";
     return; //Thoát khỏi hàm và không thực hiện lệnh bên dưới
   }
+
   if ($count > 0) {
     echo "<script> alert('Tài khoản đã tồn tại') </script>";
     //một biểu thức chính trong PHP được sử dụng để xác thực xem một chuỗi có khớp với định dạng của một địa chỉ email hợp lệ hay không
@@ -97,6 +126,7 @@ if (isset($_POST["btn"])) {
   }
 }
 
-
 ?>
+
+
 </html>

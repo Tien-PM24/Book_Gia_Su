@@ -9,6 +9,37 @@
 
   <title>Regester</title>
 </head>
+<<<<<<< HEAD
+
+<<<<<<< HEAD
+<?php
+include './Database/conn.php';
+if (isset($_POST["btn"])) {
+  $taikhoan = $_POST["tk"];
+  $matkhau = $_POST["mk"];
+  $ten = $_POST["name"];
+  $check_ma = "SELECT * FROM student where Email='$taikhoan'";
+  $ketqua = mysqli_query($ketnoi, $check_ma);
+  $dem = mysqli_num_rows($ketqua);
+  if ($dem > 0) {
+    echo "<script> alert('Tài khoản đã tôn tại') </script>";
+  } else {
+    $sql = "INSERT INTO student (Full_name, Email, Passwork) values ('$ten', '$taikhoan', '$matkhau')";
+    if (mysqli_query($ketnoi, $sql)) {
+      echo "Thêm dữ liệu thành công";
+      header("location: login.php");
+    } else {
+      echo "Thêm dữ liệu thất bại";
+    }
+  }
+}
+?>
+
+
+=======
+>>>>>>> di_update2
+=======
+>>>>>>> origin/di_update2
 <body>
   <div class="container">
     <div class="overlay" id="overlay">
