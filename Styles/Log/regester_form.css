@@ -63,7 +63,7 @@ body{
     border-radius: 10px;
 }
 
-.regester-right{
+.regester-right {
     text-align: center;
     justify-content: center;
     background-color: var(--light);
@@ -157,6 +157,18 @@ button{
     cursor: pointer;
     width: 80%;
 }
+
+.role-user .radio-container{
+    display: inline-block;
+}
+.radio-container {
+    align-items: center;
+}
+
+input[type="radio"] {
+margin-right: 10px;
+}
+
 
 
 /* Reponsive*/
