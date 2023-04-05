@@ -33,8 +33,8 @@
         <div class="container">
             <div class="login-left">
                 <div class="login-header">
-                    <h2>Chào mừng quý khách đến với <span>Web KingDom</span> </h2>
-                    <p>Đăng nhập ngay để được khóa học ngon-bổ-rẻ</p>
+                    <h2>We're delighted to welcome you to<span> KingDom</span> </h2>
+                    <p>Log in now to get a good-quality and affordable course</p>
                 </div>
                 <div class="login-form">
                     <div class="login-form-content">
@@ -63,7 +63,7 @@
                         <img src="../../Asstet/images/GG.png" alt="" width="30">Google login
                     </a><br>
                 </div>
-                </div>            
+                </div>       
             </div>
             <div class="login-right">
                 <img class="img-right" src="https://unnombrex.neocities.org/Cobay/alumnos.gif" alt="">
