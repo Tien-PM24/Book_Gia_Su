@@ -1,8 +1,35 @@
+<?php include "../../Database/conn.php" ?>
 <html>
     <head>
         <link rel="stylesheet" href="../../styles/Log/login_form.css">
     </head>
     <body>
+
+    <?php 
+    if (isset($_POST["btn"])) {
+      $tk = $_POST["email"];
+      $mk = $_POST["mk"];
+      if (!$mk || !$tk)
+      {
+          echo "Vui lòng nhập đầy đủ thông tin. <a href='login.php'>Trở lại</a>";
+          exit;
+      }
+      $ketnoi = mysqli_connect("localhost", "root", "", "book_tutor") or die("connect fail!");
+      $sql = "SELECT * FROM student WHERE Email= '$tk' AND Passwork ='$mk'";
+      $result = mysqli_query($ketnoi, $sql);
+    
+      if (mysqli_num_rows($result) != 1){
+            echo "<script> alert('Sai tài khoản đăng nhập hoặc sai mật khẩu') </script>";
+      }
+    
+      if (mysqli_num_rows($result) == 1) {
+        header("Location: https://www.youtube.com/");
+        exit();
+      } 
+      mysqli_close($ketnoi);
+    }
+    ?>
+            
         <div class="container">
             <div class="login-left">
                 <div class="login-header">
@@ -26,7 +53,7 @@
                                 <label for="rememberMecheckbox" class="checkboxLabel">Remenber me</label>
                             </div>
                         </div>
-                        <button type="submit">SIGN IN</button>
+                        <button type="submit" id="btn">SIGN IN</button>
                     </div>
                     <div class="login-form-footer">
                     <a href="https://www.facebook.com">
