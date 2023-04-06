@@ -11,7 +11,7 @@
     <div class="container">
         <div class="login-left">
             <div class="login-header">
-                <h2> Welcome to <span>Web KingDom</span> </h2>
+                <h2>Chào mừng quý khách đến với <span>Web KingDom</span> </h2>
                 <p>Login </p>
             </div>
 
