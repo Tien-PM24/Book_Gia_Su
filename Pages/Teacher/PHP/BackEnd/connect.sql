@@ -6,6 +6,7 @@ VALUES
 ('Phạm Văn Dinh', 'phamvand@example.com', '654321', 'Giáo viên', 'Số 4 Nguyễn Trãi'),
 ('Đỗ Thị Em', 'dothie@example.com', 'password789', 'Giáo viên', 'Số 5 Hàng Bài');
 
+
 INSERT INTO student (Full_name, Email, Password, Job_title, Address)
 VALUES 
 ('Nguyễn Thị Anh', 'nguyenthia@example.com', 'password123', 'Học sinh', 'Số 1 Đại Cồ Việt'),
@@ -14,13 +15,16 @@ VALUES
 ('Phạm Văn Dụ', 'phamvand@example.com', '654321', 'Học sinh', 'Số 4 Nguyễn Trãi'),
 ('Đỗ Thị Hà', 'dothie@example.com', 'password789', 'Học sinh', 'Số 5 Hàng Bài');
 
+
 INSERT INTO course (Name, Price, Body, Image)
 VALUES 
-('Tiếng Anh', 100, 'Khóa học Tiếng Anh sẽ giúp bạn cải thiện kỹ năng ngôn ngữ và giao tiếp tiếng Anh một cách nhanh chóng và hiệu quả.', '../../../../Asset/Picture/Course/Sach-1.png'),
+('Tiếng Anh', 100, 'Khóa học Tiếng Anh sẽ giúp bạn cải thiện kỹ năng ngôn ngữ và giao tiếp tiếng Anh một cách nhanh chóng và hiệu quả.', '../../../../A'),
 ('Hóa Học', 150, 'Khóa học Lập trình giúp bạn tìm hiểu và làm quen với các ngôn ngữ lập trình phổ biến như Java, Python, C++ và các công cụ lập trình hiện đại.', '../../../../Asset/Picture/Course/Sach-2.png'),
 ('Vật Lý', 200, 'Khóa học Thiết kế đồ họa cung cấp kiến thức và kỹ năng cần thiết để thiết kế các sản phẩm đồ họa chuyên nghiệp.', '../../../../Asset/Picture/Course/Sach-3.png'),
 ('Ngữ Văn', 120, 'Khóa học Kinh doanh giúp bạn tìm hiểu về các nguyên tắc cơ bản của kinh doanh, từ quản lý tài chính đến tiếp thị và bán hàng.', '../../../../Asset/Picture/Course/Sach-4.png'),
 ('Tin Học', 80, 'Khóa học Marketing giúp bạn hiểu rõ hơn về quảng cáo, tiếp thị và xây dựng thương hiệu trong thời đại kỹ thuật số.', '../../../../Asset/Picture/Course/Sach-5.png');
+
+
 --  Chèn 3 bảng đó trước sau đó lấy ID bỏ vô mấy bảng dưới
 INSERT INTO picture_stu (ID_student,Image)
 VALUES
