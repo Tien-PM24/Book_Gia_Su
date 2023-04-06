@@ -10,7 +10,6 @@
   <link rel="stylesheet" href="../styles/inc_styles/style_header.css">
 </head>
 <body>
-
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">

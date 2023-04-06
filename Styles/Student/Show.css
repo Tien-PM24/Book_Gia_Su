@@ -8,13 +8,17 @@
     position: relative;
   }
   .fui-card-profile-1 .card-image-cover {
-    width: 100%;
+    width: 60%;
     height: 100%;
+    margin: auto;
+  
   }
   .fui-card-profile-1 .card-image-cover img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    align-items: center;
+    border-radius: 20px;
   }
   .fui-card-profile-1 .card-avatar {
     position: absolute;
@@ -150,4 +154,7 @@
 }
 .card-content {
   padding: 10px;
+}
+#tx{
+  text-align: center;
 }

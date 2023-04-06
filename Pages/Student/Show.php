@@ -6,11 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../../Styles/Student/Show.css"> 
+    <link rel="stylesheet" href="../../Styles/Student/Show.css">
+    <link rel="stylesheet" href="../../Styles/inc_styles/style_header.css">
+    
+    
     
 </head>
 <body>
-    <header></header>
+     <header>
+    <?php
+     include "../../inc/header.php";
+    ?>
+    </header>
    
     <div class="fui-card-profile-1">
     <div class="background-wrap">
@@ -23,15 +30,8 @@
    
         
         <?php
-            // Kết nối đến cơ sở dữ liệu
-            $servername = "localhost";
-            $username = "root";
-            $password = "";
-            $dbname = "tutors";
-            $conn = mysqli_connect($servername, $username, $password, $dbname);
-            if (!$conn) {
-                die("Kết nối đến cơ sở dữ liệu thất bại: " . mysqli_connect_error());
-            }
+           
+            include "./conncect.php";
             // Thực hiện truy vấn đến cơ sở dữ liệu
             $sql = "SELECT * FROM picture_student ";
             $result = mysqli_query($conn, $sql);
@@ -54,15 +54,7 @@
 <br>
     
     <?php
-            $servername = "localhost";
-            $username = "root";
-            $password = "";
-            $dbname = "tutors";
-            $conn = mysqli_connect($servername, $username, $password, $dbname);
-            if (!$conn) {
-                die("Kết nối đến cơ sở dữ liệu thất bại: " . mysqli_connect_error());
-            }
-            
+           include "./conncect.php";
             // Thực hiện truy vấn đến cơ sở dữ liệu
             $sql = "SELECT *FROM student";
             $result = mysqli_query($conn, $sql);
@@ -74,35 +66,31 @@
                     echo '<p name="email">'.$row["Email"].'</p>';
                     echo '<p name="address">'.$row["Address"].'</p>';
                     // echo '<p>'.$row["Job_title"].'</p>';
-                }
-               
-            } else {
-                echo "Không có kết quả";
-            };
+
         ?>
         <div class="card-button-wrap">
-        <a href="edit.php?ID_student=1">
-            <button class="card-btn card-btn--secondary" data-id="<?php echo $row['ID_student']; ?>">
+        
+            <button class="card-btn card-btn--secondary" >
+            <a href="sua.php?ID_student=<?php echo $row['ID_student']?>">
                 Sửa
+                  </a>
             </button>
-        </a>
+      
             <button class="card-btn card-btn--primary">
             Xóa
             </button>
         </div>
     </div>
 </div>
-
 <?php
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "tutors";
-    $conn = mysqli_connect($servername, $username, $password, $dbname);
-    if (!$conn) {
-        die("Kết nối đến cơ sở dữ liệu thất bại: " . mysqli_connect_error());
-    }
-    
+                }
+                
+            } else {
+                echo "Không có kết quả";
+            };
+?>
+<?php
+   include "./conncect.php";
     // Thực hiện truy vấn đến cơ sở dữ liệu
     $sql = "SELECT course.*, student.*, student_course.*
             FROM course
@@ -116,11 +104,11 @@
             echo '<div class="grid-container">';
             echo '<div class="card">';
             echo '<a href="course_detail.php?id=' . $row["ID_course"] . '"><img src="'.$row['Image'] . '"/></a>';
-
+            
             // echo '<img src="'.$row['Image'] . '"/>';
-            echo '<div class="card-content">';
+            echo '<div class="card-content" >';
             // echo '<p>'.$row["Body"].'</p>';
-            echo '<p>'.$row["Name"].'</p>';
+            echo '<p id="tx">'.$row["Name"].'</p>';
             // echo '<p>'.$row["Price"].'</p>';
             echo "</div>";
             echo "</div>";
@@ -136,7 +124,9 @@
 
         
     <footer>
-
+        <?php
+        include "../../inc/footer.php";
+        ?>
     </footer>
 </body>
 
