@@ -32,6 +32,7 @@ $order=$oder->getOrder();
     }
     table{
       width: 985px;
+      color: #FFFF;
     }
   </style>
 </head>
@@ -46,6 +47,7 @@ $order=$oder->getOrder();
           <th scope="col">Image</th>
           <th scope="col">Student</th>
           <th scope="col">Image</th>
+          <th scope="col">Course</th>
         </tr>
       </thead>
       <tbody>
@@ -55,11 +57,11 @@ $order=$oder->getOrder();
         ?>
           <tr>
             <th scope="row"><?php echo $i ?></th>
-            <td><?php echo $oder['teacher_name'] ?></td>
-            <td><img src="<?php echo $oder['teacher_image'] ?>" alt=""></td>
-            <td><?php echo $oder['student_name'] ?></td>
-            <td><img src="<?php echo $oder['student_image'] ?>" alt=""></td>
-            <td>Xóa</td>
+            <td><?php echo $oder['Teacher'] ?></td>
+            <td><img src="<?php echo $oder['Image_teacher'] ?>" alt=""></td>
+            <td><?php echo $oder['Student'] ?></td>
+            <td><img src="<?php echo $oder['Image_student'] ?>" alt=""></td>
+            <td><?php echo $oder['Name'] ?></td>
           </tr>
         <?php
           $i++;

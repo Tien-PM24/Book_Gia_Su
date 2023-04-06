@@ -45,16 +45,16 @@ $order = $count->countOrder();
               label: 'Sales',
               data: [<?php echo $teacher; ?>, <?php echo $student; ?>, <?php echo $course; ?>,<?php echo $order; ?>],
               backgroundColor: [
-                'yellow',
-                'yellow',
-                'yellow',
-                'yellow',
+                '#34425A',
+                '#34425A',
+                '#34425A',
+                '#34425A',
               ],
               borderColor: [
-                'yellow',
-                'yellow',
-                'yellow',
-                'yellow',
+                '#34425A',
+                '#34425A',
+                '#34425A',
+                '#34425A',
               ],
               borderWidth: 1
             }]

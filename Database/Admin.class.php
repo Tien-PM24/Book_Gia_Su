@@ -17,7 +17,7 @@ class Admin extends DataBase
 
     public function showCourse()
     {
-        $sql = "SELECT Name,Price,Image,Full_name
+        $sql = "SELECT course.ID_course as ID_course ,Name,Price,Image,Full_name
             FROM teacher_course
             Left JOIN course ON course.ID_course = teacher_course.ID_course
             Left JOIN teacher ON teacher.ID_teacher = teacher_course.ID_teacher";
@@ -104,11 +104,17 @@ class Admin extends DataBase
         $pdo->beginTransaction();
 
         try {
+            $pdo->query("set foreign_key_checks=0");
             // Xóa khóa ngoại trước
-            $pdo->query("DELETE FROM student_teacher WHERE ID_teacher = $delete");
-            $pdo->query("DELETE FROM teacher_course WHERE ID_teacher = $delete");
-            // Xóa bảng chính
-            $pdo->query("DELETE FROM teacher WHERE ID_teacher = $delete");
+            $pdo->query("DELETE teacher, student_teacher, teacher_course, picture_teacher
+            FROM teacher
+            LEFT JOIN student_teacher ON teacher.ID_teacher = student_teacher.ID_teacher
+            LEFT JOIN teacher_course ON teacher.ID_teacher = teacher_course.ID_teacher
+            LEFT JOIN picture_teacher ON teacher.ID_teacher = picture_teacher.ID_teacher
+            WHERE teacher.ID_teacher = $delete;");
+            // $pdo->query("DELETE FROM teacher_course WHERE ID_teacher = $delete");
+            // // Xóa bảng chính
+            // $pdo->query("DELETE FROM teacher WHERE ID_teacher = $delete");
             $pdo->commit();
         } catch (PDOException $e){
             $pdo->rollBack();
@@ -120,12 +126,14 @@ class Admin extends DataBase
 
     public function getOrder()
     {
-        $sql = "SELECT teacher.Full_name AS teacher_name,picture_teacher.image AS teacher_image, student.Full_name AS student_name,  picture_stu.image AS student_image
-            FROM student_teacher
-            INNER JOIN student ON student.ID_student = student_teacher.ID_student
-            INNER JOIN teacher ON teacher.ID_teacher = student_teacher.ID_teacher
-            LEFT JOIN picture_teacher ON picture_teacher.ID_teacher = teacher.ID_teacher
-            LEFT JOIN picture_stu ON picture_stu.ID_student = student.ID_student";
+        $sql = "SELECT distinct teacher.Full_name as Teacher, picture_teacher.Image as Image_teacher, student.Full_name as Student, picture_stu.Image as Image_student, Course.Name
+        From student_teacher
+        inner join student on student.ID_student =student_teacher.ID_student
+        inner join teacher on teacher.ID_teacher=student_teacher.ID_teacher
+        left join teacher_course on teacher_course.ID_teacher=student_teacher.ID_teacher
+        left join course on course.ID_course=teacher_course.ID_course
+        left join picture_stu on picture_stu.ID_student = student_teacher.ID_student
+        left join picture_teacher on picture_teacher.ID_teacher=student_teacher.ID_teacher";
 
         $stm = $this->Connect()->query($sql);
         $Order = array();
@@ -158,6 +166,30 @@ class Admin extends DataBase
         $row=$stm->fetchAll();
         return $row;
     }
+
+    public function logIn($email,$pass){
+        $sql="SELECT * from admin";
+        $stm=$this->Connect()->query($sql);
+        while ( $row=$stm->fetch()) {
+            if ($email==$row["Email"] && $pass==$row["Password"]) {
+                header("location:../Pages/Admin/Php/FrontEnd/Home.php");
+             }
+        }
+    }
+
+    function search($Name){
+        $sql="SELECT * from course where name like('%' ? '%')";
+        $stm=$this->Connect()->prepare($sql);
+        $stm->execute([$Name]);
+        $Search=array();
+
+        while ($row=$stm->fetch()){
+            $Search[]=$row;
+        }
+        return $Search;
+
+    }
 }
 
     
+?>

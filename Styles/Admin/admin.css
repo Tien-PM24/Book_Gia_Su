@@ -1,5 +1,5 @@
 * {
-  font-family: Georgia;
+  font-family: Cambria, Cochin, Georgia, Times, serif;
 }
 
 .container__tap__bar {
@@ -25,6 +25,12 @@
   font-size: 20px;
   justify-content: center;
   align-items: center;
+}
+.container__tap__bar .research {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 .container__tap__bar .__modol__icon {
   display: flex;
@@ -66,7 +72,7 @@
   display: block;
   text-align: center;
   padding-top: 20px;
-  background: #ECC30B;
+  background: #34425A;
   font-size: 20px;
   color: #FFFFFF;
 }

@@ -65,25 +65,29 @@ $row = $edit->Profile();
                     <?php
                 }
                ?>
-                <div class="__menu_icon __menu__ _menu_home__" onclick="Change_Page()">
+                <div class="__menu_icon __menu__ _menu_home__" onclick="changeHome()">
                     <i class="fa-solid fa-house"></i>
                     <p>HOME</p>
                 </div>
-                <div class="__menu_icon __menu__ __menu_User__" onclick="Change_Page_User()">
+                <div class="__menu_icon __menu__ __menu_User__" onclick="changeTeacher()">
                     <i class="fa-solid fa-users"></i>
                     <p>TEACHER</p>
                 </div>
-                <div class="__menu_icon __menu__ __Menu_comment__" onclick="Change_Page_Comment()">
+                <div class="__menu_icon __menu__ __Menu_comment__" onclick="changeStudent()">
                     <i class="fa-regular fa-comment"></i>
                     <p>STUDENT</p>
                 </div>
-                <div class="__menu_icon __menu__ __menu_course__" onclick="Change_Page_Course()">
+                <div class="__menu_icon __menu__ __menu_course__" onclick="changeCourse()">
                     <i class="fa-solid fa-book"></i>
                     <p>COURSES</p>
                 </div>
-                <div class="__menu_icon __menu__ __menu_Order__" onclick="Change_Page_Order()">
+                <div class="__menu_icon __menu__ __menu_Order__" onclick="changeOder()">
                     <i class="fa-sharp fa-solid fa-cart-shopping"></i>
                     <p>ORDERS</p>
+                </div>
+                <div class="__menu_icon __menu__ __menu_search__" onclick="changeSearch()">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <p>SEARCH</p>
                 </div>
             </div>
             <div class="container__show_detail">

@@ -29,6 +29,7 @@ $row = $course->showCourse();
     }
     table{
       width: 985px;
+      color: #FFFF;
     }
   </style>
 </head>
@@ -43,7 +44,6 @@ $row = $course->showCourse();
       <th scope="col">Price</th>
       <th scope="col">Image</th>
       <th scope="col">Teacher</th>
-      <th scope="col">Action</th>
         </tr>
       </thead>
       <tbody>
@@ -57,7 +57,6 @@ $row = $course->showCourse();
             <td><?php echo $course['Price'] ?></td>
             <td><img src="<?php echo $course['Image'] ?>" alt=""></td>
             <td><?php echo $course['Full_name'] ?></td>
-            <td>Xóa</td>
           </tr>
         <?php
           $i++;
