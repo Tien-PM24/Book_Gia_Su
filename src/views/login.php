@@ -38,7 +38,6 @@
                     <p>Log in now to get a good-quality and affordable course</p>
                 </div>
                 <div class="login-form">
-=======
 
 <head>
     <link rel="stylesheet" href="../../styles/Log/login_form.css">
@@ -55,7 +54,6 @@
 
             <div class="login-form">
                 <form id="sign-up-form" method="post" action="" enctype="multipart/form-data">
->>>>>>> di_update2
                     <div class="login-form-content">
                         <div class="form-item">
                             <label for="email">Enter Email</label>
@@ -71,12 +69,9 @@
                                 <input type="checkbox" name="" id="rememberMecheckbox" checked>
                                 <label for="rememberMecheckbox" class="checkboxLabel">Remenber me</label>
                             </div>
-                        </div>
-<<<<<<< HEAD
-                        <button type="submit" id="btn">SIGN IN</button>
-=======
+                        </div>                      <button type="submit" id="btn">SIGN IN</button>
+
                         <button type="submit" name="btn">SIGN IN</button>
->>>>>>> di_update2
                     </div>
                 </form>
                 <div class="login-form-footer">
@@ -87,13 +82,10 @@
                         <img src="../../Asstet/images/GG.png" alt="" width="30">Google login
                     </a><br>
                 </div>
-<<<<<<< HEAD
                 </div>       
             </div>
             <div class="login-right">
                 <img class="img-right" src="https://unnombrex.neocities.org/Cobay/alumnos.gif" alt="">
-=======
->>>>>>> di_update2
             </div>
 
         </div>

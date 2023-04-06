@@ -1,3 +1,25 @@
+CREATE TABLE student (
+ID INT AUTO_INCREMENT PRIMARY KEY,
+Name VARCHAR(50),
+Jobtitle	VARCHAR(50),	
+Address	VARCHAR(255),	
+Phone	VARCHAR(15),	
+Email	VARCHAR(150),	
+Password	VARCHAR(15)	
+);
+
+CREATE TABLE teacher (
+ID INT AUTO_INCREMENT PRIMARY KEY,
+Name VARCHAR(50),
+Jobtitle	VARCHAR(50),	
+Address	VARCHAR(255),	
+Phone	VARCHAR(15),	
+Email	VARCHAR(150),	
+Password	VARCHAR(15)	
+);
+
+
+
 INSERT INTO teacher (Full_name, Email, Password, Job_title, Address)
 VALUES 
 ('Nguyễn Văn Nhật', 'nguyenvana@example.com', 'password123', 'Giáo viên', 'Số 1 Đại Cồ Việt'),
