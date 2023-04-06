@@ -15,9 +15,7 @@ if(isset($_POST['update'])) {
 
 if(isset($_GET['ID_student'])) {
   $id = $_GET['ID_student'];
-  $sql = "SELECT *
-  FROM student
-  JOIN picture_student ON picture_student.ID_student = student.ID_student WHERE ID_student=$id";
+  $sql = "SELECT * FROM student WHERE ID_student=$id";
   $result = mysqli_query($conn, $sql);
 
   if($row=mysqli_num_rows($result) == 1) {
@@ -25,7 +23,7 @@ if(isset($_GET['ID_student'])) {
     $fullname = $row['Full_name'];
     $email = $row['Email'];
     $address = $row['Address'];
-    $avt=$row['Image'];
+    // $avt=$row['Image'];
   } else {
     echo "Không tìm thấy học sinh";
     exit();
@@ -53,11 +51,11 @@ if(isset($_GET['ID_student'])) {
     <label for="address">Địa chỉ:</label>
     <input type="text" id="address" name="address" value="<?php echo $address; ?>" required>
   </div>
-  <div>
+  <!-- <div>
     <label for="avt">Ảnh đại diện:</label>
     <span><img src="<?php echo $avt; ?>" width="100px"; height="120px"></span>
     <input type="file" id="" name="avt" value="<?php echo $avt; ?>" required>
-  </div>
+  </div> -->
   <button type="submit" name="update">Cập nhật</button>
 </form>
 
