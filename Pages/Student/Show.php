@@ -15,7 +15,7 @@
 <body>
      <header>
     <?php
-     include "../../inc/header.php";
+     require_once "../../inc/header.php";
     ?>
     </header>
    
@@ -90,6 +90,7 @@
             };
 ?>
 <?php
+
    include "./conncect.php";
     // Thực hiện truy vấn đến cơ sở dữ liệu
     $sql = "SELECT course.*, student.*, student_course.*

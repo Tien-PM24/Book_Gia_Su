@@ -1,44 +1,56 @@
-# Đề tài: Book_Tutor
+# Subject: Book_Tutor
 
-# Thành viên
-- A Tiến (Leader)
-- Phan Thanh Lực
-- Hồ Văn Đi
-- Võ Thị Thúy Hà
-- ZoRum Thị Phượng
+# Members
+- Phan Thanh Luc
+- Ho Van Di
+- A Tien (leader)
+- ZoRum Thi Phuong
+- Vo Thi Thuy Ha
 
-# Công nghệ sử dụng
+# Programing languages
 - web FontEnd:    HTML5, CSS, SCSS, JavaScript.
 - web BackEnd:    Php.
-- Cơ sở dữ liệu:  MySQL.
+- Database:  MySQL.
 
-# Đối tượng sử dụng:
-- Tutor
+# Target audience:
+- Tutors
 - Students
 - Admin
+- Visitor
 
-   # Giao diện chính
-   - Trang chủ
-   - Tìm gia sư
-   - Tìm khóa học
-   - Giới thiệu
-   - Xem tin thông tin gia sư
+   # User interface
+   - Views Home
+   - Views Tutors
+   - Views Courses
+   - Views Class
    
-   # Giao diện Student
-   - Xem danh sách lớp
-   - Tìm kiếm lớp
-   - Xem và tìm kiếm bài viết, đánh giá
-   - Đăng kí khóa học
-   - Xem tài khoản cá nhân
+   # Student interface
+   - View class detail
+   - Search courses or class
+   - View, comment, like and share post and rivew
+   - Register for courses
+   - Pay ment
+   - View profile
    
-   # Giao diện tutor:
-    - Trang chủ
-    - Tạo lớp học
-    - Tạo khóa học
-    - Xem tài khoản cá nhân
+   # Tutor interface:
+    - Register for tutor
+    - Add class
+    - Add courses
+    - View profile
     
-   # Giao diện quản trị viên
-     - Quản lí CRUD các khóa học
-     - Quản lí thanh toán
-     - Quản lí CRUD các tài khoản người dùng
+   # Admin interface:
+     - Manage Course,User,Oder
+     - Delete Teacher
+     - Edit user profile
    
+   # Run project
+     - First, download XAMPP from the official website
+     - Second, install XAMPP and start the Apache web server
+     - Third, import the database from the "data_book_tutor.sql" file using XAMPP's MySQL web server
+     - Finally, use XAMPP's Apache web server and navigate to the project directory to run the website
+
+   # Deploy project
+     - Using Visual Studio Code to development project
+     - Using Github to manage source code, deploy, and develop projects
+     - Using MVC and OOP allows for easy modification and reuse of the source code
+     - Using Trello to track project progress and effectively divide tasks
