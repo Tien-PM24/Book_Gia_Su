@@ -44,10 +44,13 @@
      - Edit user profile
    
    # Run project
-     - Using XAMPP's Apache web server to run the website
-     - Using Visual Studio Code to development project
+     - First, download XAMPP from the official website
+     - Second, install XAMPP and start the Apache web server
+     - Third, import the database from the "data_book_tutor.sql" file using XAMPP's MySQL web server
+     - Finally, use XAMPP's Apache web server and navigate to the project directory to run the website
 
-  # Deploy project
+   # Deploy project
+     - Using Visual Studio Code to development project
      - Using Github to manage source code, deploy, and develop projects
      - Using MVC and OOP allows for easy modification and reuse of the source code
      - Using Trello to track project progress and effectively divide tasks
