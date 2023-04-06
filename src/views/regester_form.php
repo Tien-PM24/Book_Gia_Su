@@ -9,6 +9,7 @@
   <title>Regester account</title>
 </head>
 
+
 <?php ini_set('display_errors' ,0) ?>
 
 <body>
