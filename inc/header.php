@@ -19,7 +19,7 @@
   <header>
     <div class="container-header">
       <div class="logo">
-        <a href="index.php"><img src="Asstet/images/logo (1).png" alt="" height="100"></a>
+        <a href="index.php"><img src="Asset/images/logo (1).png" alt="" height="100"></a>
       </div>
       <div class="nav-item">
         <nav>
@@ -43,7 +43,7 @@
       <div class="tap-right">
         <div class="personal-profile">
           <a href="./src/views/login.php">Sign in</a>
-          <a href="./src/views/login.php"><img src="./Asstet/images/people.png" alt="" height="25"> </a>
+          <a href="./src/views/login.php"><img src="./Asset/images/people.png" alt="" height="25"> </a>
         </div>
       </div>
     </div>

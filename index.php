@@ -9,12 +9,12 @@
         include "./inc/header.php";
         //require_once './inc/slide.php';
         //require_once './src/views/home.php';
-        include "connect.php";
+        include "./src/core/connectDB.php";
 
-        class ShowDB extends connectDB {
+       class ShowDB extends connectDB {
             public function getAllCourse() {
                 error_reporting(0);
-                $conn = $this->conn;
+                $conn = $this->connection;
                 $sql = "SELECT * FROM course";
                 $result = $conn->query($sql);
 

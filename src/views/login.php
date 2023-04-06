@@ -97,7 +97,7 @@
 
     
     <?php
-    include './Database/conn.php'; 
+    include '../../Database/conn.php'; 
     if (isset($_POST["btn"])) {
         $tk = $_POST["email"];
         $mk = $_POST["mk"];
