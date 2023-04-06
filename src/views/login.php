@@ -12,7 +12,7 @@
         <div class="login-left">
             <div class="login-header">
                 <h2>Chào mừng quý khách đến với <span>Web KingDom</span> </h2>
-                <p>Đăng nhập</p>
+                <p>Login </p>
             </div>
 
             <div class="login-form">
