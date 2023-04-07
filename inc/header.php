@@ -15,10 +15,6 @@
   <link rel="stylesheet" href="./styles/inc_styles/style.css">
 </head>
 <body>
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#"><img src="../images/logo (1).png" alt="" width="100"></a>~~
   <!-- header -->
   <header>
     <div class="container-header">

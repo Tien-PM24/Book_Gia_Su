@@ -6,8 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../../Styles/Student/Show.css">
+    <!-- <link rel="stylesheet" href="../../Styles/Student/Show.css"> -->
     <link rel="stylesheet" href="../../Styles/inc_styles/style_header.css">
+    <link rel="stylesheet" href="../../Styles/Student/Show.css">
     
     
     
@@ -71,7 +72,7 @@
         <div class="card-button-wrap">
         
             <button class="card-btn card-btn--secondary" >
-            <a href="sua.php?ID_student=<?php echo $row['ID_student']?>">
+            <a style="text-decoration: none;" href="edit.php?ID_student=<?php echo $row['ID_student']?>">
                 Sửa
                   </a>
             </button>
@@ -79,15 +80,15 @@
             <button class="card-btn card-btn--primary">
             Xóa
             </button>
+            </div>
         </div>
     </div>
-</div>
 <?php
-                }
+    }
                 
-            } else {
-                echo "Không có kết quả";
-            };
+    } else {
+        echo "Không có kết quả";
+    };
 ?>
 <?php
 
@@ -104,7 +105,7 @@
         while($row = mysqli_fetch_assoc($result)) {
             echo '<div class="grid-container">';
             echo '<div class="card">';
-            echo '<a href="course_detail.php?id=' . $row["ID_course"] . '"><img src="'.$row['Image'] . '"/></a>';
+            echo '<a href="course_detail.php?id=' . $row["ID_course"] . '"><img style="border-radius: 20px;" src="'.$row['Image'] . '"/></a>';
             
             // echo '<img src="'.$row['Image'] . '"/>';
             echo '<div class="card-content" >';
