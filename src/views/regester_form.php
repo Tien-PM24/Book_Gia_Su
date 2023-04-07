@@ -9,28 +9,28 @@
   <title>Regester account</title>
 </head>
 
-<!--<?php
-//include './Database/conn.php';
-//if (isset($_POST["btn"])) {
-//  $taikhoan = $_POST["tk"];
-//  $matkhau = $_POST["mk"];
-//  $ten = $_POST["name"];
-//  $check_ma = "SELECT * FROM student where Email='$taikhoan'";
-//  $ketqua = mysqli_query($ketnoi, $check_ma);
-//  $dem = mysqli_num_rows($ketqua);
-//  if ($dem > 0) {
-//    echo "<script> alert('Tài khoản đã tôn tại') </script>";
-//  } else {
-//    $sql = "INSERT INTO student (Full_name, Email, Passwork) values ('$ten', '$taikhoan', '$matkhau')";
-//    if (mysqli_query($ketnoi, $sql)) {
-//      echo "Thêm dữ liệu thành công";
-//      header("location: regester.php");
-//    } else {
-//      echo "Thêm dữ liệu thất bại";
-//    }
-//  }
-//}
-?>-->
+<?php
+include '../../Database/conn.php';
+if (isset($_POST["btn"])) {
+  $taikhoan = $_POST["tk"];
+  $matkhau = $_POST["mk"];
+  $ten = $_POST["name"];
+  $check_ma = "SELECT * FROM student where Email='$taikhoan'";
+  $ketqua = mysqli_query($ketnoi, $check_ma);
+  $dem = mysqli_num_rows($ketqua);
+  if ($dem > 0) {
+    echo "<script> alert('Tài khoản đã tôn tại') </script>";
+  } else {
+    $sql = "INSERT INTO student (Full_name, Email, Passwork) values ('$ten', '$taikhoan', '$matkhau')";
+    if (mysqli_query($ketnoi, $sql)) {
+      echo "Thêm dữ liệu thành công";
+      header("location: regester.php");
+    } else {
+      echo "Thêm dữ liệu thất bại";
+    }
+  }
+}
+?>
   <body>
     <div class="container">
       <div class="regester-left">
