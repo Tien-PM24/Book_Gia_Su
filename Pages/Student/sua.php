@@ -1,61 +1,66 @@
 <?php
+session_start();
 include "./conncect.php";
+$emailUser = $_SESSION['user'];
+if(isset($_GET['ID_student'])) {
+  $id=$_GET['ID_student'];
+  $sql = "SELECT student.ID_student as ID_student, Image,Full_name,Email,Address from picture_stu,student
+            where student.ID_student=picture_stu.ID_student and  student.Email = '$emailUser' and student.ID_student=$id";
+  $result = mysqli_query($conn, $sql);
+  $row=mysqli_fetch_assoc($result);
+
+  $fullname = $row['Full_name'];
+  $email = $row['Email'];
+  $address = $row['Address'];
+  $avt=$row['Image'];
+
+ 
+
+}
+
+
+
+
 
 if(isset($_POST['update'])) {
-  $id = $_POST['id'];
+  $id = $_GET['ID_student'];
   $fullname = $_POST['fullname'];
   $email = $_POST['email'];
   $address = $_POST['address'];
-  $avt=$_POST['avt'];
+  $avt=$_FILES['avt']['name'];
 
-  $sql = "UPDATE student SET Full_name='$fullname', Email='$email', Address='$address', Image='$avt' WHERE ID_student='$id'";
-  $result = mysqli_query($conn, $sql);
-  header("location: Show.php");
-}
-
-if(isset($_GET['ID_student'])) {
-  $id = $_GET['ID_student'];
-  $sql = "SELECT * FROM student WHERE ID_student=$id";
-  $result = mysqli_query($conn, $sql);
-
-  if($row=mysqli_num_rows($result) == 1) {
-    $row = mysqli_fetch_assoc($result);
-    $fullname = $row['Full_name'];
-    $email = $row['Email'];
-    $address = $row['Address'];
-    // $avt=$row['Image'];
-  } else {
-    echo "Không tìm thấy học sinh";
-    exit();
+  $taget_dir="../../Asset/Picture/Student/";
+  $taget_file=$taget_dir.basename($avt);
+  if($_FILES['avt']['size']<500000){
+    move_uploaded_file($_FILES['avt']['tmp_name'],$taget_file);
+    $sql = "UPDATE student,picture_stu 
+    SET Full_name='$fullname', Email='$email', Address='$address', Image='$avt'  
+    where student.ID_student=picture_stu.ID_student 
+    and  student.Email = '$emailUser'  and student.ID_student=$id";
+    $result = mysqli_query($conn, $sql);
+    header("location: Show.php");
   }
-} else {
-  echo "Không tìm thấy học sinh";
-  exit();
 }
-?>
 
-<form method="POST" >
-  <div>
-    <label for="id">ID:</label>
-    <input type="text" id="id" name="id" value="<?php echo $id; ?>" readonly>
-  </div>
+?>
+<form method="post" enctype="multipart/form-data">
   <div>
     <label for="fullname">Họ và tên:</label>
-    <input type="text" id="fullname" name="fullname" value="<?php echo $fullname; ?>" required>
+    <input type="text" id="fullname" name="fullname" value="<?php echo $fullname; ?>">
   </div>
   <div>
     <label for="email">Email:</label>
-    <input type="email" id="email" name="email" value="<?php echo $email; ?>" required>
+    <input type="email" id="email" name="email" value="<?php echo $email; ?>" >
   </div>
   <div>
     <label for="address">Địa chỉ:</label>
-    <input type="text" id="address" name="address" value="<?php echo $address; ?>" required>
+    <input type="text" id="address" name="address" value="<?php echo $address; ?>" >
   </div>
-  <!-- <div>
+  <div>
     <label for="avt">Ảnh đại diện:</label>
-    <span><img src="<?php echo $avt; ?>" width="100px"; height="120px"></span>
-    <input type="file" id="" name="avt" value="<?php echo $avt; ?>" required>
-  </div> -->
+    <span><img src="../../Asset/Picture/Student/<?php echo $avt; ?>" width="100px"; height="120px"></span>
+    <input type="file" id="" name="avt" value="<?php echo $avt; ?>" >
+  </div>
   <button type="submit" name="update">Cập nhật</button>
 </form>
 
