@@ -1,0 +1,162 @@
+.fui-card-profile-1 {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .fui-card-profile-1 .background-wrap {
+    height: 214px;
+    position: relative;
+  }
+  .fui-card-profile-1 .card-image-cover {
+    width: 60%;
+    height: 100%;
+    margin: auto;
+  
+  }
+  .fui-card-profile-1 .card-image-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    align-items: center;
+    border-radius: 20px;
+  }
+  .fui-card-profile-1 .card-avatar {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 115px;
+    height: 115px;
+    border-radius: 100rem;
+    background-color: #fff;
+    padding: 8px;
+  }
+  .fui-card-profile-1 .card-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 100rem;
+  }
+  .fui-card-profile-1 .card-body {
+    padding: 50px 20px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .fui-card-profile-1 .card-name {
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 14px;
+  }
+  .fui-card-profile-1 .card-desc {
+    color: #78858f;
+  }
+  .fui-card-profile-1 .card-button-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  .fui-card-profile-1 .card-btn {
+    display: inline-block;
+    padding-inline: 36px;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: capitalize;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 8px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+  }
+  .fui-card-profile-1 .card-btn--primary {
+    background-color: #1dc071;
+    color: white;
+  }
+  .fui-card-profile-1 .card-btn--primary:hover::before {
+    left: auto;
+    right: 0;
+    width: 100%;
+  }
+  .fui-card-profile-1 .card-btn--primary::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: auto;
+    top: 0;
+    height: 100%;
+    width: 0;
+    background-color: #fff;
+    opacity: 0.1;
+    z-index: -1;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+  .fui-card-profile-1 .card-btn--secondary {
+    border: 1px solid #1dc071;
+    color: #1dc071;
+    text-decoration: none;
+    outline: 2px solid #fff;
+    position: relative;
+    overflow: hidden;
+    transition: color 0.6s;
+  }
+  .fui-card-profile-1 .card-btn--secondary:hover {
+    color: #fff;
+  }
+  .fui-card-profile-1 .card-btn--secondary::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -50px;
+    width: 150%;
+    height: 100%;
+    background-color: #1dc071;
+    transform: scaleX(0) skewX(35deg);
+    transform-origin: left;
+    z-index: -1;
+    transition: transform 0.6s;
+  }
+  .fui-card-profile-1 .card-btn--secondary:hover::before {
+    transform: scaleX(1) skewX(35deg);
+  }
+
+.grid-container{
+    padding-top: 20px;
+    margin-left: 60px;
+    margin-right: 40px;
+}
+#image{
+  height: 10%;
+  width: 10%;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
+  box-shadow: #1dc071;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ccc;
+  border-top-right-radius:20px;
+  border-top-left-radius:20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.card img {
+  width: 100%;
+  height: auto;
+}
+.card-content {
+  padding: 10px;
+}
+#tx{
+  text-align: center;
+  text-shadow: #0161aa;
+}
