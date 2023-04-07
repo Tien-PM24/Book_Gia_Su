@@ -8,16 +8,13 @@
         <?php
         include "./inc/header.php";
         //require_once './inc/slide.php';
-<<<<<<< HEAD
         //require_once './src/views/home.php';
-=======
->>>>>>> tien_dev
-        include "./src/core/connectDB.php";
+        include "connect.php";
 
         class ShowDB extends connectDB {
             public function getAllCourse() {
                 error_reporting(0);
-                $conn = $this->connection;
+                $conn = $this->conn;
                 $sql = "SELECT * FROM course";
                 $result = $conn->query($sql);
 

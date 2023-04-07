@@ -1,20 +1,54 @@
 <?php include "../../Database/conn.php" ?>
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> tien_dev
 <html>
 <head>
     <link rel="stylesheet" href="../../styles/Log/login_form.css">
 </head>
 <?php ini_set('display_errors' ,0) ?>
 <body>
+<<<<<<< HEAD
     <div class="container">
         <div class="login-left">
             <div class="login-header">
                 <h2>Chào mừng quý khách đến với <span>Web KingDom</span> </h2>
                 <p>Login </p>
-            </div>
+=======
+<!--<?php 
+if (isset($_POST["btn"])) {
+    $tk = $_POST["email"];
+    $mk = $_POST["mk"];
+    if (!$mk || !$tk)
+    {
+        echo "Vui lòng nhập đầy đủ thông tin. <a href='login.php'>Trở lại</a>";
+        exit;
+    }
+    $ketnoi = mysqli_connect("localhost", "root", "", "book_tutor") or die("connect fail!");
+    $sql = "SELECT * FROM student WHERE Email= '$tk' AND Passwork ='$mk'";
+    $result = mysqli_query($ketnoi, $sql);
 
+    if (mysqli_num_rows($result) != 1){
+        echo "<script> alert('Sai tài khoản đăng nhập hoặc sai mật khẩu') </script>";
+    }
+
+    if (mysqli_num_rows($result) == 1) {
+    header("Location: https://www.youtube.com/");
+    exit();
+    } 
+    mysqli_close($ketnoi);
+}
+?>-->
+    <div class="container">
+        <div class="login-left">
+            <div class="login-header">
+                <h2>We're delighted to welcome you to<span> KingDom</span> </h2>
+                <p>Log in now to get a good-quality and affordable course</p>
+>>>>>>> tien_dev
+            </div>
             <div class="login-form">
                 <form id="sign-up-form" method="post" action="" enctype="multipart/form-data">
                     <div class="login-form-content">
@@ -32,26 +66,35 @@
                                 <input type="checkbox" name="" id="rememberMecheckbox" checked>
                                 <label for="rememberMecheckbox" class="checkboxLabel">Remenber me</label>
                             </div>
+<<<<<<< HEAD
                         </div>
+=======
+                        </div>     
+>>>>>>> tien_dev
                         <button type="submit" name="btn">SIGN IN</button>
                     </div>
                 </form>
+                <div class="forget-password_and_create_newaccount">
+                    <a id="forget-password" href="#">Forget password?</a>
+                    <a id="create-account" href="../../src/views/regester_form.php">Create account?</a>
+                </div>
                 <div class="login-form-footer">
                     <a href="https://www.facebook.com">
                         <img src="https://www.verfvanniveau.nl/wp-content/uploads/2019/08/logo-social-fb-facebook-icon.png" alt="" width="30">Facebook login
                     </a>
                     <a href="#">
                         <img src="../../Asset/images/GG.png" alt="" width="30">Google login
+<<<<<<< HEAD
                         <!-- <img src="../../../images/GG.png" alt="" width="30">Google login -->
                     </a><br>
+=======
+                    </a>
+>>>>>>> tien_dev
                 </div>
             </div>
-
-        </div>
-        <div class="login-right">
-            <img class="img-right" src="https://unnombrex.neocities.org/Cobay/alumnos.gif" alt="">
         </div>
     </div>
+<<<<<<< HEAD
 
     <?php
     include '../../Database/conn.php';
@@ -87,6 +130,8 @@
     }
     ?>
 
+=======
+>>>>>>> tien_dev
 </body>
 
 </html>

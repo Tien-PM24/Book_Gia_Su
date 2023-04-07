@@ -8,10 +8,6 @@
         <?php
         include "./inc/header.php";
         //require_once './inc/slide.php';
-<<<<<<< HEAD
-        //require_once './src/views/home.php';
-=======
->>>>>>> tien_dev
         include "./src/core/connectDB.php";
 
         class ShowDB extends connectDB {
