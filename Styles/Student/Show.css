@@ -138,6 +138,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 20px;
+  box-shadow: #1dc071;
 }
 .card {
   display: flex;
@@ -157,4 +158,5 @@
 }
 #tx{
   text-align: center;
+  text-shadow: #0161aa;
 }
