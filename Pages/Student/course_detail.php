@@ -20,7 +20,7 @@
 			if (!$conn) {
 			    die("Kết nối đến cơ sở dữ liệu thất bại: " . mysqli_connect_error());
 			}
-
+				
 			// Lấy thông tin của khóa học từ database dựa trên ID_course
             if (isset($_GET['id'])) {
                 $id_course = $_GET['id'];
