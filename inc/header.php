@@ -4,9 +4,9 @@
   <title>Book tutor</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="./Asstet/bootstrap-4.0.0-dist/css/bootstrap.min.css">
-  <script src="./Asstet/bootstrap-4.0.0-dist/js/jquery.min.js"></script>
-  <script src="./Asstet/bootstrap-4.0.0-dist/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="./Asset/bootstrap-4.0.0-dist/css/bootstrap.min.css">
+  <script src="./Asset/bootstrap-4.0.0-dist/js/jquery.min.js"></script>
+  <script src="./Asset/bootstrap-4.0.0-dist/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/flexslider.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

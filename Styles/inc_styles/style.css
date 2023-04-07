@@ -52,11 +52,13 @@ nav .menu a {
     font-size: 1.4rem;
     color: var(--main-color);
     font-weight: bold;
+    transition: color 0.2s ease;
 }
 
 nav a:hover {
     text-decoration: none;
     color: var(--danger);
+    transition-delay: 0.1s;
 }
 
 
