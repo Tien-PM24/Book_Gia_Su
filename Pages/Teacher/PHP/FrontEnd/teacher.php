@@ -1,5 +1,7 @@
+<?php require_once "../../../../inc/header.php" ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>Teacher</title>
     <meta charset="utf-8">
@@ -12,10 +14,10 @@
     <link rel="stylesheet" href="./style_teachers.css">
 </head>
 <body>
-    <?php include '../../../../inc/header.php' ?>
+   
     <div class="container">
         <h2>Thông tin cá nhân</h2>
-            <?php include '../BackEnd/get_teacher.php' ?>
+        <?php include '../BackEnd/get_teacher.php' ?>
         <h2>Khóa học của tôi</h2>
         <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Add</button><br><br>
         <div class="grid-container">
@@ -30,7 +32,7 @@
                 <div class="modal-dialog">
                     <!-- Modal content-->
                     <div class="modal-content">
-                        <div class="modal-header" style="background-color: #BC8F8F;">
+                        <div class="modal-header" style="background-color: #FFCC66;">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                             <h4 class="modal-title" style="font-size: 30px; color:aliceblue;">Thêm khóa học mới</h4>
                         </div>
@@ -49,9 +51,13 @@
                 </div>
             </div>
         </form>
-        <?php include '../BackEnd/formAdd_course.php' ?>
+       
     </div>
+    <?php include '../BackEnd/formAdd_course.php' ?>
+    <?php include '../../../../inc/footer.php' ?>
 </body>
+
 </html>
 </body>
+
 </html>
