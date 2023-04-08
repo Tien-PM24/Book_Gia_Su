@@ -10,7 +10,7 @@
         ?>
         <div class="form_container">
             <div id="form">
-                <img src="../../../../Asset/Picture/Course/<?php echo $row['Image'] ?>" alt="course image">
+                <img src="<?php echo $row['Image'] ?>" alt="course image">
                 <label for="title">Title</label>
                 <input type="text" id="title" name="title" value="<?php echo $row['Name'] ?>" >
                 <label for="price">Price</label>
@@ -22,9 +22,7 @@
     
     
     <?php
-    }
-
-    
+    } 
 ?>
 <script>
     var btn=document.querySelector('.dong');
