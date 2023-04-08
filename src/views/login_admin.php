@@ -31,7 +31,7 @@ if(isset($_POST["btn"])):
         
     }
     if($errors["email"]=="" and $errors["password"]==""){
-        header("location: https://www.youtube.com/");
+        header("location:../../Pages/Admin/Php/FrontEnd/Home.php");
     }
 endif;
 
@@ -41,10 +41,6 @@ endif;
 <head>
     <link rel="stylesheet" href="../../styles/Log/login_form.css">
 </head>
-
-
-
-
 <body>
     <div class="container">
         <div class="login-left">
