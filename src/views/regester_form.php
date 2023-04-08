@@ -10,26 +10,46 @@
 </head>
 
 <?php
-include '../../Database/conn.php';
-if (isset($_POST["btn"])) {
-  $taikhoan = $_POST["tk"];
-  $matkhau = $_POST["mk"];
-  $ten = $_POST["name"];
-  $check_ma = "SELECT * FROM student where Email='$taikhoan'";
-  $ketqua = mysqli_query($ketnoi, $check_ma);
-  $dem = mysqli_num_rows($ketqua);
-  if ($dem > 0) {
-    echo "<script> alert('Tài khoản đã tôn tại') </script>";
-  } else {
-    $sql = "INSERT INTO student (Full_name, Email, Passwork) values ('$ten', '$taikhoan', '$matkhau')";
-    if (mysqli_query($ketnoi, $sql)) {
-      echo "Thêm dữ liệu thành công";
-      header("location: regester.php");
-    } else {
-      echo "Thêm dữ liệu thất bại";
-    }
-  }
+// Get form data
+$name = $_POST['name'];
+$email = $_POST['email'];
+$password = $_POST['password'];
+$username = $_POST['username'];
+$phonenumber = $_POST['phonenumber'];
+$role = $_POST['role'];
+
+// Validate form data
+// ...
+
+// Insert data into database
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "boo_tutor";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
 }
+
+// Prepare SQL statement
+$stmt = $conn->prepare("INSERT INTO users (name, email, password, username, phonenumber, role) VALUES (?, ?, ?, ?, ?, ?)");
+$stmt->bind_param("ssssss", $name, $email, $password, $username, $phonenumber, $role);
+
+// Execute SQL statement
+if ($stmt->execute()) {
+  echo "Data inserted successfully";
+} else {
+  echo "Error inserting data: " . $conn->error;
+}
+
+// Close connection
+$conn->close();
+?>
+
 ?>
   <body>
     <div class="container">
@@ -37,53 +57,55 @@ if (isset($_POST["btn"])) {
         <img class="img-right" src="../../Asset/images/regester.jpg" alt="">
       </div>
       <div class="regester-right">
-        <h1>Craeta your account to connect with us</h1>
-        <div class="regester-form">
-          <div class="form-left">
-            <div class="form-item">
-                <label for="name">Enter Full Name</label>
-                <input type="text" name="name" id="name" >
+        <form action="" method="post">
+          <h1>Craeta your account to connect with us</h1>
+          <div class="regester-form">
+            <div class="form-left">
+              <div class="form-item">
+                  <label for="name">Enter Full Name</label>
+                  <input type="text" name="name" id="name" >
+              </div>
+              <div class="form-item">
+                <label for="email">Enter Email</label>
+                <input type="text" name="email" id="email" >
+              </div>
+              <div class="form-item">
+                <label for="password">Enter Password</label>
+                <input type="password" name="password" id="password">
+                <i class="toggle-password fas fa-eye"></i>
+              </div>
             </div>
-            <div class="form-item">
-              <label for="email">Enter Email</label>
-              <input type="text" name="email" id="email" >
-            </div>
-            <div class="form-item">
-              <label for="password">Enter Password</label>
-              <input type="password" name="password" id="password">
-              <i class="toggle-password fas fa-eye"></i>
+            <div class="form-right">
+              <div class="form-item">
+                <label for="user-name">Enter Username</label>
+                <input type="text" name="username" id="username">
+              </div>
+              <div class="form-item">
+                <label for="phone-number">Enter Phonenumber</label>
+                <input type="text" name="phonenumber" id="phonenumber">
+              </div>
+              <div class="form-item">
+                <label for="password">Confirm Password</label>
+                <input type="password" name="" id="password">
+                <i class="toggle-password fas fa-eye"></i>
+              </div>
             </div>
           </div>
-          <div class="form-right">
-            <div class="form-item">
-              <label for="user-name">Enter Username</label>
-              <input type="text" name="username" id="username">
+          <div class="role-user">
+            <div>
+              <h3>Please select your role:</h3>
             </div>
-            <div class="form-item">
-              <label for="phone-number">Enter Phonenumber</label>
-              <input type="text" name="phonenumber" id="phonenumber">
+            <div class="radio-container">
+              <input type="radio" id="student" name="role" value="student">
+              <label for="student">Student</label>
             </div>
-            <div class="form-item">
-              <label for="password">Confirm Password</label>
-              <input type="password" name="" id="password">
-              <i class="toggle-password fas fa-eye"></i>
+            <div class="radio-container">
+              <input type="radio" id="tutor" name="role" value="tutor">
+              <label for="tutor">Tutor</label>
             </div>
           </div>
-        </div>
-        <div class="role-user">
-          <div>
-            <h3>Please select your role:</h3>
-          </div>
-          <div class="radio-container">
-            <input type="radio" id="student" name="role" value="student">
-            <label for="student">Student</label>
-          </div>
-          <div class="radio-container">
-            <input type="radio" id="tutor" name="role" value="tutor">
-            <label for="tutor">Tutor</label>
-          </div>
-        </div>
-        <button type="submit">REGESTER</button>           
+          <button type="submit">REGESTER</button>
+        </form>         
       </div>
     </div>
   </body>
