@@ -1,4 +1,77 @@
-<?php include "../../Database/conn.php" ?>
+<?php 
+    session_start();
+    if (!isset($_SESSION['user'])) $_SESSION['user']=[];
+
+include "../../Database/conn.php" ;
+
+error_reporting(0);
+
+    // include './Database/conn.php'; 
+    if (isset($_POST["btn"])) {
+        $accout = $_POST["email"];
+        $password = $_POST["password"];
+        if (!$password || !$accout) {
+            echo "<script> alert('Vui lòng nhập đây đủ thông tin') </script>";
+            exit;
+        }
+
+        $sqlstu="SELECT * from student";
+        $sqlteach="SELECT * from teacher";
+        $sqladmin="SELECT * from admin";
+
+        $stm1=mysqli_query($ketnoi,$sqlstu);
+        $stm2=mysqli_query($ketnoi,$sqlteach);
+        $stm3=mysqli_query($ketnoi,$sqladmin);
+
+        while($row=mysqli_fetch_assoc($stm1)){
+            if ($accout==$row['Email']) {
+                header("location:../../index.php");
+                $_SESSION['user'] = $accout;
+                $emailUser = $_SESSION['user']
+            }
+        }
+        while($row=mysqli_fetch_assoc($stm2)){
+            if ($accout==$row['Email']) {
+                header("location:../../index.php");
+                $_SESSION['user'] = $accout;
+                $emailUser = $_SESSION['user']
+            }
+        }
+        while($row=mysqli_fetch_assoc($stm3)){
+            if ($accout==$row['Email']) {
+                header("location:../../index.php");
+                                $_SESSION['user'] = $accout;
+                                $emailUser = $_SESSION['user']
+            }
+        }
+
+
+
+        // lệnh undo cho phép để kết hợp kết quả truy vấn từ hai bảng student và teacher
+        // user_type để phân biệt giữa tài khoản học sinh và giáo viên
+        // $sql = "SELECT * FROM (SELECT 'student' AS user_type, Email, Password, Full_name, Address, Job_title FROM student UNION SELECT 'teacher' AS user_type, Email, Password, Full_name, Address, Job_title FROM teacher) 
+        // AS users WHERE Email = '$accout' AND Password = '$password'";
+        // $result = mysqli_query($ketnoi, $sql);
+
+        // if (mysqli_num_rows($result) != 1) {
+        //     echo "<script> alert('Sai tài khoản đăng nhập hoặc sai mật khẩu') </script>";
+        // }
+
+        // if (mysqli_num_rows($result) == 1) {
+        //     $user = mysqli_fetch_assoc($result);
+        //     if ($user['user_type'] == 'student') {
+        //         header("Location: https://www.youtube.com/");
+        //         exit();
+        //     } elseif ($user['user_type'] == 'teacher') {
+        //         header("Location: https://www.google.com/");
+        //         exit();
+        //     }
+        // }
+
+        // mysqli_close($ketnoi);
+    }
+    ?>
+    <!-- <img src="../../index.php" alt=""> -->
 
 
 
@@ -48,36 +121,5 @@
         </div>
     </div>
 
-    <?php
-    include './Database/conn.php'; 
-    if (isset($_POST["btn"])) {
-        $accout = $_POST["email"];
-        $password = $_POST["password"];
-        if (!$password || !$accout) {
-            echo "<script> alert('Vui lòng nhập đây đủ thông tin') </script>";
-            exit;
-        }
-        // lệnh undo cho phép để kết hợp kết quả truy vấn từ hai bảng student và teacher
-        // user_type để phân biệt giữa tài khoản học sinh và giáo viên
-        $sql = "SELECT * FROM (SELECT 'student' AS user_type, Email, Password, Full_name, Address, Job_title FROM student UNION SELECT 'teacher' AS user_type, Email, Password, Full_name, Address, Job_title FROM teacher) 
-        AS users WHERE Email = '$accout' AND Password = '$password'";
-        $result = mysqli_query($ketnoi, $sql);
 
-        if (mysqli_num_rows($result) != 1) {
-            echo "<script> alert('Sai tài khoản đăng nhập hoặc sai mật khẩu') </script>";
-        }
-
-        if (mysqli_num_rows($result) == 1) {
-            $user = mysqli_fetch_assoc($result);
-            if ($user['user_type'] == 'student') {
-                header("Location: https://www.youtube.com/");
-                exit();
-            } elseif ($user['user_type'] == 'teacher') {
-                header("Location: https://www.google.com/");
-                exit();
-            }
-        }
-
-        mysqli_close($ketnoi);
-    }
-    ?>
+    
