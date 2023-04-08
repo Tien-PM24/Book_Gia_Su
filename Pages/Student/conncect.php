@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "tutors";
+$dbname = "book_tutor";
 
 // Kết nối đến MySQL
 $conn = mysqli_connect($servername, $username, $password, $dbname);
@@ -11,4 +11,5 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 if (!$conn) {
     die("Kết nối đến cơ sở dữ liệu thất bại: " . mysqli_connect_error());
 }
+
 ?>
