@@ -134,7 +134,7 @@ h1 {
     font-size: 18px;
     border-radius: 100px;
 }
-#username {
+#Job_title {
     border: 1px solid black;
     height: 50px;
     padding: 0 2rem;
@@ -144,7 +144,7 @@ h1 {
     font-size: 18px;
     border-radius: 100px;
 }
-#phonenumber {
+#address {
     border: 1px solid black;
     height: 50px;
     padding: 0 2rem;

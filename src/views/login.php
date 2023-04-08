@@ -1,22 +1,20 @@
-
 <?php 
-    session_start();
-    if (!isset($_SESSION['user'])) $_SESSION['user']=[];
+  session_start();
+  if (!isset($_SESSION['user'])) $_SESSION['user']=[];
 
 include "../../Database/conn.php" ;
 
-error_reporting(0);
-
-    // include './Database/conn.php'; 
-
+  error_reporting(0);
     if (isset($_POST["btn"])) {
         $accout = $_POST["email"];
         $password = $_POST["password"];
         if (!$password || !$accout) {
-            echo "<script> alert('Vui lòng nhập đây đủ thông tin') </script>";
-            exit;
+          echo "<script> alert('Vui lòng nhập đây đủ thông tin') </script>";
+        
         }
-
+        else{
+            echo "<script> alert('Sai tài khoản đăng nhập hoặc sai mật khẩu') </script>";
+        }
 
         $sqlstu="SELECT * from student";
         $sqlteach="SELECT * from teacher";
@@ -27,39 +25,33 @@ error_reporting(0);
         $stm3=mysqli_query($ketnoi,$sqladmin);
 
         while($row=mysqli_fetch_assoc($stm1)){
-            if ($accout==$row['Email']) {
+            if ($accout==$row['Email']&& $password==$row['Password']) {
                 header("location:../../index.php");
                 $_SESSION['user'] = $accout;
                 $emailUser = $_SESSION['user'];
             }
         }
         while($row=mysqli_fetch_assoc($stm2)){
-            if ($accout==$row['Email']) {
+            if ($accout==$row['Email']&& $password==$row['Password']) {
                 header("location:../../index.php");
                 $_SESSION['user'] = $accout;
                 $emailUser = $_SESSION['user'];
             }
         }
         while($row=mysqli_fetch_assoc($stm3)){
-            if ($accout==$row['Email']) {
-                header("location:../../index.php");
-                                $_SESSION['user'] = $accout;
-                                $emailUser = $_SESSION['user'];
+            if ($accout==$row['Email']&& $password==$row['Password']) {
+                header("location:../../Pages/Admin/Php/FrontEnd/Home.php");
+                $_SESSION['user'] = $accout;
+                $emailUser = $_SESSION['user'];
             }
         }
-
-
-
-    
     }
     ?>
-    <!-- <img src="../../index.php" alt=""> -->
-
 <html>
-    <head>
-        <link rel="stylesheet" href="../../styles/Log/login_form.css">
-    </head>
-</html>
+<head>
+    <link rel="stylesheet" href="../../styles/Log/login_form.css">
+</head>
+<body>
     <div class="container">
         <div class="login-left">
             <div class="login-header">
@@ -71,11 +63,11 @@ error_reporting(0);
                     <div class="login-form-content">
                         <div class="form-item">
                             <label for="email">Enter Email</label>
-                            <input type="text" name="email" id="email"  value="<?php echo $_POST['email'] ?>">
+                            <input type="text" name="email" id="email">
                         </div>
                         <div class="form-item">
                             <label for="password">Enter Password</label>
-                            <input type="password" name="password" id="password"  value="<?php echo $_POST['password'] ?>">
+                            <input type="password" name="password" id="password">
                             <i class="toggle-password fas fa-eye"></i>
                         </div>
                         <div class="form-item">
@@ -83,6 +75,7 @@ error_reporting(0);
                                 <input type="checkbox" name="" id="rememberMecheckbox" checked>
                                 <label for="rememberMecheckbox" class="checkboxLabel">Remenber me</label>
                             </div>
+                        </div>     
                         <button type="submit" name="btn">SIGN IN</button>
                     </div>
                 </form>
@@ -94,12 +87,16 @@ error_reporting(0);
                     <a href="https://www.facebook.com">
                         <img src="https://www.verfvanniveau.nl/wp-content/uploads/2019/08/logo-social-fb-facebook-icon.png" alt="" width="30">Facebook login
                     </a>
-                    <a href="#">
-                        <img src="../../Asset/images/GG.png" alt="" width="30">Google login
+                    <a href="#"><img src="../../Asset/images/GG.png" alt="" width="30">Google login
+                    </a>
                 </div>
+                </div>       
+            </div>
+            <div class="login-right">
+                <img class="img-right" src="https://unnombrex.neocities.org/Cobay/alumnos.gif" alt="">
             </div>
         </div>
     </div>
+</body>
 
-
-   
+</html>
