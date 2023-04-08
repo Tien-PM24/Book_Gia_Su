@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "tutors";
+$dbname = "book_tutor";
 
 // Kết nối đến MySQL
 $conn = mysqli_connect($servername, $username, $password, $dbname);

@@ -12,14 +12,7 @@
 	<div class="container">
 		<?php
 			// Kết nối tới database
-			$servername = "localhost";
-			$username = "root";
-			$password = "";
-			$dbname = "tutors";
-			$conn = mysqli_connect($servername, $username, $password, $dbname);
-			if (!$conn) {
-			    die("Kết nối đến cơ sở dữ liệu thất bại: " . mysqli_connect_error());
-			}
+			include './conncect.php';
 				
 			// Lấy thông tin của khóa học từ database dựa trên ID_course
             if (isset($_GET['id'])) {

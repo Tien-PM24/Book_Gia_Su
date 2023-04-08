@@ -16,7 +16,7 @@
 <body>
      <header>
     <?php
-     require_once "../../inc/header.php";
+    //  require_once "../../inc/header.php";
     ?>
     </header>
    
@@ -127,7 +127,7 @@
         
     <footer>
         <?php
-        include "../../inc/footer.php";
+        // include "../../inc/footer.php";
         ?>
     </footer>
 </body>
