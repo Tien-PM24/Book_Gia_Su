@@ -1,4 +1,8 @@
-
+<html>
+    <head>
+        <link rel="stylesheet" href="../../styles/Log/login_form.css">
+    </head>
+</html>
     <div class="container">
         <div class="login-left">
             <div class="login-header">
