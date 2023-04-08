@@ -8,7 +8,7 @@ if(isset($_GET['ID_student'])) {
             where student.ID_student=picture_stu.ID_student and  student.Email = '$emailUser' and student.ID_student=$id";
   $result = mysqli_query($conn, $sql);
   $row=mysqli_fetch_assoc($result);
-
+  
   $fullname = $row['Full_name'];
   $email = $row['Email'];
   $address = $row['Address'];
@@ -17,9 +17,6 @@ if(isset($_GET['ID_student'])) {
  
 
 }
-
-
-
 
 
 if(isset($_POST['update'])) {

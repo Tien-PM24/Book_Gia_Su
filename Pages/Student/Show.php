@@ -57,7 +57,7 @@ $emailUser = $_SESSION['user']
                 </div>
                 <div class="card-button-wrap">
                     <button class="card-btn card-btn--secondary">
-                        <a href="sua.php?ID_student=<?php echo $row['ID_student'] ?>">
+                        <a href="edit.php?ID_student=<?php echo $row['ID_student'] ?>">
                             Sửa
                         </a>
                     </button>
