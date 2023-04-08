@@ -88,7 +88,7 @@ p{
 .login-form-footer {
     display: flex;
     gap: 30px;
-    margin-top: 70px;
+    margin-top: 30px;
 }
 
 a {
@@ -168,6 +168,31 @@ button{
 
 button:hover {
     padding: 0.8rem;
+}
+.forget-password_and_create_newaccount {
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.forget-password_and_create_newaccount a {
+    display: inline-block;
+    border: none;
+    color: var(--first);
+    font-style: initial;
+}
+
+.forget-password_and_create_newaccount a:hover {
+    background-color: white;
+    color: var(--success);
+}
+
+#forget-password {
+    font-style: italic;
+}
+
+#create-account {
+    font-style: italic;
 }
 
 /* Reponsive*/

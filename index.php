@@ -8,7 +8,6 @@
         <?php
         include "./inc/header.php";
         //require_once './inc/slide.php';
-        //require_once './src/views/home.php';
         include "./src/core/connectDB.php";
 
        class ShowDB extends connectDB {

@@ -24,7 +24,21 @@ class Student extends User{
         $this->Password=$Password;
 
     }
+<<<<<<< HEAD
+    public function Search(){
+    }
+    public function Display(){
+        $sql = "SELECT * FROM sudent";
+        $stm =$this->Ketnoi()->prepare($sql);
+        $Student=array();
+
+        while ($row=$stm->fetch()) {
+            $Student[]=$row;
+        }
+        return $Student;
+=======
     public function Search($C){
+>>>>>>> f7184de8231886e61ec26bee18b03ffa01a88386
 
     }
     public function Login($Name,$Job_title,$Email,$Password,$Address){

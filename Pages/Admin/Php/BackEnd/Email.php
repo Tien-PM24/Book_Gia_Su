@@ -8,13 +8,13 @@
     $mail->isSMTP();
     $mail->Host = 'smtp.gmail.com';  // SMTP server của bạn
     $mail->SMTPAuth = true;
-    $mail->Username = 'phanthanhluc24@gmail.com';  // Tên đăng nhập SMTP
+    $mail->Username = 'luc.phan24@student.passerellesnumeriques.org';  // Tên đăng nhập SMTP
     $mail->Password = 'rhansgglxwylklzi';  // Mật khẩu SMTP
     $mail->SMTPSecure = 'tls';  // Loại mã hóa SSL hoặc TLS
     $mail->Port = 587;  // Cổng SMTP
     
     // Thiết lập thông tin email
-    $mail->setFrom('phanthanhluc24@gmail.com', 'Phan Thanh Lực');  // Địa chỉ email gửi đi và tên người gửi
+    $mail->setFrom('luc.phan24@student.passerellesnumeriques.org', 'Phan Thanh Lực');  // Địa chỉ email gửi đi và tên người gửi
     if(isset($_POST['submit-email'])){
         $To_email=$_POST['to-email'];
         $Subject=$_POST['subject-email'];
