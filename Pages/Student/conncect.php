@@ -11,4 +11,5 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 if (!$conn) {
     die("Kết nối đến cơ sở dữ liệu thất bại: " . mysqli_connect_error());
 }
+
 ?>
