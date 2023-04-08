@@ -97,7 +97,7 @@ if (isset($_POST["btn"])) {
 <<<<<<< HEAD
 
     <?php
-    include '../../Database/conn.php';
+    include './Database/conn.php'; 
     if (isset($_POST["btn"])) {
         $accout = $_POST["email"];
         $password = $_POST["password"];

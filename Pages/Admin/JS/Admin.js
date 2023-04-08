@@ -1,19 +1,22 @@
 
-function Change_Page() {
+function changeHome(){
     window.location.href="../../../Admin/Php/FrontEnd/Home.php";
 }
 
-function Change_Page_User(){
+function changeTeacher(){
     window.location.href="../../../Admin/Php/FrontEnd/Teacher.php";
 }
 
-function Change_Page_Comment(){
+function changeStudent(){
     window.location.href="../../../Admin/Php/FrontEnd/Student.php";
 }
-function Change_Page_Course(){
+function changeCourse(){
     window.location.href="../../../Admin/Php/FrontEnd/Course.php";
 }
-function Change_Page_Order(){
+function changeOder(){
     window.location.href="../../../Admin/Php/FrontEnd/Oders.php";
+}
+function changeSearch(){
+    window.location.href="../../../Admin/Php/FrontEnd/Search.php";
 }
 

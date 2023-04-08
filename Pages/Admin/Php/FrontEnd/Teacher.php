@@ -13,5 +13,5 @@ include_once "../BackEnd/Show_Teacher.php";
 ?>
 <script>
     var User = document.querySelector(".__menu_User__");
-    User.style.background = "#ECC30B";
+    User.style.background = "#FFA500";
 </script>

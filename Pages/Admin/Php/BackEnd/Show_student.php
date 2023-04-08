@@ -28,7 +28,11 @@ $row_stu = $student->showStudent();
       min-height: 3px;
       left: 20%;
       top: 20%;
+
     }
+    table{
+          color: #FFFF;
+        }
   </style>
 </head>
 
@@ -43,7 +47,6 @@ $row_stu = $student->showStudent();
           <th scope="col">Adress</th>
           <th scope="col">Job_Title</th>
           <th scope="col">Image</th>
-          <th scope="col">Action</th>
         </tr>
       </thead>
       <tbody>
@@ -58,7 +61,6 @@ $row_stu = $student->showStudent();
             <td><?php echo $student['Address'] ?></td>
             <td><?php echo $student['Job_title'] ?></td>
             <td><img src="<?php echo $student['Image'] ?>" alt=""></td>
-            <td>Xóa</td>
           </tr>
         <?php
           $i++;

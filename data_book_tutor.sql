@@ -18,6 +18,69 @@ Email	VARCHAR(150),
 Password	VARCHAR(15)	
 );
 
+CREATE TABLE `admin` (
+  `ID_admin` int(11) NOT NULL,
+  `Full_name` varchar(150) NOT NULL,
+  `Password` varchar(150) NOT NULL,
+  `Email` varchar(150) NOT NULL,
+  `Image` varchar(150) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+CREATE TABLE `comment` (
+  `ID_comment` int(11) NOT NULL,
+  `ID_course` int(11) NOT NULL,
+  `Content` varchar(250) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+CREATE TABLE `course` (
+  `ID_course` int(11) NOT NULL,
+  `Name` varchar(150) NOT NULL,
+  `Price` float NOT NULL,
+  `Body` varchar(150) NOT NULL,
+  `Image` varchar(225) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+CREATE TABLE `teacher_course` (
+  `ID_teacher` int(11) NOT NULL,
+  `ID_course` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+CREATE TABLE `stu_course` (
+  `ID_course` int(11) NOT NULL,
+  `ID_student` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+CREATE TABLE `stu_comment` (
+  `ID_student` int(11) NOT NULL,
+  `ID_comment` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+CREATE TABLE `student_teacher` (
+  `ID_student` int(11) NOT NULL,
+  `ID_teacher` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+CREATE TABLE `picture_teacher` (
+  `ID_teacher` int(11) NOT NULL,
+  `ID_picture` int(11) NOT NULL,
+  `Image` varchar(150) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+CREATE TABLE `picture_stu` (
+  `ID_student` int(11) NOT NULL,
+  `ID_picture` int(11) NOT NULL,
+  `Image` varchar(150) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+
+
+
+
+
+
 
 
 INSERT INTO teacher (Full_name, Email, Password, Job_title, Address)

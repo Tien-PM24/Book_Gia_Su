@@ -3,7 +3,7 @@ include '../../../../Database/Admin.class.php';
     if(isset($_POST['Update'])){
         $Image=$_FILES['avatar']['name'];
         $ID=$_POST['id_avatar'];
-        $taget_dir="../../../../Asset/Admin/";
+        $taget_dir="../../../../Asset/Picture/Admin/";
         $ok_upload=1;
         $taget_file=$taget_dir.basename($Image);
 

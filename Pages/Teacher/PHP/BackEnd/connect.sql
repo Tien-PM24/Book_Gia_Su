@@ -53,35 +53,35 @@ VALUES
 
 INSERT INTO teacher_course(ID_teacher,ID_course)
 VALUES
-(1,1),
-(1,1),
-(1,1),
-(1,1),
-(1,1);
+(1,5),
+(2,4),
+(3,3),
+(4,2),
+(5,1);
 -- Mọi người thay lại ID cho đúng theo thứ tự của bảng mình nhé. Vì mỗi Database có bạn xóa nhiều nên Lực sẽ cho tự điền.
 INSERT INTO student_teacher(ID_student,ID_teacher)
 VALUES
-(1,1),
-(1,1),
-(1,1),
-(1,1),
-(1,1);
+(1,5),
+(2,4),
+(3,3),
+(4,2),
+(5,1);
 -- Mọi người thay lại ID cho đúng theo thứ tự của bảng mình nhé. Vì mỗi Database có bạn xóa nhiều nên Lực sẽ cho tự điền.
 
 INSERT INTO stu_course(ID_course,ID_student)
 VALUES
-(1,1),
-(1,1),
-(1,1),
-(1,1),
-(1,1);
+(1,5),
+(2,4),
+(3,3),
+(4,2),
+(5,1);
 -- Mọi người thay lại ID cho đúng theo thứ tự của bảng mình nhé. Vì mỗi Database có bạn xóa nhiều nên Lực sẽ cho tự điền.
 INSERT INTO stu_comment(ID_student,ID_comment)
 VALUES
-(1,1),
-(1,1),
-(1,1),
-(1,1),
-(1,1);
+(1,5),
+(2,4),
+(3,3),
+(4,2),
+(5,1);
 
 -- Mọi người thay lại ID cho đúng theo thứ tự của bảng mình nhé. Vì mỗi Database có bạn xóa nhiều nên Lực sẽ cho tự điền.

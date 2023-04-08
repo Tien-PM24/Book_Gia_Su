@@ -4,5 +4,5 @@
 ?>
 <script>
     var Home = document.querySelector(".__Menu_comment__");
-    Home.style.background = "#ECC30B";
+    Home.style.background = "#FFA500";
 </script>

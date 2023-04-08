@@ -2,6 +2,8 @@
     include '../../Email/PHPMailer-master/src/PHPMailer.php';
     include '../../Email/PHPMailer-master/src/SMTP.php';
     include '../../Email/PHPMailer-master/src/Exception.php';
+    include "../../Email/vendor/autoload.php";
+    // require_once 'vendor/autoload.php';
     $mail = new PHPMailer\PHPMailer\PHPMailer();
     $mail->isSMTP();
     $mail->Host = 'smtp.gmail.com';  // SMTP server của bạn

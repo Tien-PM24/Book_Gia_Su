@@ -10,7 +10,7 @@
         //require_once './inc/slide.php';
         include "./src/core/connectDB.php";
 
-        class ShowDB extends connectDB {
+       class ShowDB extends connectDB {
             public function getAllCourse() {
                 error_reporting(0);
                 $conn = $this->connection;
