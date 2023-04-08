@@ -1,3 +1,4 @@
+
 <?php
 
 //Kết nối đến cơ sở dữ liệu
@@ -8,8 +9,8 @@ $dbname = "book_tutor";
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 if (!$conn) {
     die("Kết nối đến cơ sở dữ liệu thất bại: " . mysqli_connect_error());
-}
-$sql = "SELECT Full_name, Job_title FROM teacher WHERE ID_teacher=5";
+} 
+$sql = "SELECT * FROM teacher WHERE ID_teacher=4";
 $result = mysqli_query($conn, $sql);
 if (mysqli_num_rows($result) > 0) {
     // Duyệt qua các bản ghi của kết quả và show thông tin giáo viên
@@ -23,18 +24,15 @@ if (mysqli_num_rows($result) > 0) {
          />
         </div>
         <div class="card-avatar">
-        <img
-            src="https://i.ibb.co/KzDrSb7/avatar-2.jpg"
-            alt="fashui"
-        />
+        <img src="../../../../Asset/Picture/Teacher/Teacher-4.png" alt="">
         </div>
         </div>
         <div class="card-body">
         <h2 class="card-name">'.$row['Full_name'].'</h2>
         <p class="card-desc">'.$row['Job_title'].'</p>
         <div class="card-button-wrap">
-        <button type="submit" class="card-btn card-btn--secondary" name="btn">
-            Edit
+        <button class="card-btn card-btn--secondary" name="btn">
+        <a href="../FrontEnd/edit_tutor.php?id='.$row['ID_teacher'].'" class="edit">Edit</a>
         </button>
          </div>
         </div>
@@ -45,5 +43,9 @@ if (mysqli_num_rows($result) > 0) {
 }
 // Đóng kết nối đến cơ sở dữ liệu
 mysqli_close($conn);
-
 ?>
+<style>
+    .edit{
+        text-decoration: none;
+    }
+</style>

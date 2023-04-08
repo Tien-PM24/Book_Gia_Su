@@ -12,7 +12,7 @@ $result = mysqli_query($conn, $sql);
 if (mysqli_num_rows($result) > 0) {
     while ($row = mysqli_fetch_assoc($result)) {
         echo "<div>";
-        echo '<img src="../../../../Asset/Picture/Course/' . $row['Image'] . '"width =350 height=200>';
+        echo '<img src="'.$row['Image'] . '"width =350 height=200>';
         echo "<p class='pshow'><br><strong>Tên khóa học:</strong> " . $row["Name"] . "</p>";
         echo "<p class='pshow'><strong>Giá:</strong> " . $row["Price"] . "</p>";
         ?>
