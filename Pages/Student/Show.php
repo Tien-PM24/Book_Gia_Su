@@ -78,10 +78,6 @@ $emailUser = $_SESSION['user']
         ?>
         <?php
 
-        //  $sql = "SELECT course.*, student.*, student_course.*
-        //             FROM course
-        //             INNER JOIN student_course ON course.ID_course = student_course.ID_course
-        //             INNER JOIN student ON student.ID_student = student_course.ID_student";
 
         $sql = "SELECT Image,Name,Price 
     from course,stu_course,student
