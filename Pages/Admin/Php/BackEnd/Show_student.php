@@ -21,6 +21,7 @@ $row_stu = $student->showStudent();
       width: 50px;
       height: 50px;
       border-radius: 50px;
+      object-fit: cover;
     }
 
     .table_position {
@@ -60,7 +61,7 @@ $row_stu = $student->showStudent();
             <td><?php echo $student['Email'] ?></td>
             <td><?php echo $student['Address'] ?></td>
             <td><?php echo $student['Job_title'] ?></td>
-            <td><img src="<?php echo $student['Image'] ?>" alt=""></td>
+            <td><img src="../../../../Asset/Picture/Student/<?php echo $student['Image'] ?>" alt=""></td>
           </tr>
         <?php
           $i++;

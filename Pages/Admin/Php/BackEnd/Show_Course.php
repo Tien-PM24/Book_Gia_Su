@@ -20,6 +20,8 @@ $row = $course->showCourse();
     img {
       width: 50px;
       height: 50px;
+      border-radius: 50px;
+      object-fit: cover;
     }
     .table_position {
       position: absolute;
@@ -55,7 +57,7 @@ $row = $course->showCourse();
             <td><?php echo $i ?></td>
             <td><?php echo $course['Name'] ?></td>
             <td><?php echo $course['Price'] ?></td>
-            <td><img src="<?php echo $course['Image'] ?>" alt=""></td>
+            <td><img src="../../../../Asset/Picture/Course/<?php echo $course['Image'] ?>" alt=""></td>
             <td><?php echo $course['Full_name'] ?></td>
           </tr>
         <?php

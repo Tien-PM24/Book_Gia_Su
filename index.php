@@ -23,7 +23,7 @@
                     while($row = $result->fetch_assoc()) {
                         echo "<div class='col-md-3'>";
                         echo "<div class='card'>";
-                        echo "<img src='" . $row["img"] . "' class='card-img-top' alt='" . $row["name"] . "'>";
+                        echo "<img src='./Asset/Picture/Course/" . $row["Image"] . "' class='card-img-top' alt='" . $row["name"] . "'>";
                         echo "<div class='card-body'>";
                         echo "<a href='#' class='btn btn-primary'>Enjoy</a>";
                         echo "</div>";
@@ -55,3 +55,4 @@
     </body>
 </html>
 
+<img src="" alt="">

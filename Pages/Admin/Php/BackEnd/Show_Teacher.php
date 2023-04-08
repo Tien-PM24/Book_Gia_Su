@@ -6,10 +6,14 @@ $row = $student->showTeacher();
 
 ?>
 <style>
+  *{
+    font-family: Helvetica;
+  }
   img {
     width: 50px;
     height: 50px;
     border-radius: 50px;
+    object-fit: cover;
   }
 
   .table_position {
@@ -23,6 +27,19 @@ $row = $student->showTeacher();
   table {
     color: #FFFF;
   }
+  .a{
+    width: 200px;
+  }
+  .b{
+    width: 300px;
+  }
+.c{
+  width: 300px;
+}
+a i{
+  text-decoration: none;
+  color: orangered;
+}
 </style>
 <!doctype html>
 <html lang="en">
@@ -56,11 +73,11 @@ $row = $student->showTeacher();
         ?>
           <tr>
             <td> <?php echo $i ?></td>
-            <td><?php echo $student['Full_name'] ?></td>
-            <td><?php echo $student['Email'] ?></td>
-            <td><?php echo $student['Address'] ?></td>
+            <td class="a"><?php echo $student['Full_name'] ?></td>
+            <td class="b"><?php echo $student['Email'] ?></td>
+            <td class="c"><?php echo $student['Address'] ?></td>
             <td><?php echo $student['Job_title'] ?></td>
-            <td><img src="<?php echo $student['Image'] ?>" alt=""></td>
+            <td><img src="../../../../Asset/Picture/Teacher/<?php echo $student['Image'] ?>" alt=""></td>
             <td><a href="../FrontEnd/Teacher.php?delete=<?php echo $student['ID_teacher'] ?>"><i class="fa-solid fa-trash"></i></a></td>
           </tr>
         <?php

@@ -1,3 +1,44 @@
+<?php
+    error_reporting(0);
+    include './Database/conn.php'; 
+    if (isset($_POST["btn"])) {
+        $accout = $_POST["email"];
+        $password = $_POST["password"];
+        if (!$password || !$accout) {
+            echo "<script> alert('Vui lòng nhập đây đủ thông tin') </script>";
+            exit;
+        }
+        // lệnh undo cho phép để kết hợp kết quả truy vấn từ hai bảng student và teacher
+        // user_type để phân biệt giữa tài khoản học sinh và giáo viên
+        $sql = "SELECT * FROM 
+        (SELECT 'student' AS user_type, Email, Password,
+         Full_name, Address, Job_title 
+         FROM student UNION SELECT 'teacher' AS user_type, Email, 
+         Password, Full_name, Address, Job_title FROM teacher) 
+        AS users WHERE Email = '$accout' AND Password = '$password'";
+
+
+ 
+        $result = mysqli_query($ketnoi, $sql);
+
+        if (mysqli_num_rows($result) != 1) {
+            echo "<script> alert('Sai tài khoản đăng nhập hoặc sai mật khẩu') </script>";
+        }
+
+        if (mysqli_num_rows($result) == 1) {
+            $user = mysqli_fetch_assoc($result);
+            if ($user['user_type'] == 'student') {
+                header("location:../../index.php");
+                exit();
+            } elseif ($user['user_type'] == 'teacher') {
+                header("location:../../index.php");
+                exit();
+            }
+        }
+
+        mysqli_close($ketnoi);
+    }
+    ?>
 <html>
     <head>
         <link rel="stylesheet" href="../../styles/Log/login_form.css">
@@ -44,36 +85,4 @@
         </div>
     </div>
 
-    <?php
-    include './Database/conn.php'; 
-    if (isset($_POST["btn"])) {
-        $accout = $_POST["email"];
-        $password = $_POST["password"];
-        if (!$password || !$accout) {
-            echo "<script> alert('Vui lòng nhập đây đủ thông tin') </script>";
-            exit;
-        }
-        // lệnh undo cho phép để kết hợp kết quả truy vấn từ hai bảng student và teacher
-        // user_type để phân biệt giữa tài khoản học sinh và giáo viên
-        $sql = "SELECT * FROM (SELECT 'student' AS user_type, Email, Password, Full_name, Address, Job_title FROM student UNION SELECT 'teacher' AS user_type, Email, Password, Full_name, Address, Job_title FROM teacher) 
-        AS users WHERE Email = '$accout' AND Password = '$password'";
-        $result = mysqli_query($ketnoi, $sql);
-
-        if (mysqli_num_rows($result) != 1) {
-            echo "<script> alert('Sai tài khoản đăng nhập hoặc sai mật khẩu') </script>";
-        }
-
-        if (mysqli_num_rows($result) == 1) {
-            $user = mysqli_fetch_assoc($result);
-            if ($user['user_type'] == 'student') {
-                header("Location: https://www.youtube.com/");
-                exit();
-            } elseif ($user['user_type'] == 'teacher') {
-                header("Location: https://www.google.com/");
-                exit();
-            }
-        }
-
-        mysqli_close($ketnoi);
-    }
-    ?>
+  

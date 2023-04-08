@@ -22,6 +22,7 @@ $order=$oder->getOrder();
       width: 50px;
       height: 50px;
       border-radius: 50px;
+      object-fit: cover;
     }
 
     .table_position {
@@ -58,9 +59,9 @@ $order=$oder->getOrder();
           <tr>
             <th scope="row"><?php echo $i ?></th>
             <td><?php echo $oder['Teacher'] ?></td>
-            <td><img src="<?php echo $oder['Image_teacher'] ?>" alt=""></td>
+            <td><img src="../../../../Asset/Picture/Teacher/<?php echo $oder['Image_teacher'] ?>" alt=""></td>
             <td><?php echo $oder['Student'] ?></td>
-            <td><img src="<?php echo $oder['Image_student'] ?>" alt=""></td>
+            <td><img src="../../../../Asset/Picture/Student/<?php echo $oder['Image_student'] ?>" alt=""></td>
             <td><?php echo $oder['Name'] ?></td>
           </tr>
         <?php

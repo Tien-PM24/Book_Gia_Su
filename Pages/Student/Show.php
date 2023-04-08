@@ -9,7 +9,7 @@ $Email = "luc.phan24@student.passerellesnumeriques.org";
 $_SESSION['user'] = $Email;
 $emailUser = $_SESSION['user']
 ?>
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 
 <head>
