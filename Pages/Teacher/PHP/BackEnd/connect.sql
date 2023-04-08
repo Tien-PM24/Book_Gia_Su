@@ -18,7 +18,7 @@ VALUES
 
 INSERT INTO course (Name, Price, Body, Image)
 VALUES 
-('Tiếng Anh', 100, 'Khóa học Tiếng Anh sẽ giúp bạn cải thiện kỹ năng ngôn ngữ và giao tiếp tiếng Anh một cách nhanh chóng và hiệu quả.', '../../../../A'),
+('Tiếng Anh', 100, 'Khóa học Tiếng Anh sẽ giúp bạn cải thiện kỹ năng ngôn ngữ và giao tiếp tiếng Anh một cách nhanh chóng và hiệu quả.', '../../../../Asset/Picture/Course/Sach-1.png'),
 ('Hóa Học', 150, 'Khóa học Lập trình giúp bạn tìm hiểu và làm quen với các ngôn ngữ lập trình phổ biến như Java, Python, C++ và các công cụ lập trình hiện đại.', '../../../../Asset/Picture/Course/Sach-2.png'),
 ('Vật Lý', 200, 'Khóa học Thiết kế đồ họa cung cấp kiến thức và kỹ năng cần thiết để thiết kế các sản phẩm đồ họa chuyên nghiệp.', '../../../../Asset/Picture/Course/Sach-3.png'),
 ('Ngữ Văn', 120, 'Khóa học Kinh doanh giúp bạn tìm hiểu về các nguyên tắc cơ bản của kinh doanh, từ quản lý tài chính đến tiếp thị và bán hàng.', '../../../../Asset/Picture/Course/Sach-4.png'),

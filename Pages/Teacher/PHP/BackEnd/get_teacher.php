@@ -1,5 +1,5 @@
-
 <?php
+
 //Kết nối đến cơ sở dữ liệu
 $servername = "localhost";
 $username = "root";
@@ -9,71 +9,41 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 if (!$conn) {
     die("Kết nối đến cơ sở dữ liệu thất bại: " . mysqli_connect_error());
 }
-echo '<div class="fui-card-profile-1">
-<div class="background-wrap">
-    <div class="card-image-cover">
+$sql = "SELECT Full_name, Job_title FROM teacher WHERE ID_teacher=5";
+$result = mysqli_query($conn, $sql);
+if (mysqli_num_rows($result) > 0) {
+    // Duyệt qua các bản ghi của kết quả và show thông tin giáo viên
+    while ($row = mysqli_fetch_assoc($result)) {
+        echo '<div class="fui-card-profile-1">
+        <div class="background-wrap">
+        <div class="card-image-cover">
         <img
-            src="../../../../Asstet/images/background-teacher.jpg"
+            src="https://haycafe.vn/wp-content/uploads/2021/12/Hinh-nen-Full-HD-1080-cho-may-tinh-dep.jpg"
             alt="fashui"
-        />
-    </div>
-    <div class="card-avatar">
+         />
+        </div>
+        <div class="card-avatar">
         <img
             src="https://i.ibb.co/KzDrSb7/avatar-2.jpg"
             alt="fashui"
         />
-    </div>
-</div>
-<div class="card-body">
-    <h2 class="card-name">Cameron Williamson</h2>
-    <p class="card-desc">Web Development</p>
-    <div class="card-button-wrap">
-        <button class="card-btn card-btn--secondary">
+        </div>
+        </div>
+        <div class="card-body">
+        <h2 class="card-name">'.$row['Full_name'].'</h2>
+        <p class="card-desc">'.$row['Job_title'].'</p>
+        <div class="card-button-wrap">
+        <button type="submit" class="card-btn card-btn--secondary" name="btn">
             Edit
         </button>
-        <button class="card-btn card-btn--primary">
-            Button
-        </button>
-    </div>
-</div>
-</div>';
-// Thực hiện truy vấn đến cơ sở dữ liệu
-// $sql = "SELECT * FROM teacher";
-// $result = mysqli_query($conn, $sql);
-// if (mysqli_num_rows($result) > 0) {
-    
-//     while ($row = mysqli_fetch_assoc($result)) {
+         </div>
+        </div>
+        </div>';
+    }
+} else {
+    echo "Không có kết quả";
+}
+// Đóng kết nối đến cơ sở dữ liệu
+mysqli_close($conn);
 
-//         echo '<div class="fui-card-profile-1">
-//     <div class="background-wrap">
-//         <div class="card-image-cover">
-//             <img
-//                 src="https://i.ibb.co/1M0TF14/art-2.jpg"
-//                 alt="fashui"
-//             />
-//         </div>
-//         <div class="card-avatar">
-//             <img
-//                 src="https://i.ibb.co/KzDrSb7/avatar-2.jpg"
-//                 alt="fashui"
-//             />
-//         </div>
-//     </div>
-//     <div class="card-body">
-//         <h2 class="card-name">Cameron Williamson</h2>
-//         <p class="card-desc">Web Development</p>
-//         <div class="card-button-wrap">
-//             <button class="card-btn card-btn--secondary">
-//                 Button
-//             </button>
-//             <button class="card-btn card-btn--primary">
-//                 Button
-//             </button>
-//         </div>
-//     </div>
-// </div>';
-//     }
-// } else {
-//     echo "Không có kết quả";
-// };
 ?>

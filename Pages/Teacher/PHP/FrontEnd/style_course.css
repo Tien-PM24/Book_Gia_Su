@@ -4,8 +4,9 @@
 
 .grid-container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 10px;
+    grid-template-columns: repeat(4, 200px);
+    grid-gap: 100px;
+    grid-row-gap: 30px;
 }
 
 .course {
@@ -22,4 +23,6 @@
 .inputthem {
     width: 100%;
 }
-
+img{
+    border-radius: 20px;
+}
