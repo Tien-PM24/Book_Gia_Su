@@ -1,3 +1,7 @@
+<?php include "../../Database/conn.php" ?>
+
+
+
 <html>
     <head>
         <link rel="stylesheet" href="../../styles/Log/login_form.css">
