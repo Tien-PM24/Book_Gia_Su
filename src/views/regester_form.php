@@ -8,50 +8,40 @@
   <link rel="stylesheet" href="../../styles/Log/regester_form.css">
   <title>Regester account</title>
 </head>
-
-<?php
-// Get form data
-$name = $_POST['name'];
-$email = $_POST['email'];
-$password = $_POST['password'];
-$username = $_POST['username'];
-$phonenumber = $_POST['phonenumber'];
-$role = $_POST['role'];
-
-// Validate form data
-// ...
-
-// Insert data into database
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "boo_tutor";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
-
-// Prepare SQL statement
-$stmt = $conn->prepare("INSERT INTO users (name, email, password, username, phonenumber, role) VALUES (?, ?, ?, ?, ?, ?)");
-$stmt->bind_param("ssssss", $name, $email, $password, $username, $phonenumber, $role);
-
-// Execute SQL statement
-if ($stmt->execute()) {
-  echo "Data inserted successfully";
-} else {
-  echo "Error inserting data: " . $conn->error;
-}
-
-// Close connection
-$conn->close();
-?>
-
-?>
   <body>
+  <?php
+  $name = $_POST['name'];
+  $email = $_POST['email'];
+  $password = $_POST['password'];
+  $username = $_POST['username'];
+  $phonenumber = $_POST['phonenumber'];
+  $role = $_POST['role'];
+
+  $servername = "localhost";
+  $dbusername = "root";
+  $dbpassword = "";
+  $dbname = "book_tutor";
+
+  $conn = new mysqli($servername, $dbusername, $dbpassword, $dbname);
+
+  if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+  }
+
+
+  $sql = $conn->prepare("INSERT INTO users (name, email, password, username, phonenumber, role) VALUES (?, ?, ?, ?, ?, ?)");
+  $sql->bind_param("ssssss", $name, $email, $password, $username, $phonenumber, $role);
+
+
+  if ($sql->execute()) {
+    echo "Data inserted successfully";
+  } else {
+    echo "Error inserting data: " . $conn->error;
+  }
+
+  $conn->close();
+?>
+
     <div class="container">
       <div class="regester-left">
         <img class="img-right" src="../../Asset/images/regester.jpg" alt="">
@@ -77,7 +67,7 @@ $conn->close();
             </div>
             <div class="form-right">
               <div class="form-item">
-                <label for="user-name">Enter Username</label>
+                <label for="username">Enter Username</label>
                 <input type="text" name="username" id="username">
               </div>
               <div class="form-item">
@@ -86,7 +76,7 @@ $conn->close();
               </div>
               <div class="form-item">
                 <label for="password">Confirm Password</label>
-                <input type="password" name="" id="password">
+                <input type="password" name="password" id="password">
                 <i class="toggle-password fas fa-eye"></i>
               </div>
             </div>
