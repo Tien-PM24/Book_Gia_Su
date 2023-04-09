@@ -42,7 +42,7 @@
       </div>
       <div class="tap-right">
         <div class="personal-profile">
-          <a href="../src/views/regester_form.php">Sign in</a>
+          <a href="./src/views/login.php">Sign in</a>
           <a href="./src/views/login.php"><img src="./Asset/images/people.png" alt="" height="25"> </a>
         </div>
       </div>
