@@ -36,7 +36,7 @@
           <h5 class="card-title"><?php echo $row["Name"] ?></h5>
           <a href="#" class="btn btn-primary">Join</a>
          <!-- Button trigger modal -->
-      <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter">
+      <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter" onclick="location.href='./src/views/detail_course.php?id=<?php echo $row['id']; ?>'">
         Details
       </button>
           <!-- Modal -->
@@ -74,11 +74,6 @@
    
             }
         }
-    
-
-
-
-
 
 
 
