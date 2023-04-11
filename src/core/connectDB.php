@@ -7,7 +7,7 @@ class ConnectDB {
     private $nameDB = "book_tutor";
 
 
-    function connect() {
+    public function __construct() {
         $this->connection = mysqli_connect("$this->hostname","$this->username","$this->password","$this->nameDB");
         if(!$this->connection){
             die ("Failed to connect with server");

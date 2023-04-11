@@ -26,7 +26,7 @@
           <ul class="menu">
             <li><a href="#">Home</a></li>
             <li><a href="#">Tutors</a></li>
-            <li><a href="#">Courses</a></li>
+            <li><a href="/Book_Gia_Su/src/views/course_page.php">Courses</a></li>
             <li><a href="#">Class</a></li>
             <li><a href="#">Contact</a></li>
           </ul>
