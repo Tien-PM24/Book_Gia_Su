@@ -1,0 +1,56 @@
+.teacher-detail {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 50px;
+margin-left: 400px;
+}
+
+.teacher-image img {
+    width: 300px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 8%;
+    margin-right: 30px;
+}
+
+.teacher-info {
+    flex: 1;
+}
+
+.teacher-info h1 {
+    font-size: 32px;
+    margin: 0;
+}
+
+.teacher-info p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.teacher-info ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.teacher-info li {
+    margin-right: 20px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.teacher-info li:last-child {
+    margin-right: 0;
+}
+
+.teacher-info li img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}

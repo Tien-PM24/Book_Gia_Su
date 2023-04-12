@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../../styles/Log/regester_form.css">
+  <link rel="stylesheet" href="../../Styles/Log/regester_form.css">
   <title>Regester account</title>
 </head>
   <body>
@@ -63,11 +63,11 @@
 
 <?php
 include '../../Database/conn.php';
-$sql = "";
+// $sql = "";
 if (isset($_POST["btn"])) {
   $email = $_POST["email"];
   $password = $_POST["password"];
-  $name = $_POST["name"];
+  $name = ucwords($_POST["name"]);
   $Job_title = $_POST["Job_title"];
   $address = $_POST["address"];
 $check_email = "SELECT * FROM teacher WHERE Email='$email' UNION SELECT * FROM student WHERE Email='$email'";
@@ -88,14 +88,14 @@ $check_email = "SELECT * FROM teacher WHERE Email='$email' UNION SELECT * FROM s
     //một biểu thức chính trong PHP được sử dụng để xác thực xem một chuỗi có khớp với định dạng của một địa chỉ email hợp lệ hay không
   } elseif (!preg_match('/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/', $email)) { //[a-zA-Z0-9._%+-] đại diện tên người dùng [a-zA-Z0-9.-] Điều này đại diện cho phần tên miền của địa chỉ email
     echo "<script> alert('Địa chỉ email không hợp lệ') </script>";
-  } elseif (isset($_POST["user_type"]) && $_POST["user_type"] == "teacher") {
-    $sql = "INSERT INTO teacher (Full_name, Email, Password, Job_title, Address) values (UPPER('$name'), '$email', '$password','$Job_title', '$address')";
+  } elseif (isset($_POST["Job_title"]) && $_POST["Job_title"] == "teacher") {
+    $sql = "INSERT INTO teacher (Full_name, Email, Password, Job_title, Address) values ('$name', '$email', '$password','$Job_title', '$address')";
   } else {
-    $sql = "INSERT INTO student (Full_name, Email, Password, Job_title, Address) values (UPPER('$name'), '$email', '$password','$Job_title', '$address')";
+    $sql = "INSERT INTO student (Full_name, Email, Password, Job_title, Address) values ('$name', '$email', '$password','$Job_title', '$address')";
   }
   if (!empty($sql)) { //Điều này sẽ đảm bảo rằng truy vấn chỉ được thực thi nếu $sql không trống và sẽ ngăn thông báo lỗi xảy ra. tại vì nếu $sql trống thì sẽ báo lỗi
     if (mysqli_query($ketnoi, $sql)) {
-      header('location: login.php');
+      header('location:../../index.php');
     } else {
       echo "Thêm dữ liệu thất bại";
     }

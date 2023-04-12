@@ -2,14 +2,15 @@
     include '../../Email/PHPMailer-master/src/PHPMailer.php';
     include '../../Email/PHPMailer-master/src/SMTP.php';
     include '../../Email/PHPMailer-master/src/Exception.php';
-    include "../../Email/vendor/autoload.php";
+    // include "../../Email/vendor/autoload.php";
     // require_once 'vendor/autoload.php';
     $mail = new PHPMailer\PHPMailer\PHPMailer();
     $mail->isSMTP();
+    $mail->CharSet = 'UTF-8';
     $mail->Host = 'smtp.gmail.com';  // SMTP server của bạn
     $mail->SMTPAuth = true;
     $mail->Username = 'luc.phan24@student.passerellesnumeriques.org';  // Tên đăng nhập SMTP
-    $mail->Password = 'rhansgglxwylklzi';  // Mật khẩu SMTP
+    $mail->Password = 'geclldizkowdovvm';  // Mật khẩu SMTP
     $mail->SMTPSecure = 'tls';  // Loại mã hóa SSL hoặc TLS
     $mail->Port = 587;  // Cổng SMTP
     

@@ -1,49 +1,80 @@
+<!--Footer-->
 
-    <!--Footer-->
-    <section class="footer" id="footer">
-        <div class="footer">
-            <br>	
-            <div class="content-footer">
-                <div class="footer-left">
-                    <h3>Link Quick</h3>
-                    <p><a href="#">Home</a></p>
-                    <p><a href="#">Tutors</a></p>
-                    <p><a href="#">Courses</a></p>
-                    <p><a href="#">Class</a></p>
-                    <p><a href="#">Contact</a></p>
-                </div>
-                <div class="footer-right">
-                    <div class="right-content">
-                    <h3>Working hours</h3>
-                    <p>Monday: 8h00-21h00</p>
-                    <p>Tuesday: 8h00-21h00</p>
-                    <p>Wednesday: 8h00-21h00</p>
-                    <p>Thursday: 8h00-21h00</p>
-                    <p>Friday: 8h00-21h00</p>
-                    </div>
-                    <div class="left-contact">
-                    <h3>Contact <span>KingDom</span></h3>
-                        <p><img src="./Asset/images/location.png" alt="" width="30"> 101b Le Huu Trac, Phuoc My, Son Tra, Đa Nang</p>
-                        <p><img src="./Asset/images/gmail.png" alt="" width="26"> tientranplus2@gmail.com</p>
-                        <p><img src="./Asset/images/call.png" alt="" width="26"> (+84) 123 4567 889</p>
-                        <p><img src="./Asset/images/call.png" alt="" width="26"> (+84) 888 4567 809</p><br>
-                        <img src="./Asset/images/payment1.png" alt="" height="30">
-                    </div>        
-                </div>
-            </div>
 
-            <div class="contact-top">
-                <a>Flow us:</a> 
-                <a href="#https://www.facebook.com"><img src="./Asset/images/Facebook.png" alt="" width="30"> Facebook</a>
-                <a href="#https://www.tiktok.com"><img src="./Asset/images/Tiktok.png" alt="" width="30"> Tiktok</a>
-                <a href="#skype:yourusername?chat"><img src="./Asset/images/Skype.png" alt="" width="30"> Skype</a>
-                <a href="#https://www.youtube.com"><img src="./Asset/images/Youtube.png" alt="" width="30"> Youtube</a>
-            </div></br>
-            <div class="footer-bottom">
-                <p>Created By <span>KingDom </span>team</p>
-                <p>students PNV24</p>
-            </div><br>
-        </div>
-    </section>    
 </body>
-</html>
+<style>
+  .content_footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: space-between;
+     margin: auto;
+  }
+
+  .footer_contact h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  .footer_contact p {
+    margin: 0;
+    line-height: 1.8;
+  }
+
+  .footer_left {
+    flex: 1;
+    margin-left: 150px;
+  }
+
+  .footer_left p a{
+    color: #fff;
+    text-decoration: none;
+  }
+  .right_content {
+    margin-right: 50px;
+  }
+
+  .left_contact img {
+    vertical-align: middle;
+    margin-right: 10px;
+  }
+
+  .contact_top {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .contact_top a {
+    color: #fff;
+    margin-right: 20px;
+    font-size: 18px;
+    text-decoration: none;
+  }
+
+  .contact_top img {
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+
+  .footer_bottom {
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    max-width: 1000px;
+    margin: auto;
+    margin-top: 50px;
+  }
+
+  .footer_bottom p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .footer_bottom span {
+    font-weight: bold;
+  } 
+</style>

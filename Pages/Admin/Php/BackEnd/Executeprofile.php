@@ -19,3 +19,8 @@
   </form>
 </div>
 
+<script>
+  function cancel(){
+    location.href="../FrontEnd/Edit_profile.php";
+  }
+</script>

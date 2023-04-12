@@ -25,21 +25,31 @@ if(isset($_POST['update'])) {
   $email = $_POST['email'];
   $address = $_POST['address'];
   $avt=$_FILES['avt']['name'];
-
-  $taget_dir="../../Asset/Picture/Student/";
-  $taget_file=$taget_dir.basename($avt);
-  if($_FILES['avt']['size']<500000){
-    move_uploaded_file($_FILES['avt']['tmp_name'],$taget_file);
+  if(!empty($avt)){
+    $taget_dir="../../Asset/Picture/Student/";
+    $taget_file=$taget_dir.basename($avt);
+    if($_FILES['avt']['size']<500000){
+      move_uploaded_file($_FILES['avt']['tmp_name'],$taget_file);
+      $sql = "UPDATE student,picture_stu 
+      SET Full_name='$fullname', Email='$email', Address='$address', Image='$avt'  
+      where student.ID_student=picture_stu.ID_student 
+      and  student.Email = '$emailUser'  and student.ID_student=$id";
+      $result = mysqli_query($conn, $sql);
+      header("location: Show.php");
+    }
+  }else{
     $sql = "UPDATE student,picture_stu 
-    SET Full_name='$fullname', Email='$email', Address='$address', Image='$avt'  
+    SET Full_name='$fullname', Email='$email', Address='$address'  
     where student.ID_student=picture_stu.ID_student 
     and  student.Email = '$emailUser'  and student.ID_student=$id";
     $result = mysqli_query($conn, $sql);
     header("location: Show.php");
   }
+  
 }
 
 ?>
+<link rel="stylesheet" href="../../Styles/Student/edit.css">
 <form method="post" enctype="multipart/form-data">
   <div>
     <label for="fullname">Họ và tên:</label>

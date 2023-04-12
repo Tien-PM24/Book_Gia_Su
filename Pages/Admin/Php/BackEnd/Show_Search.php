@@ -55,9 +55,12 @@
         $i = 1;
         if (isset($_POST['submit'])) {
           $Search=$_POST['search'];
+          
           $course=new Admin();
           $row=$course->search($Search);
         
+        if($Search!=""){
+
         
         foreach ($row as $course) {
         ?>
@@ -69,7 +72,7 @@
           </tr>
         <?php
           $i++;
-        }
+        }}
         }
      
         ?>
