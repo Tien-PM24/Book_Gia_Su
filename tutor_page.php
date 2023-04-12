@@ -1,4 +1,8 @@
-<?php include "../../src/core/connectDB.php" ?>
+
+
+<?php include "./src/core/connectDB.php"; ?>
+<?php include './inc/header.php'; ?>
+<!--<?php include "./styles/inc_styles/style.css"; ?>-->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -6,33 +10,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Asset/bootstrap-4.0.0-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./styles/Teacher/tutor.css">
     <title>Tutor Pages</title>
 </head>
+
 <body>
     <?php
     class ShowTutor extends ConnectDB {
         function getAllTutor () {
             error_reporting(0);
             $conn = $this->connection;
-            $sql = "SELECT * FROM teacher";
+            $sql = "SELECT Full_name, Images FROM teacher";
             $result = $conn->query($sql);
-            
             ?> 
             <div class="container">
                 <div class="row">
                     <?php while ($row = mysqli_fetch_assoc($result)) { ?>
                     <div class="col-md-4">
                         <div class="card">
-                            <div class="card-header">
-                                <?php echo $row["Full_name"] ?>
+                            <div class="card-img">
+                                <img src="./Asset/Picture/Teacher/<?php echo $row["Images"] ?> " alt="" /> 
+                            </div><br><br>
+                            <div class="information">
+                                <p><?php echo $row["Full_name"] ?></p>
                             </div>
-                            <div class="card-body">
-                                <p>Email: <?php echo $row["Email"] ?></p>
-                                <p>Job Title: <?php echo $row["Jobtittle"] ?></p>
-                                <p>Address: <?php echo $row["Address"] ?></p>
-                            </div>
+                            <button class="btn btn-primary" onclick="location.href='./src/views/tutor_profile.php'">View profile</button> <br>
                         </div>
-                        <button>View</button>
                     </div>
                     <?php } ?>
                 </div>
@@ -43,6 +48,10 @@
 
     $showTutor = new ShowTutor();
     $showTutor->getAllTutor();
+
+
+
+    include "./inc/footer.php";
     ?>
     
 </body>

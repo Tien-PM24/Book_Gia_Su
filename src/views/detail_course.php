@@ -37,7 +37,7 @@
 
                         echo '<img src="../../Asset/Picture/Course/' . $row["Image"] . '" alt="" width="350" class="img-fluid">';
                     ?>
-                    <button class="btn btn-success" >Book now</button>
+                    <button class="btn btn-success" >Join</button>
                 </div>
                 <div class="col-md-6">
                     <?php

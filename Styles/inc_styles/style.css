@@ -73,8 +73,8 @@ nav a:hover {
 }
 
 .search-item .search-item button {
-    padding: 10px;
-    font-size: 1.3rem;
+    padding: 8px;
+    font-size: 1rem;
     border: 1px solid var(--gray);
     border-radius: 0 12px 12px 0;
     width: 18%;
@@ -101,6 +101,10 @@ nav a:hover {
 
 .tap-right .personal-profile a:hover {
     text-decoration: none;
+}
+
+.nav-item  nav li.active a {
+  color: red;
 }
 
 
