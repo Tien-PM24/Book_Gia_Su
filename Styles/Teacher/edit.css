@@ -1,0 +1,48 @@
+form {
+    background-color: rgba(255, 255, 255, 0.9); /* màu nền form có độ mờ là 90% */
+    border-radius: 10px; /* bo tròn viền form */
+    box-shadow: 0px 0px 10px rgba(246, 10, 10, 0.5); /* hiệu ứng bóng đổ cho form */
+    padding: 20px; /* khoảng cách giữa viền form và các phần tử bên trong */
+    position: absolute; /* vị trí tuyệt đối để căn giữa form */
+    top: 50%; /* căn form theo chiều dọc */
+    left: 50%; /* căn form theo chiều ngang */
+    transform: translate(-50%, -50%); /* dịch chuyển form để căn giữa toàn bộ màn hình */
+    z-index: 1; /* độ sâu của form trên trang web */
+    width: 400px;
+    height: 500px;
+  }
+  
+  form::before {
+    content: "";
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("path/to/your/background/image.jpg"); /* thay đổi đường dẫn đến ảnh nền */
+    background-size: cover;
+    filter: blur(10px); /* độ mờ của ảnh nền */
+  }
+  .div_image,.div_title,.div_price{
+    text-align: center;
+  }
+  .div_title input{
+    width: 300px;
+    height: 40px;
+    outline: none;
+  }
+  .div_price input{
+    width: 300px;
+    height: 40px;
+    outline: none;
+  }
+  button{
+    text-align: center;
+    display: inline-block;
+    margin: 0 auto;
+    margin-right: 10px;
+    margin-left: 55px;
+    height: 40px;
+    width: 110px;
+  }

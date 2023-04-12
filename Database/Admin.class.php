@@ -1,4 +1,6 @@
 <?php
+
+
 include "Database.class.php";
 class Admin extends DataBase
 {
@@ -23,7 +25,6 @@ class Admin extends DataBase
             Left JOIN teacher ON teacher.ID_teacher = teacher_course.ID_teacher";
         $stm = $this->Connect()->query($sql);
         $Course = array();
-
         while ($row = $stm->fetch()) {
             $Course[] = $row;
         }
@@ -112,9 +113,6 @@ class Admin extends DataBase
             LEFT JOIN teacher_course ON teacher.ID_teacher = teacher_course.ID_teacher
             LEFT JOIN picture_teacher ON teacher.ID_teacher = picture_teacher.ID_teacher
             WHERE teacher.ID_teacher = $delete;");
-            // $pdo->query("DELETE FROM teacher_course WHERE ID_teacher = $delete");
-            // // Xóa bảng chính
-            // $pdo->query("DELETE FROM teacher WHERE ID_teacher = $delete");
             $pdo->commit();
         } catch (PDOException $e){
             $pdo->rollBack();
@@ -145,6 +143,7 @@ class Admin extends DataBase
     }
 
     public function updateProfile($image,$ID){
+
         $sql="UPDATE admin set Image=? where ID_Admin=?";
         $stm=$this->Connect()->prepare($sql);
         $stm->execute([$image,$ID]);
@@ -167,18 +166,32 @@ class Admin extends DataBase
         return $row;
     }
 
-    public function logIn($email,$pass){
-        $sql="SELECT * from admin";
-        $stm=$this->Connect()->query($sql);
-        while ( $row=$stm->fetch()) {
-            if ($email==$row["Email"] && $pass==$row["Password"]) {
-                header("location:../Pages/Admin/Php/FrontEnd/Home.php");
-             }
-        }
-    }
+    // public function logIn($email,$pass){
+    //     $sql="SELECT * from admin";
+    //     $stm=$this->Connect()->query($sql);
+    //     while ( $row=$stm->fetch()) {
+    //         if ($email==$row["Email"] && $pass==$row["Password"]) {
+    //             header("location:../Pages/Admin/Php/FrontEnd/Home.php");
+    //          }
+    //     }
+    // }
+
+    // function search($Name){
+    //     $sql = "SELECT * from course where Name like(:name)"; // :name là tham số truyền vào giá trị của biến $Name
+    //     $stm = $this->Connect()->prepare($sql);
+    //     $stm->bindParam(':name', $Name); // bindParam một phương thức để gán giá trị cho tham số truy vấn // giá trị đầu tiên là truyền tham sô, thứ 2 là truyền giá trị tham số
+    //     $stm->execute();
+
+    //     $Search = array();
+    
+    //     while ($row=$stm->fetch()){
+    //         $Search[] = $row;
+    //     }
+    //     return $Search;
+    // }
 
     function search($Name){
-        $sql="SELECT * from course where name like('%' ? '%')";
+        $sql="SELECT * from course where Name like('%' ? '%')";
         $stm=$this->Connect()->prepare($sql);
         $stm->execute([$Name]);
         $Search=array();

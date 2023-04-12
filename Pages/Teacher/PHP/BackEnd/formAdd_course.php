@@ -1,4 +1,7 @@
-
+<?php 
+    session_start();
+    $emailUser=$_SESSION['user'];
+?>
 
 <?php
 if (isset($_POST['btn'])) {
@@ -11,16 +14,26 @@ if (isset($_POST['btn'])) {
         echo "Vui lòng chọn ảnh!";
     } else {
         $connect = mysqli_connect("localhost", 'root', '', "book_tutor") or die("connect fail !");
-
-        $sql = "insert into `Course`(Name,Price,Body,Image)
-            values('$ten','$gia','$mota','../../../Asset/Picture/Course/$tenfile')";
+        $target_file="../../../../Asset/Picture/Course/";
+        $file=$target_file.basename($tenfile);
+        $sql = "INSERT into `Course`(Name,Price,Body,Image)
+            values('$ten','$gia','$mota','$tenfile')";
 
         if (mysqli_query($connect, $sql)) {
+            move_uploaded_file($_FILES['Image']['tmp_name'],$file);
+            $id_course=mysqli_insert_id($connect);
+            $sql1="SELECT ID_teacher from teacher where Email='$emailUser'";
+            $stm1=mysqli_query($connect,$sql1);
+            $row1=mysqli_fetch_assoc($stm1);
+            $row=$row1['ID_teacher'];
+            $sql2="INSERT into teacher_course (ID_teacher,ID_course) values ('$row','$id_course')";
+            $stm2=mysqli_query($connect,$sql2);
+            header('location:../FrontEnd/service.php');
 
-            move_uploaded_file($fileha['tmp_name'], '../../../Asset/Picture/Course/' . $tenfile);
         } else {
             echo "Thêm thất bại!";
         }
     }
 }
 ?>
+<img src="" alt="">
