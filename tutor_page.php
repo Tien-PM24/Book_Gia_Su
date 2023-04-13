@@ -22,7 +22,7 @@
         function getAllTutor () {
             error_reporting(0);
             $conn = $this->connection;
-            $sql = "SELECT teacher.Full_name, picture_teacher.images 
+            $sql = "SELECT teacher.ID_teacher,teacher.Full_name, picture_teacher.images 
                     FROM teacher, teacher_course, picture_teacher 
                     WHERE teacher.ID_teacher = teacher_course.ID_teacher 
                     AND teacher.ID_teacher = picture_teacher.ID_teacher;
@@ -35,12 +35,12 @@
                     <div class="col-md-4">
                         <div class="card">
                             <div class="card-img">
-                                <img src="./Asset/Picture/Teacher/<?php echo $row["Images"] ?> " alt="" /> 
+                                <img src="./Asset/Picture/Teacher/<?php echo $row["images"] ?> " alt="" /> 
                             </div><br><br>
                             <div class="information">
                                 <p><?php echo $row["Full_name"] ?></p>
                             </div>
-                            <button class="btn btn-primary" onclick="location.href='./src/views/tutor_profile.php'">View profile</button> <br>
+                            <button class="btn btn-primary" onclick="location.href='./src/views/tutor_profile.php?id=<?php echo $row['ID_teacher'];?>'">View profile</button>
                         </div>
                     </div>
                     <?php } ?>
