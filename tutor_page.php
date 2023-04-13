@@ -22,7 +22,11 @@
         function getAllTutor () {
             error_reporting(0);
             $conn = $this->connection;
-            $sql = "SELECT Full_name, Images FROM teacher";
+            $sql = "SELECT teacher.Full_name, picture_teacher.images 
+                    FROM teacher, teacher_course, picture_teacher 
+                    WHERE teacher.ID_teacher = teacher_course.ID_teacher 
+                    AND teacher.ID_teacher = picture_teacher.ID_teacher;
+                    ";
             $result = $conn->query($sql);
             ?> 
             <div class="container">

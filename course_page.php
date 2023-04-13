@@ -41,6 +41,16 @@
     text-decoration: none;
   }
 
+  @media screen and (max-width: 1864px) {
+    .col-md-3 img{
+    width: 345px;
+    height: 420px;
+    object-fit: cover;
+    transform-origin: bottom left;
+    }
+
+}
+
 </style>
 <body>
     <?php
@@ -67,8 +77,7 @@
                     <div class="card-body">
                       <h5 class="card-title"><?php echo $row["Name"] ?></h5>
                       <a href="#" class="btn btn-primary">Join</a>
-                    <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter" onclick="location.href='./src/views/detail_course.php?id=<?php echo $row['ID_course']; ?>'">
+                    <button type="button" class="btn btn-success ml-3" data-toggle="modal" data-target="#exampleModalCenter" onclick="location.href='./src/views/detail_course.php?id=<?php echo $row['ID_course']; ?>'">
                       Details
                     </button>
                     </div>

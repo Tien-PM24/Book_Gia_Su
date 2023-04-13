@@ -38,12 +38,14 @@
                         echo '<img src="../../Asset/Picture/Course/' . $row["Image"] . '" alt="" width="350" class="img-fluid">';
                     ?>
                     <button class="btn btn-success" >Join</button>
+                    <button class="btn btn-success" >Comment</button>
                 </div>
                 <div class="col-md-6">
                     <?php
                         echo "<h3>Name: " . $row['Name'] . "</h3>";
                         echo "<p>Price: " . $row['Price'] . "</p>";
                         echo "<p>Description: " . $row['Body'] . "</p>";
+
                     ?>
                 </div>
             </div>
