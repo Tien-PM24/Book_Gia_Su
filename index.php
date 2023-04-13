@@ -109,7 +109,7 @@ include "./Database/conn.php" ;
                     <a href="https://www.facebook.com">
                         <img src="https://www.verfvanniveau.nl/wp-content/uploads/2019/08/logo-social-fb-facebook-icon.png" alt="" width="30">Facebook login
                     </a>
-                    <a href="#"><img src="../../Asset/images/GG.png" alt="" width="30">Google login
+                    <a href="#"><img src="./Asset/images/GG.png" alt="" width="30">Google login
                     </a>
                 </div>
                 </div>       
