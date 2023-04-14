@@ -25,6 +25,11 @@
     object-fit: cover;
     transform-origin: bottom left;
 }
+
+.personal-profile {
+    display: flex;
+    justify-content: center;
+}
 </style>
 
 <body>
@@ -53,7 +58,9 @@
         <div class="row">
             <div class="col-md-6">
                 <?php if ($row = $result->fetch_assoc()) : ?>
-                    <img src="../../Asset/Picture/Teacher/<?php echo $row["images"]?>" alt="">
+                    <div class="personal-profile">
+                        <img src="../../Asset/Picture/Teacher/<?php echo $row["images"]?>" alt="">
+                    </div>
                 <?php endif; ?>
             </div>
             <div class="col-md-6" >
