@@ -8,16 +8,12 @@
   <title>Book tutor</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="./Asset/bootstrap-4.0.0-dist/css/bootstrap.min.css">
-  <script src="./Asset/bootstrap-4.0.0-dist/js/jquery.min.js"></script>
-  <script src="./Asset/bootstrap-4.0.0-dist/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/flexslider.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/jquery.flexslider-min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/jquery.flexslider-min.js"></script>
   <link rel="stylesheet" href="../../Styles/inc_styles/style.css">
-  <!-- <link rel="stylesheet" href="../../Styles/inc_styles/style.css"> -->
+  <link rel="stylesheet" href="./styles/inc_styles/style.css">
 </head>
 <body>
   <!-- header -->
@@ -29,9 +25,9 @@
       <div class="nav-item">
         <nav>
           <ul class="menu">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Tutors</a></li>
-            <li><a href="#">Courses</a></li>
+            <li><a href="./index.php">Home</a></li>
+            <li><a href="/Book_gia_su/tutor_page.php">Tutors</a></li>
+            <li><a href="/Book_Gia_Su/course_page.php">Courses</a></li>
             <li><a href="#">Class</a></li>
             <li><a href="#">Contact</a></li>
           </ul>
@@ -39,7 +35,7 @@
       </div>
       <div class="search-item">
         <div class="search-item">
-            <form class="example" action="" style="margin:auto;max-width:300px">
+            <form class="example" action="./search.php" method="GET" style="margin:auto;max-width:300px">
               <input type="text" placeholder="Search.." name="search">
               <button type="submit"><i class="fa fa-search"></i></button>
             </form>
