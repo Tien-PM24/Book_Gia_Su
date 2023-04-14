@@ -32,7 +32,7 @@
     class ShowProfile extends ConnectDB {
         public function getTutor($id) {
             $conn = $this->connection;
-            $sql = "SELECT teacher.Full_name, teacher.Address, teacher.Job_title, course.Name, course.Image, picture_teacher.images
+            $sql = "SELECT teacher.Full_name, teacher.Address, teacher.Job_title, course.Name, course.Image, picture_teacher.images, course.ID_course
                     FROM teacher
                     INNER JOIN teacher_course ON teacher.ID_teacher = teacher_course.ID_teacher
                     INNER JOIN course ON course.ID_course = teacher_course.ID_course
