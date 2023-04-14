@@ -37,7 +37,7 @@
     class ShowProfile extends ConnectDB {
         public function getTutor($id) {
             $conn = $this->connection;
-            $sql = "SELECT teacher.full_name, teacher.address, teacher.job_title, course.name, course.image, picture_teacher.image, course.id_course
+            $sql = "SELECT teacher.full_name, teacher.address, teacher.job_title, course.name, course.image as img_course, picture_teacher.image, course.id_course, teacher.email
                     FROM teacher
                     INNER JOIN teacher_course ON teacher.id_teacher = teacher_course.id_teacher
                     INNER JOIN course ON course.id_course = teacher_course.id_course
@@ -68,6 +68,7 @@
                     <p>Full name: <?php echo $row["full_name"] ?></p>
                     <p>Address: <?php echo $row["address"] ?></p>
                     <p>Job title: <?php echo $row["job_title"] ?></p>
+                    <p>Email: <?php echo $row["email"] ?></p>
                 <?php endif; ?>
             </div>
         </div>
@@ -81,7 +82,7 @@
             foreach ($courses as $course) : ?>
                 <div class="col-md-3">
                     <div class="card">
-                        <img src="../../Asset/Picture/Course/<?php echo $course["image"] ?>" alt="">
+                        <img src="../../Asset/Picture/Course/<?php echo $course["img_course"] ?>" alt="">
                     </div>
                     <div class="card-body">
                         <h5 class="card-title"><?php echo $course["name"] ?></h5>
