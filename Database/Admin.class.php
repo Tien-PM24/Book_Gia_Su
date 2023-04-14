@@ -101,37 +101,43 @@ class Admin extends DataBase
     public function deleteTeacher()
     {
         $delete = $_GET['delete'];
+        // $sql1="";
+        $sql2="set foreign_key_checks=0;
+        DELETE teacher, student_teacher, teacher_course, picture_teacher
+        FROM teacher
+        LEFT JOIN student_teacher ON teacher.ID_teacher = student_teacher.ID_teacher
+        LEFT JOIN teacher_course ON teacher.ID_teacher = teacher_course.ID_teacher
+        LEFT JOIN picture_teacher ON teacher.ID_teacher = picture_teacher.ID_teacher
+        WHERE teacher.ID_teacher = $delete";
         $pdo = $this->Connect();
-        $pdo->beginTransaction();
+        $pdo->exec($sql2);
+        // $pdo = $this->Connect()->query();
+        
 
-        try {
-            $pdo->query("set foreign_key_checks=0");
-            // Xóa khóa ngoại trước
-            $pdo->query("DELETE teacher, student_teacher, teacher_course, picture_teacher
-            FROM teacher
-            LEFT JOIN student_teacher ON teacher.ID_teacher = student_teacher.ID_teacher
-            LEFT JOIN teacher_course ON teacher.ID_teacher = teacher_course.ID_teacher
-            LEFT JOIN picture_teacher ON teacher.ID_teacher = picture_teacher.ID_teacher
-            WHERE teacher.ID_teacher = $delete;");
-            $pdo->commit();
-        } catch (PDOException $e){
-            $pdo->rollBack();
-            echo "Erro: " . $e->getMessage();
-        }
+        // try {
+            
+        //     // Xóa khóa ngoại trước
+        //     $pdo->query(";");
+        //     $pdo->commit();
+        // } catch (PDOException $e){
+        //     $pdo->rollBack();
+        //     echo "Erro: " . $e->getMessage();
+        // }
     }
 
 
 
     public function getOrder()
     {
-        $sql = "SELECT distinct teacher.Full_name as Teacher, picture_teacher.Image as Image_teacher, student.Full_name as Student, picture_stu.Image as Image_student, Course.Name
-        From student_teacher
-        inner join student on student.ID_student =student_teacher.ID_student
-        inner join teacher on teacher.ID_teacher=student_teacher.ID_teacher
-        left join teacher_course on teacher_course.ID_teacher=student_teacher.ID_teacher
-        left join course on course.ID_course=teacher_course.ID_course
-        left join picture_stu on picture_stu.ID_student = student_teacher.ID_student
-        left join picture_teacher on picture_teacher.ID_teacher=student_teacher.ID_teacher";
+        $sql = "SELECT DISTINCT teacher.Full_name as Teacher, picture_teacher.Image as Image_teacher, student.Full_name as Student, picture_stu.Image as Image_student, Course.Name
+        FROM student_teacher
+        INNER JOIN student ON student.ID_student = student_teacher.ID_student
+        INNER JOIN teacher ON teacher.ID_teacher = student_teacher.ID_teacher
+        LEFT JOIN teacher_course ON teacher_course.ID_teacher = student_teacher.ID_teacher
+        LEFT JOIN stu_course on stu_course.ID_student=student.Id_student
+        LEFT JOIN course on stu_course.ID_course=course.ID_course
+        LEFT JOIN picture_teacher on picture_teacher.ID_teacher=teacher.ID_teacher
+        LEFT JOIN picture_stu on picture_stu.ID_student=student.ID_student";
 
         $stm = $this->Connect()->query($sql);
         $Order = array();
