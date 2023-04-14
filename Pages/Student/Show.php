@@ -34,27 +34,27 @@
             />
         </div>
     <?php
-        $sql = "SELECT student.ID_student as ID_student, Image,Full_name,Email,Address,Job_title from picture_stu,student
-        where student.ID_student=picture_stu.ID_student and  student.Email = '$emailUser'";
+        $sql = "SELECT student.id_student as id_student, image,full_name,email,address,job_title from picture_stu,student
+        where student.id_student=picture_stu.id_student and  student.email = '$emailUser'";
         $result = mysqli_query($conn, $sql);
         while ($row = mysqli_fetch_assoc($result)) {
  ?>
         <div class="card-avatar">
             <img
-                src="../../Asset/Picture/Student/<?php echo $row['Image'] ?>"
+                src="../../Asset/Picture/Student/<?php echo $row['image'] ?>"
                 alt="fashui"
             />
         </div>
     </div>
     <div class="card-body">
-        <h2 class="card-name"><?php echo $row["Full_name"] ?></h2>
-        <h2 class="card-desc"><?php echo $row["Job_title"] ?></h2>
+        <h2 class="card-name"><?php echo $row["full_name"] ?></h2>
+        <h2 class="card-desc"><?php echo $row["job_title"] ?></h2>
         <div class="card-button-wrap">
             <button class="card-btn card-btn--secondary">
                 Button
             </button>
             <button class="card-btn card-btn--primary">
-            <a href="edit.php?ID_student=<?php echo $row['ID_student'] ?>">
+            <a href="edit.php?ID_student=<?php echo $row['id_student'] ?>">
                             Sửa
                         </a>
                 

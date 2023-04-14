@@ -29,12 +29,12 @@ if(isset($_GET['edit'])){
                     foreach ($row as $avatar) {
                         ?>
                         <div class="card-avatar">
-                        <img id="avatar" src="<?php echo $avatar['Image'] ?>" alt="fashui" />
+                        <img id="avatar" src="<?php echo $avatar['image'] ?>" alt="fashui" />
                         </div>
                  
             </div>
             <div class="card-body">
-                <h2 class="card-name"><?php echo $avatar['Full_name'] ?></h2>
+                <h2 class="card-name"><?php echo $avatar['full_name'] ?></h2>
                 <p class="card-desc">Admin</p>
                 <?php
                     }
@@ -43,7 +43,7 @@ if(isset($_GET['edit'])){
                   foreach ($row as $avatar) {
                     ?>
                 <div class="card-button-wrap">
-                   <a href="../BackEnd/Executeprofile.php?edit=<?php echo $avatar['ID_admin']?>"><button class="card-btn card-btn--secondary">
+                   <a href="../BackEnd/Executeprofile.php?edit=<?php echo $avatar['id_admin']?>"><button class="card-btn card-btn--secondary">
                         Edit
                     </button></a> 
                     

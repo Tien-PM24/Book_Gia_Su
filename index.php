@@ -23,16 +23,16 @@ include "./Database/conn.php" ;
         $stm3=mysqli_query($ketnoi,$sqladmin);
 
         while ($row = mysqli_fetch_assoc($stm1)) {
-            if ($accout == $row['Email'] && $password == $row['Password']) {
+            if ($accout == $row['email'] && $password == $row['password']) {
                 $_SESSION['user'] = $accout;
                 $emailUser = $_SESSION['user'];
-                if ($emailUser == $row['Email']) {
-                    $id = $row['ID_student'];
-                    $sql2 = "SELECT * FROM picture_stu WHERE ID_student = '$id'";
+                if ($emailUser == $row['email']) {
+                    $id = $row['id_student'];
+                    $sql2 = "SELECT * FROM picture_stu WHERE id_student = '$id'";
                     $stm2 = mysqli_query($ketnoi, $sql2);
                     $picture_stu = mysqli_fetch_assoc($stm2);
                     if (!$picture_stu) {
-                        $sql1 = "INSERT INTO picture_stu (ID_student, Image) VALUES ('$id', 'user.png')";
+                        $sql1 = "INSERT INTO picture_stu (id_student, image) VALUES ('$id', 'user.png')";
                         $stm3 = mysqli_query($ketnoi, $sql1);
                     }
                     header("location:./src/views/product.php");
@@ -43,16 +43,16 @@ include "./Database/conn.php" ;
        
         
         while ($row = mysqli_fetch_assoc($stm2)) {
-            if ($accout == $row['Email'] && $password == $row['Password']) {
+            if ($accout == $row['email'] && $password == $row['password']) {
                 $_SESSION['user'] = $accout;
                 $emailUser = $_SESSION['user'];
-                if ($emailUser == $row['Email']) {
-                    $id = $row['ID_teacher'];
-                    $sql2 = "SELECT * FROM picture_teacher WHERE ID_teacher = '$id'";
+                if ($emailUser == $row['email']) {
+                    $id = $row['id_teacher'];
+                    $sql2 = "SELECT * FROM picture_teacher WHERE id_teacher = '$id'";
                     $stm2 = mysqli_query($ketnoi, $sql2);
                     $picture_stu = mysqli_fetch_assoc($stm2);
                     if (!$picture_stu) {
-                        $sql1 = "INSERT INTO picture_teacher (ID_teacher, Image) VALUES ('$id', 'user.png')";
+                        $sql1 = "INSERT INTO picture_teacher (id_teacher, image) VALUES ('$id', 'user.png')";
                         $stm3 = mysqli_query($ketnoi, $sql1);
                     }
                     header("location:./src/views/product.php");
@@ -61,7 +61,7 @@ include "./Database/conn.php" ;
             }
         }
         while($row=mysqli_fetch_assoc($stm3)){
-            if ($accout==$row['Email']&& $password==$row['Password']) {
+            if ($accout==$row['email']&& $password==$row['password']) {
                 header("location:./Pages/Admin/Php/FrontEnd/Home.php");
                 $_SESSION['user'] = $accout;
                 $emailUser = $_SESSION['user'];

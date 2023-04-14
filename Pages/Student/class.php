@@ -20,9 +20,9 @@ if(mysqli_num_rows($result)){
   <?php while ($row = mysqli_fetch_assoc($result)) { ?>
     <div class="col-md-3">
       <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="../../Asset/Picture/Course/<?php echo $row["Image"] ?>" alt="">
+        <img class="card-img-top" src="../../Asset/Picture/Course/<?php echo $row["image"] ?>" alt="">
         <div class="card-body">
-          <h5 class="card-title"><?php echo $row["Name"] ?></h5>
+          <h5 class="card-title"><?php echo $row["name"] ?></h5>
         </div>
       </div>
     </div>

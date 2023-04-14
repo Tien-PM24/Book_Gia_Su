@@ -6,7 +6,7 @@ include "../../../../Database/conn.php";
 
 if (isset($_GET['data_id'])) {
     $id = $_GET['data_id'];
-    $sql = "SELECT * From course where ID_course='$id'";
+    $sql = "SELECT * From course where id_course='$id'";
     $result = mysqli_query($ketnoi, $sql);
     $row = mysqli_fetch_assoc($result);
 ?>
@@ -18,19 +18,19 @@ if (isset($_GET['data_id'])) {
 <form method="post" action="../BackEnd/update.php" enctype="multipart/form-data">
     <div class="div_image">
         <label for="image"><b>Image:</b></label><br>
-        <input type="file" id="image" name="image" value="<?php echo $row['Image'] ?>">
+        <input type="file" id="image" name="image" value="<?php echo $row['image'] ?>">
     </div>
     <br><br>
     <div class="div_title">
         <label for="title"><b>Title:</b></label><br>
-        <input type="text" id="title" name="title" value="<?php echo $row['Name'] ?>" required>
+        <input type="text" id="title" name="title" value="<?php echo $row['name'] ?>" required>
     </div>
     <br><br>
     <div class="div_price">
         <label for="name"><b>Price:</b> </label><br>
-        <input type="text" id="name" name="price" value="<?php echo $row['Price'] ?>" required>
+        <input type="text" id="name" name="price" value="<?php echo $row['price'] ?>" required>
     </div>
-    <input type="hidden" id="" name="id" value="<?php echo $row['ID_course'] ?>" required>
+    <input type="hidden" id="" name="id" value="<?php echo $row['id_course'] ?>" required>
     <br><br>
     <button type="submit" name="update" style="background: green;">Update</button>
     <button class="dong" type="button" style="background: red;">Cancel</button>

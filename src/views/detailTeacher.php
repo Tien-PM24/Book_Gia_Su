@@ -2,9 +2,9 @@
 include "../../Database/conn.php";
 if (isset($_GET['detai_teacher'])) {
     $id = $_GET['detai_teacher'];
-    $sql = "SELECT Image, Full_name,Job_title, Email,Address from teacher,picture_teacher
-        where teacher.ID_teacher=picture_teacher.ID_teacher
-        and teacher.ID_teacher='$id'";
+    $sql = "SELECT image, full_name,job_title, email,address from teacher,picture_teacher
+        where teacher.id_teacher=picture_teacher.id_teacher
+        and teacher.id_teacher='$id'";
 
     $stm = mysqli_query($ketnoi, $sql);
     while( $row = mysqli_fetch_assoc($stm)){
@@ -13,13 +13,13 @@ if (isset($_GET['detai_teacher'])) {
     <link rel="stylesheet" href="../../Styles/inc_styles/detai.css">
     <div class="teacher-detail">
         <div class="teacher-image">
-            <img src="../../Asset/Picture/Teacher/<?php echo $row['Image'] ?>" alt="Hình ảnh giáo viên">
+            <img src="../../Asset/Picture/Teacher/<?php echo $row['image'] ?>" alt="Hình ảnh giáo viên">
         </div>
         <div class="teacher-info">
-            <h1><?php echo $row['Full_name'] ?></h1>
-            <p>Chức vụ: <?php echo $row['Job_title'] ?></p>
-            <p>Địa chỉ: <?php echo $row['Address'] ?></p>
-            <p>Email: <?php echo $row['Email'] ?></p>
+            <h1><?php echo $row['full_name'] ?></h1>
+            <p>Chức vụ: <?php echo $row['job_title'] ?></p>
+            <p>Địa chỉ: <?php echo $row['address'] ?></p>
+            <p>Email: <?php echo $row['email'] ?></p>
             <ul>
                 <li><i class="fa-brands fa-facebook"></i></li>
                 <li><i class="fa-brands fa-linkedin"></i></li>
@@ -28,11 +28,11 @@ if (isset($_GET['detai_teacher'])) {
     </div>
 <?php
  }
- $sql="SELECT Image,Name,Price,course.ID_course as Course
+ $sql="SELECT Image,Name,Price,course.id_course as Course
  from course,teacher,teacher_course
- where teacher.ID_teacher=teacher_course.ID_teacher
- and course.ID_course=teacher_course.ID_course
- and teacher.ID_teacher='$id'";
+ where teacher.id_teacher=teacher_course.id_teacher
+ and course.id_course=teacher_course.id_course
+ and teacher.id_teacher='$id'";
 
  $stm=mysqli_query($ketnoi,$sql);
  ?>
@@ -42,9 +42,9 @@ if (isset($_GET['detai_teacher'])) {
               <?php while ($row = mysqli_fetch_assoc($stm)) { ?>
                 <div class="col-md-3">
                   <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="../../Asset/Picture/Course/<?php echo $row["Image"] ?>" alt="">
+                    <img class="card-img-top" src="../../Asset/Picture/Course/<?php echo $row["image"] ?>" alt="">
                     <div class="card-body">
-                      <h5 class="card-title"><?php echo $row["Name"] ?></h5>
+                      <h5 class="card-title"><?php echo $row["name"] ?></h5>
                       <a href="#=<?php echo $row['Course'] ?>" class="btn btn-primary">See More</a>
                       <a href="#=<?php echo $row['Course'] ?>" class="btn btn-primary">Learn Now</a>
                     </div>

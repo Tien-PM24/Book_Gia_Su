@@ -57,8 +57,8 @@
           $sql = "SELECT * FROM course";
           $result = $conn->query($sql);
           $conn1=$this->connection;
-          $sql1="SELECT Image, Full_name,teacher.ID_teacher as Teacher from teacher,picture_teacher
-          where teacher.ID_teacher=picture_teacher.ID_teacher";
+          $sql1="SELECT image, full_name,teacher.id_teacher as Teacher from teacher,picture_teacher
+          where teacher.id_teacher=picture_teacher.id_teacher";
            $result1 = $conn1->query($sql1);
       ?>
           <div class="container" style="margin-top: 60px;">
@@ -69,7 +69,7 @@
                   <div class="card" style="width: 18rem;">
                     <img class="card-img-top" src="../../Asset/Picture/Course/<?php echo $row["Image"] ?>" alt="">
                     <div class="card-body">
-                      <h5 class="card-title"><?php echo $row["Name"] ?></h5>
+                      <h5 class="card-title"><?php echo $row["name"] ?></h5>
                       <a href="#" class="btn btn-primary">Join</a><br>
                       <a href="#" class="btn btn-secondary">See more</a>
                     </div>
@@ -85,9 +85,9 @@
               <?php while ($row = mysqli_fetch_assoc($result1)) { ?>
                 <div class="col-md-3">
                   <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="../../Asset/Picture/Teacher/<?php echo $row["Image"] ?>" alt="">
+                    <img class="card-img-top" src="../../Asset/Picture/Teacher/<?php echo $row["image"] ?>" alt="">
                     <div class="card-body">
-                      <h5 class="card-title"><?php echo $row["Full_name"] ?></h5>
+                      <h5 class="card-title"><?php echo $row["full_name"] ?></h5>
                       <a href="./detailTeacher.php?detai_teacher=<?php echo $row['Teacher'] ?>" class="btn btn-primary">See More</a>
                     </div>
                   </div>

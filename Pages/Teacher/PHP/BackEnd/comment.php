@@ -3,11 +3,11 @@ session_start();
 
 include "../../../../Database/conn.php";
 $emailUser=$_SESSION['user'];
-$sql = "SELECT Image,Name,Price,course.ID_course as Course
+$sql = "SELECT image,name,price,course.id_course as course
     from course,teacher,teacher_course
-    where teacher.ID_teacher=teacher_course.ID_teacher
-    and course.ID_course=teacher_course.ID_course
-    and teacher.Email='$emailUser'";
+    where teacher.id_teacher=teacher_course.id_teacher
+    and course.id_course=teacher_course.id_course
+    and teacher.email='$emailUser'";
 $result = mysqli_query($ketnoi, $sql);
 
 ?>
@@ -17,8 +17,8 @@ $result = mysqli_query($ketnoi, $sql);
     while ($row = mysqli_fetch_assoc($result)) {
     ?>
         <div class="container_course">
-            <img src="../../../../Asset/Picture/Course/<?php echo $row["Image"]?>" alt="">
-            <p><?php echo $row["Name"]?></p>
+            <img src="../../../../Asset/Picture/Course/<?php echo $row["image"]?>" alt="">
+            <p><?php echo $row["name"]?></p>
         </div>
     <?php
     }

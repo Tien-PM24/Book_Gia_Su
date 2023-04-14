@@ -12,7 +12,7 @@
     
             if($_FILES['image']['size']<500000){
                 move_uploaded_file($_FILES['image']['tmp_name'],$file);
-                $sql="UPDATE course set Image='$Image',Name='$Title',Price=' $Price'where ID_course='$id'";
+                $sql="UPDATE course set image='$Image',name='$Title',price=' $Price'where id_course='$id'";
                 $stm=mysqli_query($ketnoi,$sql);
                 header('location:../FrontEnd/service.php');
             } else{
@@ -20,7 +20,7 @@
         }
        
         }else{
-            $sql="UPDATE course set Name='$Title',Price=' $Price'where ID_course='$id'";
+            $sql="UPDATE course set name='$Title',price=' $Price'where id_course='$id'";
             $stm=mysqli_query($ketnoi,$sql);
             header('location:../FrontEnd/service.php');
         }
