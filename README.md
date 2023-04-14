@@ -46,7 +46,7 @@
    # Run project
      - First, download XAMPP from the official website
      - Second, install XAMPP and start the Apache web server
-     - Third, import the database from the "data_book_tutor.sql" file using XAMPP's MySQL web server
+     - Third, import the database from the "book_tutor.sql" file using XAMPP's MySQL web server
      - Finally, use XAMPP's Apache web server and navigate to the project directory to run the website
 
    # Deploy project
