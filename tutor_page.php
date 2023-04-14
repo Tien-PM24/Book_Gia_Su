@@ -1,8 +1,6 @@
 
-
 <?php include "./src/core/connectDB.php"; ?>
 <?php include './inc/header.php'; ?>
-<!--<?php include "./styles/inc_styles/style.css"; ?>-->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -20,12 +18,12 @@
     <?php
     class ShowTutor extends ConnectDB {
         function getAllTutor () {
-            error_reporting(0);
+            //error_reporting(0);
             $conn = $this->connection;
-            $sql = "SELECT DISTINCT teacher.ID_teacher,teacher.Full_name, picture_teacher.images 
+            $sql = "SELECT DISTINCT teacher.id_teacher,teacher.full_name, picture_teacher.image
                     FROM teacher, teacher_course, picture_teacher 
-                    WHERE teacher.ID_teacher = teacher_course.ID_teacher 
-                    AND teacher.ID_teacher = picture_teacher.ID_teacher;
+                    WHERE teacher.id_teacher = teacher_course.id_teacher 
+                    AND teacher.id_teacher = picture_teacher.id_teacher;
                     ";
             $result = $conn->query($sql);
             ?> 
@@ -35,12 +33,12 @@
                     <div class="col-md-4">
                         <div class="card">
                             <div class="card-img">
-                                <img src="./Asset/Picture/Teacher/<?php echo $row["images"] ?> " alt="" /> 
+                                <img src="./Asset/Picture/Teacher/<?php echo $row["image"] ?> " alt="" /> 
                             </div><br><br>
                             <div class="information">
-                                <p><?php echo $row["Full_name"] ?></p>
+                                <p><?php echo $row["full_name"] ?></p>
                             </div>
-                            <button class="btn btn-primary" onclick="location.href='./src/views/tutor_profile.php?id=<?php echo $row['ID_teacher'];?>'">View profile</button>
+                            <button class="btn btn-primary" onclick="location.href='./src/views/tutor_profile.php?id=<?php echo $row['id_teacher'];?>'">View profile</button>
                         </div>
                     </div>
                     <?php } ?>
@@ -53,10 +51,7 @@
     $showTutor = new ShowTutor();
     $showTutor->getAllTutor();
 
-
-
     include "./inc/footer.php";
-    ?>
-    
+    ?> 
 </body>
 </html>
