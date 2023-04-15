@@ -1,6 +1,5 @@
 
 <?php include "./src/core/connectDB.php"; ?>
-<?php include './inc/header.php'; ?>
 
 <!DOCTYPE html>
 <html lang="en">

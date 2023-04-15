@@ -25,7 +25,7 @@
       <div class="nav-item">
         <nav>
           <ul class="menu">
-            <li><a href="./index.php">Home</a></li>
+            <li><a href="../src/views/home.html">Home</a></li>
             <li><a href="/Book_gia_su/tutor_page.php">Tutors</a></li>
             <li><a href="/Book_Gia_Su/course_page.php">Courses</a></li>
             <li><a href="#">Class</a></li>

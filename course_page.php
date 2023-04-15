@@ -1,4 +1,4 @@
-<?php include "./inc/header.php" ?>
+
 
 <html>
 <head>
@@ -54,8 +54,6 @@
 </style>
 <body>
     <?php
-    //include "./../inc/header.php";
-    //require_once './inc/slide.php';
     include "./src/core/connectDB.php";
 
     class ShowDB extends connectDB
@@ -93,7 +91,7 @@
     $show = new ShowDB();
     $show->getAllCourse();
 
-    require_once './inc/footer.php';
+    require_once './inc/footer';
     ?>
 </body>
 
