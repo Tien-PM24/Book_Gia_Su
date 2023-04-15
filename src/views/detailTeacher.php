@@ -2,16 +2,11 @@
 include "../../Database/conn.php";
 if (isset($_GET['detai_teacher'])) {
     $id = $_GET['detai_teacher'];
-<<<<<<< HEAD
-    $sql = "SELECT  image, full_name,job_title, email,address from teacher,picture_teacher
-        where teacher.id_teacher=picture_teacher.id_teacher
-        and teacher.id_teacher='$id'";
-=======
+
     $sql = "SELECT image, full_name,job_title, email,address from teacher,picture_teacher
         where teacher.id_teacher=picture_teacher.id_teacher
         and teacher.id_teacher='$id'";
 
->>>>>>> c3bd49e3b32c3f179354430524cf6a46c3cb5c61
     $stm = mysqli_query($ketnoi, $sql);
 
 
@@ -29,10 +24,8 @@ if (isset($_GET['detai_teacher'])) {
             <p>Chức vụ: <?php echo $row['job_title'] ?></p>
             <p>Địa chỉ: <?php echo $row['address'] ?></p>
             <p>Email: <?php echo $row['email'] ?></p>
-<<<<<<< HEAD
             <input type="hidden" name="id_teacher" value="<?php echo $id ?>">
-=======
->>>>>>> c3bd49e3b32c3f179354430524cf6a46c3cb5c61
+
             <ul>
                 <li><i class="fa-brands fa-facebook"></i></li>
                 <li><i class="fa-brands fa-linkedin"></i></li>
@@ -41,11 +34,10 @@ if (isset($_GET['detai_teacher'])) {
     </div>
 <?php
  }
-<<<<<<< HEAD
- $sql="SELECT image,Name,Price,course.id_course as Course
-=======
- $sql="SELECT Image,Name,Price,course.id_course as Course
->>>>>>> c3bd49e3b32c3f179354430524cf6a46c3cb5c61
+
+ $sql="SELECT image,name,price,course.id_course as Course
+
+
  from course,teacher,teacher_course
  where teacher.id_teacher=teacher_course.id_teacher
  and course.id_course=teacher_course.id_course
