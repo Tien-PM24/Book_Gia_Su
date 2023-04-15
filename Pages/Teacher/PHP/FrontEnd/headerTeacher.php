@@ -6,9 +6,9 @@ include "../../../../Database/conn.php";
 
 <link rel="stylesheet" href="../../../../Styles/Teacher/header.css">
 <?php
-$sql = "SELECT Image, Email from teacher,picture_teacher
-    where teacher.ID_teacher=picture_teacher.ID_teacher
-    and Email='$emailUser'";
+$sql = "SELECT image, email from teacher,picture_teacher
+    where teacher.id_teacher=picture_teacher.id_teacher
+    and email='$emailUser'";
 $stm = mysqli_query($ketnoi, $sql);
 
 ?>
@@ -43,7 +43,7 @@ $stm = mysqli_query($ketnoi, $sql);
         while ($row = mysqli_fetch_assoc($stm)) {
         ?>
             <div class="profile">
-                <img src="../../../../Asset/Picture/Teacher/<?php echo $row['Image'] ?>" alt="">
+                <img src="../../../../Asset/Picture/Teacher/<?php echo $row['image'] ?>" alt="">
             </div>
         <?php
         }

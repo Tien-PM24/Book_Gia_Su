@@ -24,16 +24,16 @@
             }
             
 			// $course_id = $_GET['course_id']; // Lấy ID_course từ URL
-			$sql = "SELECT * FROM course WHERE ID_course = $id_course";
+			$sql = "SELECT * FROM course WHERE id_course = $id_course";
 			$result = mysqli_query($conn, $sql);
 
 			if ($result && mysqli_num_rows($result) > 0 ) {
 			    // Hiển thị thông tin của khóa học
 			    $row = mysqli_fetch_assoc($result);
-			    echo '<h1>'.$row["Name"].'</h1>';
-			    echo '<img id="image" src="'.$row['Image'].'"/>';
-			    echo '<p>'.$row["Body"].'</p>';
-			    echo '<p>Giá tiền: '.$row["Price"].'</p>';
+			    echo '<h1>'.$row["name"].'</h1>';
+			    echo '<img id="image" src="'.$row['image'].'"/>';
+			    echo '<p>'.$row["body"].'</p>';
+			    echo '<p>Giá tiền: '.$row["price"].'</p>';
 			    echo '<a href="#">Mua khóa học</a>';
                 
 			} else {

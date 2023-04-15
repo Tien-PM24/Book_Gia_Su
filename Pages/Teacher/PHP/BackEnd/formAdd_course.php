@@ -16,17 +16,17 @@ if (isset($_POST['btn'])) {
         $connect = mysqli_connect("localhost", 'root', '', "book_tutor") or die("connect fail !");
         $target_file="../../../../Asset/Picture/Course/";
         $file=$target_file.basename($tenfile);
-        $sql = "INSERT into `Course`(Name,Price,Body,Image)
+        $sql = "INSERT into `course`(name,price,body,image)
             values('$ten','$gia','$mota','$tenfile')";
 
         if (mysqli_query($connect, $sql)) {
             move_uploaded_file($_FILES['Image']['tmp_name'],$file);
             $id_course=mysqli_insert_id($connect);
-            $sql1="SELECT ID_teacher from teacher where Email='$emailUser'";
+            $sql1="SELECT id_teacher from teacher where email='$emailUser'";
             $stm1=mysqli_query($connect,$sql1);
             $row1=mysqli_fetch_assoc($stm1);
-            $row=$row1['ID_teacher'];
-            $sql2="INSERT into teacher_course (ID_teacher,ID_course) values ('$row','$id_course')";
+            $row=$row1['id_teacher'];
+            $sql2="INSERT into teacher_course (id_teacher,id_course) values ('$row','$id_course')";
             $stm2=mysqli_query($connect,$sql2);
             header('location:../FrontEnd/service.php');
 

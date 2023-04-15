@@ -1,5 +1,5 @@
 <?php
-class connectDB {
+class ConnectDB {
     protected $connection;
     private $hostname = "localhost";
     private $username = "root";
@@ -7,7 +7,7 @@ class connectDB {
     private $nameDB = "book_tutor";
 
 
-    function __construct() {
+    public function __construct() {
         $this->connection = mysqli_connect("$this->hostname","$this->username","$this->password","$this->nameDB");
         if(!$this->connection){
             die ("Failed to connect with server");

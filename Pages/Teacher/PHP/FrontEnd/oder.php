@@ -4,14 +4,14 @@ $emailUser=$_SESSION['user'];
 include "../../../../Database/conn.php";
 include "./headerTeacher.php";
 
-$sql="  SELECT DISTINCT student.Full_name AS Student,course.Name as Course
+$sql="  SELECT DISTINCT student.full_name AS Student,course.name as Course
 FROM student_teacher
-INNER JOIN student ON student.ID_student = student_teacher.ID_student
-INNER JOIN teacher ON teacher.ID_teacher = student_teacher.ID_teacher
-LEFT JOIN teacher_course ON teacher_course.ID_teacher = student_teacher.ID_teacher
-LEFT JOIN stu_course on stu_course.ID_student=student.Id_student
-LEFT JOIN course on stu_course.ID_course=course.ID_course
-WHERE teacher.Email = '$emailUser'";
+INNER JOIN student ON student.id_student = student_teacher.id_student
+INNER JOIN teacher ON teacher.id_teacher = student_teacher.id_teacher
+LEFT JOIN teacher_course ON teacher_course.id_teacher = student_teacher.id_teacher
+LEFT JOIN stu_course on stu_course.id_student=student.id_student
+LEFT JOIN course on stu_course.id_course=course.id_course
+WHERE teacher.email = '$emailUser'";
 
 
 $stm=mysqli_query($ketnoi,$sql);

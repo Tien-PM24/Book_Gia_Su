@@ -55,10 +55,10 @@ $row = $course->showCourse();
         ?>
           <tr>
             <td><?php echo $i ?></td>
-            <td><?php echo $course['Name'] ?></td>
-            <td><?php echo $course['Price'] ?></td>
-            <td><img src="../../../../Asset/Picture/Course/<?php echo $course['Image'] ?>" alt=""></td>
-            <td><?php echo $course['Full_name'] ?></td>
+            <td><?php echo $course['name'] ?></td>
+            <td><?php echo $course['price'] ?></td>
+            <td><img src="../../../../Asset/Picture/Course/<?php echo $course['image'] ?>" alt=""></td>
+            <td><?php echo $course['full_name'] ?></td>
           </tr>
         <?php
           $i++;
