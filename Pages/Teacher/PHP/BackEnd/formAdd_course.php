@@ -13,7 +13,7 @@ if (isset($_POST['btn'])) {
     $start_day=$_POST['Starday'];
     $end_day=$_POST['Enday'];
     $courseBody=$describe."/".$quantity."/".$time."/"
-    .$star_day."/".$end_day;
+    .$start_day."/".$end_day;
     $image = $_FILES["Image"]["name"];
     if ($image == "") {
         echo "Vui lòng chọn ảnh!";
