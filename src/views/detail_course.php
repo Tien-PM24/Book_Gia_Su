@@ -33,7 +33,8 @@
                                         WHERE id_course = $id";
                                 $result = $connection->query($sql);
                                 $row = mysqli_fetch_assoc($result);
-                                return $row['num_students'];
+                                return $row['num_students'];    
+
                             }
                             
                         }
@@ -54,7 +55,19 @@
                     <h3><?php echo $row['name']; ?></h3>
                     <p>Number of students currently studying: <?php echo $showDetail->getNumberStudent($id); ?></p>
                     <p>Price this course: <?php  echo $row['price'];  ?></p>
-                    <p>Describe: <?php  echo $row['body']; ?></p>
+                    <?php  $content = $row["body"]; 
+                    $arrayBody = explode("/", $content) ;
+                    $body = $arrayBody[0];
+                    $number_student_book = $arrayBody[1];
+                    $start_day = $arrayBody[3];
+                    $end_day = $arrayBody[4];
+                    $number_teach = $arrayBody[2]
+                    ?>
+                    <p>Describe: <?php  echo $body; ?></p>
+                    <p>Number student book: <?php echo $number_student_book ?></p>
+                    <p>Number teach on week: <?php echo $number_teach ?> </p>
+                    <p>Day start: <?php echo $start_day ?></p>
+                    <p>Day end: <?php echo $end_day ?></p>
                 </div>
             </div>
         </div>
