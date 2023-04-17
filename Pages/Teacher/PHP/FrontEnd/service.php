@@ -23,24 +23,46 @@ include "../../../../Database/conn.php";
         <form method="post" action="../BackEnd/formAdd_course.php" enctype="multipart/form-data">
             <div class="modal fade" id="myModal" role="dialog">
                 <div class="modal-dialog">
-                    <!-- Modal content-->
-                    <div class="modal-content">
+                <div class="modal-content">
                         <div class="modal-header" style="background-color: #FFCC66;">
-                        <div class="col-xs-2">
-							<button type="button" class="close " data-dismiss="modal">&times;</button>
-						</div>
-						<div class="col-xs-10">
-							<h4 class="modal-title" style="font-size: 30px; color:aliceblue; text-align:right;">Thêm khóa học mới</h4>
-						</div>
+                            <div class="col-xs-2">
+                                <button type="button" class="close " data-dismiss="modal">&times;</button>
+                            </div>
+                            <div class="col-xs-10">
+                                <h4 class="modal-title" style="font-size: 30px; color:aliceblue; text-align:right;">Thêm môn
+                                    học mới</h4>
+                            </div>
+
                         </div>
                         <div class="modal-body">
-                            <input class="inputthem" type="text" name="Name" placeholder="Nhập tên khóa học" required><br><br>
-                            <input class="inputthem" type="text" name="Price" placeholder="Nhập giá tiền" required><br><br>
-                            <input class="inputthem" type="text" name="Body" placeholder="Nhập mô tả khóa học" required><br><br>
-                            Chọn hình ảnh: <input type="file" name="Image" required>
+                            <select name="Name" class="form-control form-control-lg" aria-label="Default select example">
+                                <option value="">-- Chọn môn học --</option>
+                                <optgroup label="Toán">
+                                    <option value="Toán lớp 3">Toán lớp 3</option>
+                                    <option value="Toán lớp 4">Toán lớp 4</option>
+                                    <option value="Toán lớp 5">Toán lớp 5</option>
+                                    <option value="Toán lớp 6">Toán lớp 6</option>
+                                </optgroup>
+                                <optgroup label="Ngữ văn">
+                                    <option value="Ngữ văn lớp 3">Ngữ văn lớp 3</option>
+                                    <option value="Ngữ văn lớp 4">Ngữ văn lớp 4</option>
+                                    <option value="Ngữ văn lớp 5">Ngữ văn lớp 5</option>
+                                    <option value="Ngữ văn lớp 6">Ngữ văn lớp 6</option>
+                                </optgroup>
+                                <!-- Thêm các optgroup và option cho các môn khác -->
+                            </select>
+                            <input class="inputthem" type="text" name="Price" placeholder="Nhập giá tiền" required>
+                            <textarea class="inputthem" name="Body" rows="3" placeholder="Mô ta khóa học">
+
+                            </textarea>
+                            <input class="inputthem" type="text" name="Quantity" placeholder="Số lượng học sinh có thể tham gia">
+                            <input class="inputthem" type="text" name="Time" placeholder="Nhập số buổi học trong 1 tuần">
+                            <input class="inputthem" type="date" name="Starday" placeholder="Nhập thời gian bắt đầu">
+                            <input class="inputthem" type="date" name="Enday" placeholder="Nhập thời gian kết thúc">
+                            Chọn ảnh bìa: <input type="file" name="Image" required>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+<button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
                             <button type="submit" name="btn" class="btn btn-warning">Done</button>
                             <br>
                         </div>
