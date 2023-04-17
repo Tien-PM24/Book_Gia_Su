@@ -1,5 +1,7 @@
 <?php session_start(); 
  $emailUser = $_SESSION['user'];
+
+
   include "../../Database/conn.php";
  ?>
 <!DOCTYPE html>
@@ -35,9 +37,9 @@
       </div>
       <div class="search-item">
         <div class="search-item">
-            <form class="example" action="./search.php" method="GET" style="margin:auto;max-width:300px">
+            <form class="example" method="GET" style="margin:auto;max-width:300px">
               <input type="text" placeholder="Search.." name="search">
-              <button type="submit"><i class="fa fa-search"></i></button>
+              <button type="submit" onclick="href='location:/book_gia_su/search.php'"><i class="fa fa-search"></i></button>
             </form>
         </div>
       </div>
@@ -45,27 +47,27 @@
 
       <div class="personal-profile">
         <?php
-            $sql1="SELECT Image, Email from student,picture_stu
+            $sql1="SELECT image, Email from student,picture_stu
             where student.ID_student=picture_stu.ID_student
             and Email='$emailUser'";
             $stm1=mysqli_query($ketnoi,$sql1);
-            $sql2="SELECT Image, Email from teacher,picture_teacher
+            $sql2="SELECT image, Email from teacher,picture_teacher
             where teacher.ID_teacher=picture_teacher.ID_teacher
             and Email='$emailUser'";
             $stm2=mysqli_query($ketnoi,$sql2);
             while($row=mysqli_fetch_assoc($stm1)){
               if($row){
-                echo "<img id='Image' src='../../Asset/Picture/Student/" . $row['Image'] . "' height='25'>";
+                echo "<img id='image' src='../../Asset/Picture/Student/" . $row['image'] . "' height='25'>";
               }else{
-                echo "<img id='Image' src='../../Asset/Picture/Student/user.png' height='25'>";
+                echo "<img id='image' src='../../Asset/Picture/Student/user.png' height='25'>";
               }
               
             }
             while($row=mysqli_fetch_assoc($stm2)){
               if($row){
-                echo "<img id='Image' src='../../Asset/Picture/Teacher/" . $row['Image'] . "' height='25'>";
+                echo "<img id='image' src='../../Asset/Picture/Teacher/" . $row['image'] . "' height='25'>";
               }else{
-                echo "<img id='Image' src='../../Asset/Picture/Teacher/user.png' height='25'>";
+                echo "<img id='image' src='../../Asset/Picture/Teacher/user.png' height='25'>";
               }
              
           }
@@ -78,16 +80,16 @@
 
 
   <script>
-  var img = document.querySelector("#Image");
+  var img = document.querySelector("#image");
   img.addEventListener('click', function(event) {
     event.preventDefault();
     <?php
       $emailUser = $_SESSION['user'];
-      $sql_student = "SELECT student.Email as Email, picture_stu.Image as Image
+      $sql_student = "SELECT student.Email as Email, picture_stu.image as image
                       FROM student, picture_stu
                       WHERE student.ID_student = picture_stu.ID_student
                       AND student.Email = '$emailUser'";
-      $sql_teacher = "SELECT teacher.Email as Email, picture_teacher.Image as Image
+      $sql_teacher = "SELECT teacher.Email as Email, picture_teacher.image as image
                       FROM teacher, picture_teacher
                       WHERE teacher.ID_teacher = picture_teacher.ID_teacher
                       AND teacher.Email = '$emailUser'";
@@ -100,7 +102,7 @@
        
         echo "window.location.href = '../../Pages/Student/Show.php';";
       } else if ($row_teacher) {
-        $imageFolder = "../Asset/Picture/Teacher/{$row_teacher['Image']}";
+        $imageFolder = "../Asset/Picture/Teacher/{$row_teacher['image']}";
         echo "window.location.href = '../../Pages/Teacher/PHP/FrontEnd/profile.php';";
       } else {
         echo "alert('Không tìm thấy hình ảnh của người dùng!');";
@@ -114,11 +116,8 @@
 
 
 
-
-
-
 <style>
-  #Image{
+  #image{
     width: 50px;
     height: 50px;
     border-radius: 50px;

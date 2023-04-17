@@ -16,7 +16,7 @@
       </div>
       <div class="regester-right">
         <form action="" method="post">
-          <h1>Craeta your account to connect with us</h1>
+          <h1>Create your account to connect with us</h1>
           <div class="regester-form">
             <div class="form-left">
               <div class="form-item">

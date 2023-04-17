@@ -24,7 +24,18 @@
                                 $result = $connection->query($sql);
                                 $row = mysqli_fetch_assoc($result);
                                 return $row;
-                            }  
+                            }
+
+                            public function getNumberStudent($id) {
+                                $connection = $this->connection;
+                                $sql = "SELECT COUNT(DISTINCT id_student) as num_students
+                                        FROM payment
+                                        WHERE id_course = $id";
+                                $result = $connection->query($sql);
+                                $row = mysqli_fetch_assoc($result);
+                                return $row['num_students'];
+                            }
+                            
                         }
 
                         $id = isset($_GET['id']) ? $_GET['id'] : null;
@@ -38,15 +49,12 @@
                         echo '<img src="../../Asset/Picture/Course/' . $row["image"] . '" alt="" width="350" class="img-fluid">';
                     ?>
                     <button class="btn btn-success" >Join</button>
-                    <button class="btn btn-success" >Comment</button>
                 </div>
                 <div class="col-md-6">
-                    <?php
-                        echo "<h3>Name: " . $row['name'] . "</h3>";
-                        echo "<p>Price: " . $row['price'] . "</p>";
-                        echo "<p>Description: " . $row['body'] . "</p>";
-
-                    ?>
+                    <h3><?php echo $row['name']; ?></h3>
+                    <p>Number of students currently studying: <?php echo $showDetail->getNumberStudent($id); ?></p>
+                    <p>Price this course: <?php  echo $row['price'];  ?></p>
+                    <p>Describe: <?php  echo $row['body']; ?></p>
                 </div>
             </div>
         </div>

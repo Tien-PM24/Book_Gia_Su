@@ -53,46 +53,55 @@
 
 </style>
 <body>
-    <?php
-    include "./src/core/connectDB.php";
+<?php
+include "./src/core/connectDB.php";
 
-    class ShowDB extends connectDB
+class ShowDB extends connectDB
+{
+    public function getAllCourseByName()
     {
-        public function getAllCourse()
-        {
-            error_reporting(0);
-            $conn = $this->connection;
-            $sql = "SELECT * FROM course";
-            $result = $conn->query($sql);
+        $conn = $this->connection;
+        $sql = "SELECT DISTINCT name FROM course";
+        $nameResult = $conn->query($sql);
 
+        while ($nameRow = mysqli_fetch_assoc($nameResult)) {
+            $name = $nameRow['name'];
             ?>
-            <div class="container">
-              <div class="row">
-                <?php while ($row = mysqli_fetch_assoc($result)) { ?>
-                <div class="col-md-3">
-                  <div class="card">
-                    <img class="card-img-top" src="./Asset/Picture/Course/<?php echo $row["image"] ?>" alt="">
-                    <div class="card-body">
-                      <h5 class="card-title"><?php echo $row["name"] ?></h5>
-                      <a href="#" class="btn btn-primary">Join</a>
-                    <button type="button" class="btn btn-success ml-3" data-toggle="modal" data-target="#exampleModalCenter" onclick="location.href='./src/views/detail_course.php?id=<?php echo $row['id_course']; ?>'">
-                      Details
-                    </button>
-                    </div>
-                  </div>
-                </div>
-                <?php } ?>
-              </div>
-            </div>
-            <?php  
-            }
-        }
-    // create instance of ShowDB class and call getAllCourse() method
-    $show = new ShowDB();
-    $show->getAllCourse();
 
-    require_once './inc/footer';
-    ?>
+            <div class="container">
+            <h2>Các khóa học về <?php echo preg_replace('/\d+/', '', $name);?></h2>
+                <div class="row">
+                    <?php
+                    $sql = "SELECT * FROM course WHERE name='$name'";
+                    
+                    $result = $conn->query($sql);
+
+                    while ($row = mysqli_fetch_assoc($result)) { ?>
+                        <div class="col-md-3">
+                            <div class="card">
+                                <img class="card-img-top" src="./Asset/Picture/Course/<?php echo $row["image"] ?>" alt="">
+                                <div class="card-body">
+                                    <h5 class="card-title"><?php echo $row["name"] ?></h5>
+                                    <button type="button" class='btn btn-success ml-3' onclick="location.href='./payment.php?id=<?php echo $row['id_course']; ?>'">Book</button>
+                                    <button type="button" class="btn btn-success ml-3" data-toggle="modal" data-target="#exampleModalCenter" onclick="location.href='./src/views/detail_course.php?id=<?php echo $row['id_course']; ?>'">
+                                        Details
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    <?php } ?>
+                </div>
+            </div>
+
+        <?php }
+    }
+}
+
+// create instance of ShowDB class and call getAllCourseByName() method
+$show = new ShowDB();
+$show->getAllCourseByName();
+?>
+
 </body>
 
 </html>

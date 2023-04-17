@@ -14,6 +14,8 @@
         $sql1 = "SELECT COUNT(id_student) AS total_students FROM stu_course WHERE id_course = 1;";
         $result1 = mysqli_query($conn, $sql1);
 
+        
+
         if (mysqli_num_rows($result) > 0) {
             while ($row = mysqli_fetch_assoc($result) and $row1 = mysqli_fetch_assoc($result1)) {
                 echo "<div class='course'>";

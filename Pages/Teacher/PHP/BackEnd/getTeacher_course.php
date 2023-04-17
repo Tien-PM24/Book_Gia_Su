@@ -27,7 +27,7 @@ $result = mysqli_query($conn, $sql);
             <img class="card-img-top" src="../../../../Asset/Picture/Course/<?php echo $row["image"] ?>" alt="">
             <div class="card-body">
               <h5 class="card-title"><?php echo $row["name"] ?></h5>
-              <h5 class="card-title"><?php echo $row["price"] ?></h5>
+              <h5 class="card-title">Price: <?php echo $row["price"] ?></h5>
               <a href="../FrontEnd/detail_course.php?data_id=<?php echo $row['Course'] ?>" class="btn btn-primary" >Edit</a> 
               <a href="../BackEnd/delete.php?delete_id=<?php echo $row['Course'] ?>" class="btn btn-primary" >Delete</a>
             </div>
@@ -36,12 +36,7 @@ $result = mysqli_query($conn, $sql);
       <?php } ?>
     </div>
   </div>
-
 <?
-
-
-
-
 
 ?>
 <link rel="stylesheet" href="../FrontEnd/style_course.css">

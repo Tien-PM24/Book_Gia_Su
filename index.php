@@ -32,11 +32,8 @@ include "./Database/conn.php" ;
                     $stm2 = mysqli_query($ketnoi, $sql2);
                     $picture_stu = mysqli_fetch_assoc($stm2);
                     if (!$picture_stu) {
-<<<<<<< HEAD
-                        $sql1 = "INSERT INTO picture_stu (id_student, Image) VALUES ('$id', 'user.png')";
-=======
+
                         $sql1 = "INSERT INTO picture_stu (id_student, image) VALUES ('$id', 'user.png')";
->>>>>>> c3bd49e3b32c3f179354430524cf6a46c3cb5c61
                         $stm3 = mysqli_query($ketnoi, $sql1);
                     }
                     header("location:./src/views/product.php");
@@ -56,11 +53,8 @@ include "./Database/conn.php" ;
                     $stm2 = mysqli_query($ketnoi, $sql2);
                     $picture_stu = mysqli_fetch_assoc($stm2);
                     if (!$picture_stu) {
-<<<<<<< HEAD
-                        $sql1 = "INSERT INTO picture_teacher (id_teacher, Image) VALUES ('$id', 'user.png')";
-=======
+
                         $sql1 = "INSERT INTO picture_teacher (id_teacher, image) VALUES ('$id', 'user.png')";
->>>>>>> c3bd49e3b32c3f179354430524cf6a46c3cb5c61
                         $stm3 = mysqli_query($ketnoi, $sql1);
                     }
                     header("location:./src/views/product.php");
