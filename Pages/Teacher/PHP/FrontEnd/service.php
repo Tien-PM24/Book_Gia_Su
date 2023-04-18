@@ -29,8 +29,7 @@ include "../../../../Database/conn.php";
                                 <button type="button" class="close " data-dismiss="modal">&times;</button>
                             </div>
                             <div class="col-xs-10">
-                                <h4 class="modal-title" style="font-size: 30px; color:aliceblue; text-align:right;">Thêm môn
-                                    học mới</h4>
+                                <h4 class="modal-title" style="font-size: 30px; color:aliceblue; text-align:right;">Thêm môn học mới</h4>
                             </div>
 
                         </div>
@@ -62,7 +61,7 @@ include "../../../../Database/conn.php";
                             Chọn ảnh bìa: <input type="file" name="Image" required>
                         </div>
                         <div class="modal-footer">
-<button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
                             <button type="submit" name="btn" class="btn btn-warning">Done</button>
                             <br>
                         </div>
