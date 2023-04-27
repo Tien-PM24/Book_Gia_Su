@@ -15,17 +15,17 @@
             if($_FILES['image']['size']<500000){
                 move_uploaded_file($_FILES['image']['tmp_name'],$file_image);
                 $sql = "UPDATE teacher,picture_teacher 
-                SET Full_name='$full_name', Password='$pass', Address='$address', Image='$file'  
-                where teacher.ID_teacher=picture_teacher.ID_teacher 
-                and  teacher.Email = '$emailUser'  and teacher.ID_teacher=$id";
+                SET full_name='$full_name', password='$pass', address='$address', image='$file'  
+                where teacher.id_teacher=picture_teacher.id_teacher 
+                and  teacher.Email = '$emailUser'  and teacher.id_teacher=$id";
                 $stm=mysqli_query($ketnoi,$sql);
                 header("location:./profile.php");
             }
         }else{
             $sql = "UPDATE teacher,picture_teacher 
                 SET Full_name='$full_name', Password='$pass', Address='$address'  
-                where teacher.ID_teacher=picture_teacher.ID_teacher 
-                and  teacher.Email = '$emailUser'  and teacher.ID_teacher=$id";
+                where teacher.id_teacher=picture_teacher.id_teacher 
+                and  teacher.Email = '$emailUser'  and teacher.id_teacher=$id";
                 $stm=mysqli_query($ketnoi,$sql);
                 header("location:./profile.php");
         }

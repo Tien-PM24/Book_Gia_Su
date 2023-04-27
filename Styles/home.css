@@ -43,7 +43,7 @@ p {
 
 span {
     color: var(--second);
-    text-shadow: 1px 6px 5px var(--second);
+    /*text-shadow: 1px 6px 5px var(--second);*/
 }
 
 .content1 {

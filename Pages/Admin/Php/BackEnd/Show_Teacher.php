@@ -73,12 +73,12 @@ a i{
         ?>
           <tr>
             <td> <?php echo $i ?></td>
-            <td class="a"><?php echo $student['Full_name'] ?></td>
-            <td class="b"><?php echo $student['Email'] ?></td>
-            <td class="c"><?php echo $student['Address'] ?></td>
-            <td><?php echo $student['Job_title'] ?></td>
-            <td><img src="../../../../Asset/Picture/Teacher/<?php echo $student['Image'] ?>" alt=""></td>
-            <td><a href="../FrontEnd/Teacher.php?delete=<?php echo $student['ID_teacher'] ?>"><i class="fa-solid fa-trash"></i></a></td>
+            <td class="a"><?php echo $student['full_name'] ?></td>
+            <td class="b"><?php echo $student['email'] ?></td>
+            <td class="c"><?php echo $student['address'] ?></td>
+            <td><?php echo $student['job_title'] ?></td>
+            <td><img src="../../../../Asset/Picture/Teacher/<?php echo $student['image'] ?>" alt=""></td>
+            <td><a href="../FrontEnd/Teacher.php?delete=<?php echo $student['id_teacher'] ?>"><i class="fa-solid fa-trash"></i></a></td>
           </tr>
         <?php
           $i++;

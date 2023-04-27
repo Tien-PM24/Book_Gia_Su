@@ -35,7 +35,7 @@ $row = $edit->Profile();
                 foreach ($row as $edit) {
                 ?>
                     <div class="__icon __Image" onclick="changeImage()">
-                    <a href="../FrontEnd/Edit_profile.php?edit=<?php echo $edit["ID_admin"] ?>"><img src="<?php echo $edit["Image"] ?>" alt="" ></a> 
+                    <a href="../FrontEnd/Edit_profile.php?edit=<?php echo $edit["id_admin"] ?>"><img src="<?php echo $edit["image"] ?>" alt="" ></a> 
                     </div>
                 <?php
                 }
@@ -54,9 +54,9 @@ $row = $edit->Profile();
                 foreach ($row as $edit) {
                     ?>
                     <div class="__menu_icon __Profile" onclick="changeImage()">
-                   <a href="../FrontEnd/Edit_profile.php?edit=<?php echo $edit["ID_admin"] ?>"><img src="<?php echo $edit["Image"] ?>" alt="" ></a> 
+                   <a href="../FrontEnd/Edit_profile.php?edit=<?php echo $edit["id_admin"] ?>"><img src="<?php echo $edit["image"] ?>" alt="" ></a> 
                     <br>
-                    <h5><?php echo $edit["Full_name"] ?></h5>
+                    <h5><?php echo $edit["full_name"] ?></h5>
                    
                     </div>
                     <?php

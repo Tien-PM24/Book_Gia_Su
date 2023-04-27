@@ -2,9 +2,9 @@
 session_start();
 $emailUser=$_SESSION['user'];
 include "../../Database/conn.php";
-$sql = "SELECT Image, Email from student,picture_stu
-    where student.ID_student=picture_stu.ID_student
-    and Email='$emailUser'";
+$sql = "SELECT image, email from student,picture_stu
+    where student.id_student=picture_stu.id_student
+    and email='$emailUser'";
 $stm = mysqli_query($ketnoi, $sql);
 ?>
 
@@ -39,7 +39,7 @@ $stm = mysqli_query($ketnoi, $sql);
     while($row=mysqli_fetch_assoc($stm)){
         ?>
         <div class="personal-profile">
-      <a href=""><img id="Image" src="../../Asset/Picture/Student/<?php echo $row['Image'] ?>" alt="" height="25"></a>
+      <a href=""><img id="Image" src="../../Asset/Picture/Student/<?php echo $row['image'] ?>" alt="" height="25"></a>
     </div>
     <?php
     }

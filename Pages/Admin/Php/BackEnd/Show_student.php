@@ -57,11 +57,11 @@ $row_stu = $student->showStudent();
         ?>
           <tr>
             <th scope="row"><?php echo $i ?></th>
-            <td><?php echo $student['Full_name'] ?></td>
-            <td><?php echo $student['Email'] ?></td>
-            <td><?php echo $student['Address'] ?></td>
-            <td><?php echo $student['Job_title'] ?></td>
-            <td><img src="../../../../Asset/Picture/Student/<?php echo $student['Image'] ?>" alt=""></td>
+            <td><?php echo $student['full_name'] ?></td>
+            <td><?php echo $student['email'] ?></td>
+            <td><?php echo $student['address'] ?></td>
+            <td><?php echo $student['job_title'] ?></td>
+            <td><img src="../../../../Asset/Picture/Student/<?php echo $student['image'] ?>" alt=""></td>
           </tr>
         <?php
           $i++;

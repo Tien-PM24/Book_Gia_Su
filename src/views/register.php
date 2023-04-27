@@ -63,7 +63,7 @@
 
 <?php
 include '../../Database/conn.php';
-
+include "../../Pages/Admin/Email/src/PHPMailer.php";
 // $sql = "";
 if (isset($_POST["btn"])) {
   $email = $_POST["email"];
@@ -71,7 +71,7 @@ if (isset($_POST["btn"])) {
   $name = ucwords($_POST["name"]);
   $Job_title = $_POST["Job_title"];
   $address = $_POST["address"];
-$check_email = "SELECT * FROM teacher WHERE Email='$email' UNION SELECT * FROM student WHERE Email='$email'";
+$check_email = "SELECT * FROM teacher WHERE email='$email' UNION SELECT * FROM student WHERE email='$email'";
   $result = mysqli_query($ketnoi, $check_email);
   $count = mysqli_num_rows($result);
   if (empty($email) || empty($password) || empty($name) || empty($Job_title) || empty($address)) { //empty: kiểm tra biến có rỗng hay không
@@ -90,9 +90,9 @@ $check_email = "SELECT * FROM teacher WHERE Email='$email' UNION SELECT * FROM s
   } elseif (!preg_match('/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/', $email)) { //[a-zA-Z0-9._%+-] đại diện tên người dùng [a-zA-Z0-9.-] Điều này đại diện cho phần tên miền của địa chỉ email
     echo "<script> alert('Địa chỉ email không hợp lệ') </script>";
   } elseif (isset($_POST["Job_title"]) && $_POST["Job_title"] == "teacher") {
-    $sql = "INSERT INTO teacher (Full_name, Email, Password, Job_title, Address) values ('$name', '$email', '$password','$Job_title', '$address')";
+    $sql = "INSERT INTO teacher (full_name, email, password, job_title, address) values ('$name', '$email', '$password','$Job_title', '$address')";
   } else {
-    $sql = "INSERT INTO student (Full_name, Email, Password, Job_title, Address) values ('$name', '$email', '$password','$Job_title', '$address')";
+    $sql = "INSERT INTO student (full_name, email, password, job_title, address) values ('$name', '$email', '$password','$Job_title', '$address')";
   }
   if (!empty($sql)) { //Điều này sẽ đảm bảo rằng truy vấn chỉ được thực thi nếu $sql không trống và sẽ ngăn thông báo lỗi xảy ra. tại vì nếu $sql trống thì sẽ báo lỗi
     if (mysqli_query($ketnoi, $sql)) {

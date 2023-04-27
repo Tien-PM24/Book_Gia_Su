@@ -10,14 +10,14 @@ if (isset($_GET['id'])) {
         die("Kết nối đến cơ sở dữ liệu thất bại: " . mysqli_connect_error());
     }
     $id = $_GET['id'];
-    $sql = "SELECT Full_name, Email from stu_course,student where student.ID_student = stu_course.ID_student and ID_course= '$id'";
+    $sql = "SELECT full_name, email from stu_course,student where student.id_student = stu_course.id_student and id_course= '$id'";
     $result = mysqli_query($conn, $sql);
     if (mysqli_num_rows($result) > 0) {
         // Duyệt qua các bản ghi của kết quả và show thông tin giáo viên
         while ($row = mysqli_fetch_assoc($result)) {
             echo  "<tr>";
-            echo "<td>" . $row['Full_name'] . "</td>";
-            echo "<td>" . $row['Email'] . "</td>";
+            echo "<td>" . $row['full_name'] . "</td>";
+            echo "<td>" . $row['email'] . "</td>";
             echo "</tr>";
         }
     } else {

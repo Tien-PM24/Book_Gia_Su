@@ -6,11 +6,11 @@ include "./conncect.php";
 ?>
 <body style="margin-top: 110px;">
     <?php
-$sql = "SELECT Image,Name,Price 
-from course,stu_course,student
-where course.ID_course=stu_course.ID_course 
-and student.ID_student=stu_course.ID_student
-and student.Email='$emailUser'";
+$sql = "SELECT image,name,payment.price 
+from course,payment,student
+where course.id_course=payment.id_course 
+and student.id_student=payment.id_student
+and student.email='$emailUser'";
 
 $result = mysqli_query($conn, $sql);
 if(mysqli_num_rows($result)){
@@ -20,9 +20,9 @@ if(mysqli_num_rows($result)){
   <?php while ($row = mysqli_fetch_assoc($result)) { ?>
     <div class="col-md-3">
       <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="../../Asset/Picture/Course/<?php echo $row["Image"] ?>" alt="">
+        <img class="card-img-top" src="../../Asset/Picture/Course/<?php echo $row["image"] ?>" alt="">
         <div class="card-body">
-          <h5 class="card-title"><?php echo $row["Name"] ?></h5>
+          <h5 class="card-title"><?php echo $row["name"] ?></h5>
         </div>
       </div>
     </div>
