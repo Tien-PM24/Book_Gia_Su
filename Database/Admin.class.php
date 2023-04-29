@@ -19,7 +19,7 @@ class Admin extends DataBase
 
     public function showCourse()
     {
-        $sql = "SELECT course.id_course as id_course ,Name,Price,Image,Full_name
+        $sql = "SELECT course.id_course as id_course ,name,price,image,full_name
             FROM teacher_course
             Left JOIN course ON course.id_course = teacher_course.id_course
             Left JOIN teacher ON teacher.id_teacher = teacher_course.id_teacher";
