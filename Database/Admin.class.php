@@ -178,30 +178,6 @@ class Admin extends DataBase
         return $row;
     }
 
-    // public function logIn($email,$pass){
-    //     $sql="SELECT * from admin";
-    //     $stm=$this->Connect()->query($sql);
-    //     while ( $row=$stm->fetch()) {
-    //         if ($email==$row["Email"] && $pass==$row["Password"]) {
-    //             header("location:../Pages/Admin/Php/FrontEnd/Home.php");
-    //          }
-    //     }
-    // }
-
-    // function search($Name){
-    //     $sql = "SELECT * from course where Name like(:name)"; // :name là tham số truyền vào giá trị của biến $Name
-    //     $stm = $this->Connect()->prepare($sql);
-    //     $stm->bindParam(':name', $Name); // bindParam một phương thức để gán giá trị cho tham số truy vấn // giá trị đầu tiên là truyền tham sô, thứ 2 là truyền giá trị tham số
-    //     $stm->execute();
-
-    //     $Search = array();
-    
-    //     while ($row=$stm->fetch()){
-    //         $Search[] = $row;
-    //     }
-    //     return $Search;
-    // }
-
     function search($Name){
         $sql="SELECT * from course where Name like('%' ? '%')";
         $stm=$this->Connect()->prepare($sql);
