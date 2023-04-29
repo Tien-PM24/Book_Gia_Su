@@ -123,16 +123,18 @@ $pdo->query("set foreign_key_checks=0");
 
     public function getOrder()
     {
-        $sql = "SELECT distinct teacher.full_name as teacher, picture_teacher.image as image_teacher, student.full_name as student, picture_stu.image as image_student, course.name
-        From student_teacher
-        inner join student on student.id_student =student_teacher.id_student
-        inner join teacher on teacher.id_teacher=student_teacher.id_teacher
-        left join teacher_course on teacher_course.id_teacher=student_teacher.id_teacher
-        left join course on course.id_course=teacher_course.id_course
-        left join picture_stu on picture_stu.id_student = student_teacher.id_student
-        left join picture_teacher on picture_teacher.id_teacher=student_teacher.id_teacher";
+        $sql = "SELECT DISTINCT teacher.full_name as teacher,picture_teacher.image as image_teacher,student.full_name AS student,picture_stu.image as image_student,course.name as Course
+        FROM student_teacher
+        INNER JOIN student ON student.id_student = student_teacher.id_student
+        INNER JOIN teacher ON teacher.id_teacher = student_teacher.id_teacher
+        LEFT JOIN teacher_course ON teacher_course.id_teacher = student_teacher.id_teacher
+        LEFT JOIN payment on payment.id_student=student.id_student
+        LEFT JOIN course on payment.id_course=course.id_course
+        left join picture_teacher on picture_teacher.id_teacher=student_teacher.id_teacher
+        left join picture_stu on picture_stu.id_student = student_teacher.id_student";
 
-        $stm = $this->Connect()->query($sql);
+
+        $stm = $this->Connect()->prepare($sql);
         $Order = array();
 
         while ($row = $stm->fetch()) {

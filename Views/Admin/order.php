@@ -2,8 +2,6 @@
     include "./header.php";
 ?>
 <?php
-// include "../../../../Database/Admin.class.php";
-
 $oder=new Admin();
 
 $order=$oder->getOrder();
