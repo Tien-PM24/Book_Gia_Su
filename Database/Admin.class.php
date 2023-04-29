@@ -1,7 +1,6 @@
 <?php
 
-
-include "Database.class.php";
+include "connectDB.php";
 class Admin extends DataBase
 {
     private $fullName;
@@ -101,20 +100,11 @@ class Admin extends DataBase
     public function deleteTeacher()
     {
         $delete = $_GET['delete'];
-        // $sql1="";
-        $sql2="set foreign_key_checks=0;
-        DELETE teacher, student_teacher, teacher_course, picture_teacher
-        FROM teacher
-        LEFT JOIN student_teacher ON teacher.ID_teacher = student_teacher.ID_teacher
-        LEFT JOIN teacher_course ON teacher.ID_teacher = teacher_course.ID_teacher
-        LEFT JOIN picture_teacher ON teacher.ID_teacher = picture_teacher.ID_teacher
-        WHERE teacher.ID_teacher = $delete";
         $pdo = $this->Connect();
-        $pdo->exec($sql2);
-        // $pdo = $this->Connect()->query();
-        
+        $pdo->beginTransaction();
+
         try {
-            $pdo->query("set foreign_key_checks=0");
+$pdo->query("set foreign_key_checks=0");
             // Xóa khóa ngoại trước
             $pdo->query("DELETE teacher, student_teacher, teacher_course, picture_teacher
             FROM teacher
@@ -127,23 +117,20 @@ class Admin extends DataBase
             $pdo->rollBack();
             echo "Erro: " . $e->getMessage();
         }
-
     }
 
 
 
     public function getOrder()
     {
-        $sql = "SELECT DISTINCT teacher.full_name as teacher,picture_teacher.image as image_teacher,student.full_name AS student,picture_stu.image as image_student,course.name as Course
-        FROM student_teacher
-        INNER JOIN student ON student.id_student = student_teacher.id_student
-        INNER JOIN teacher ON teacher.id_teacher = student_teacher.id_teacher
-        LEFT JOIN teacher_course ON teacher_course.id_teacher = student_teacher.id_teacher
-        LEFT JOIN payment on payment.id_student=student.id_student
-        LEFT JOIN course on payment.id_course=course.id_course
-        left join picture_teacher on picture_teacher.id_teacher=student_teacher.id_teacher
-        left join picture_stu on picture_stu.id_student = student_teacher.id_student";
-
+        $sql = "SELECT distinct teacher.full_name as teacher, picture_teacher.image as image_teacher, student.full_name as student, picture_stu.image as image_student, course.name
+        From student_teacher
+        inner join student on student.id_student =student_teacher.id_student
+        inner join teacher on teacher.id_teacher=student_teacher.id_teacher
+        left join teacher_course on teacher_course.id_teacher=student_teacher.id_teacher
+        left join course on course.id_course=teacher_course.id_course
+        left join picture_stu on picture_stu.id_student = student_teacher.id_student
+        left join picture_teacher on picture_teacher.id_teacher=student_teacher.id_teacher";
 
         $stm = $this->Connect()->query($sql);
         $Order = array();
@@ -177,30 +164,6 @@ class Admin extends DataBase
         $row=$stm->fetchAll();
         return $row;
     }
-
-    // public function logIn($email,$pass){
-    //     $sql="SELECT * from admin";
-    //     $stm=$this->Connect()->query($sql);
-    //     while ( $row=$stm->fetch()) {
-    //         if ($email==$row["Email"] && $pass==$row["Password"]) {
-    //             header("location:../Pages/Admin/Php/FrontEnd/Home.php");
-    //          }
-    //     }
-    // }
-
-    // function search($Name){
-    //     $sql = "SELECT * from course where Name like(:name)"; // :name là tham số truyền vào giá trị của biến $Name
-    //     $stm = $this->Connect()->prepare($sql);
-    //     $stm->bindParam(':name', $Name); // bindParam một phương thức để gán giá trị cho tham số truy vấn // giá trị đầu tiên là truyền tham sô, thứ 2 là truyền giá trị tham số
-    //     $stm->execute();
-
-    //     $Search = array();
-    
-    //     while ($row=$stm->fetch()){
-    //         $Search[] = $row;
-    //     }
-    //     return $Search;
-    // }
 
     function search($Name){
         $sql="SELECT * from course where Name like('%' ? '%')";

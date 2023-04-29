@@ -1,0 +1,222 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;600&display=swap");
+
+
+:root {
+    --primary-color: #131086;
+    --secondary-color: #b621f3;
+    --primary: #0071bc;
+    --warning: #ffc107;
+    --danger: #dc3545;
+    --success: #28a745;
+    --main-color: #17a2b8;
+    --light: #f8f9fa;
+    --dark: #343a40;
+    --gray: #6c757d;
+    --first: #131086;
+    --second: #b621f3;
+    --third: #FFF7D9;
+    --next: #FFCC98;
+    --Then: #53CCEC;
+    --Finaly: #FFE6B6;
+}
+
+*{
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body{
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    padding: 30px;
+}
+
+.container{
+    min-height: calc(100vh - 40px * 2);
+    display: grid;
+    grid-template-columns: 50% 50%;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.login-left{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 150px;
+    background-color: white;
+}
+.login-right{
+    background-color: #eee;
+    display: flex;
+    justify-content: center;
+}
+
+.login-right,.img-right{
+    width: 100%;
+}
+
+span{
+    color: rgb(219, 76, 159);
+}
+
+.login-header{
+    margin-top: -30px;
+    margin-bottom: 30px;
+}
+
+.login-header h2 {
+    background-image: linear-gradient(to right, var(--main-color), var(--dark));
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+p{
+    opacity: .7;
+}
+
+.login-form{
+    width: 450px;
+}
+
+.login-form-content {
+    display: flex ;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.login-form-footer {
+    display: flex;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+a {
+    flex: 6;
+    gap: 15px;
+    border: 1px solid var(--dark);
+    border-radius: 100px;
+    padding: .6rem;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    color: var(--dark);
+    text-decoration: none;
+}
+
+a:hover {
+    background-color: #eee;
+}
+
+.form-item label:not(.checkboxLabel) {
+    display: inline-block;
+    color: var(--primary);
+    background-color: white;
+    margin: 10px;
+    position: absolute;
+    padding: 0 10px;
+    transform: translate(30px, -20px);
+    font-size: 14px;
+}
+
+#email {
+    border: 1px solid black;
+    height: 50px;
+    padding: 0 2rem;
+    width: 100%;
+    outline: none;
+    transition: background .5s;
+    font-size: 18px;
+    border-radius: 100px;
+}
+
+#password {
+    border: 1px solid black;
+    height: 50px;
+    padding: 0 2rem;
+    width: 100%;
+    outline: none;
+    transition: background .5s;
+    font-size: 18px;
+    border-radius: 100px;
+}
+
+.checkbox{
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+input[type='checkbox'] {
+    width: 20px;
+    height: 20px;
+    accent-color: var(--primary-color);
+}
+
+button{
+    border: none;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    color: white;
+border-radius: 100px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    font-weight: 500;
+    height: 50px;
+    cursor: pointer;
+}
+
+button:hover {
+    padding: 0.8rem;
+}
+.forget-password_and_create_newaccount {
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.forget-password_and_create_newaccount a {
+    display: inline-block;
+    border: none;
+    color: var(--first);
+    font-style: initial;
+}
+
+.forget-password_and_create_newaccount a:hover {
+    background-color: white;
+    color: var(--success);
+}
+
+#forget-password {
+    font-style: italic;
+}
+
+#create-account {
+    font-style: italic;
+}
+
+/* Reponsive*/
+
+@media only screen and (max-width: 768px) {
+    body {
+        padding: 20px;
+    }
+    .container {
+        grid-template-columns: auto;
+    }
+    .login-right {
+        display: none;
+    }
+  }
+@media only screen and (max-width:1350px) {
+    .login-left{
+        padding: 50px !important;
+    }
+    .login-form {
+        width: 100%;
+    }
+    .login-form-footer {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
