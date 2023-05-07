@@ -6,6 +6,9 @@
     margin-top: -7px;
     display: flex;
     background: #FFFFFF;
+    position: fixed;
+    top: 0;
+    left: 0;
   }
   .container__tap__bar .__modol {
     display: flex;
@@ -17,7 +20,7 @@
     color: #fff;
     justify-content: center;
     align-items: center;
-    margin-left: -7px;
+    
   }
   .container__tap__bar .fa-solid {
     display: flex;
@@ -56,13 +59,14 @@
   }
   
   .container__menu_icon {
-    margin-top: -10px;
+    margin-top: 60px;
     width: 165px;
     height: 738px;
     background: #34425A;
     display: grid;
     grid-template-columns: 2fr 4fr;
-    margin-left: -7px;
+    left: 0;
+    position: fixed;
   }
   .container__menu_icon .__Profile {
     width: 165px;

@@ -28,8 +28,8 @@ $row = $student->showTeacher();
 
 <body>
 
-  <div class="table table-striped table-dark table_position" style="width:1000px">
-    <table>
+  <div class="table_position" style="width:1200px">
+    <table class="table table-bordered">
       <thead>
         <tr>
           <th scope="col">STT</th>
@@ -53,7 +53,7 @@ $row = $student->showTeacher();
             <td class="c"><?php echo $student['address'] ?></td>
             <td><?php echo $student['job_title'] ?></td>
             <td><img src="../../Public/Images/Teacher/<?php echo $student['image'] ?>" alt=""></td>
-            <td><a href="./teacher.php?delete=<?php echo $student['id_teacher'] ?>"><i class="fa-solid fa-trash"></i></a></td>
+            <td><a class="btn btn-danger" href="./teacher.php?delete=<?php echo $student['id_teacher'] ?>">Delete</a></td>
           </tr>
         <?php
           $i++;

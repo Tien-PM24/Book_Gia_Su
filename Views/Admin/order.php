@@ -28,8 +28,8 @@ $order=$oder->getOrder();
 </head>
 
 <body>
-  <div class="table table-striped table-dark table_position" style="width:1000px">
-    <table>
+  <div class=" table_position" style="width:1000px">
+    <table class="table table-bordered">
       <thead>
         <tr>
           <th scope="col">STT</th>

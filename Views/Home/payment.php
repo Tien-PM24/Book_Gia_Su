@@ -13,7 +13,7 @@ class Payment extends ConnectDB {
 
     public function getTeacher($id) {
         $conn = $this->connection;
-        $sql4 = "SELECT DISTINCT teacher.id_teacher
+        $sql4 = "SELECT DISTINCT teacher.id_teacher as Teacher
         FROM teacher,teacher_course,course
         WHERE teacher.id_teacher=teacher_course.id_teacher
         AND course.id_course=teacher_course.id_course

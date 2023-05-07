@@ -18,10 +18,10 @@
         <link rel="stylesheet" href="../../Public/Styles/Admin/search.css">
         <link rel="stylesheet" href="../../Public/Styles/Admin/table.css">
         <style>
-        table{
+        /* table{
           width: 985px;
           color: #FFFF;
-        }
+        } */
       </style>
     </head>
       <body>
@@ -32,8 +32,8 @@
       </form>
     </div>
       
-    <div class="table table-striped table-dark table_position" style="width:1000px">
-        <table>
+    <div class=" table_position" style="width:1000px">
+        <table class="table table-bordered">
           <thead>
             <tr>
           <th scope="col">STT</th>

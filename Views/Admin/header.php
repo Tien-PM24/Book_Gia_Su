@@ -35,7 +35,7 @@ $row = $edit->Profile();
                 foreach ($row as $edit) {
                 ?>
                     <div class="__icon __Image" onclick="changeImage()">
-                    <a href="./edit_profile.php?edit=<?php echo $edit["id_admin"] ?>"><img src="<?php echo $edit["image"] ?>" alt="" ></a> 
+                        <a href="./edit_profile.php?edit=<?php echo $edit["id_admin"] ?>"><img src="<?php echo $edit["image"] ?>" alt=""></a>
                     </div>
                 <?php
                 }
@@ -52,16 +52,16 @@ $row = $edit->Profile();
             <div class="__menu_grid_1">
                 <?php
                 foreach ($row as $edit) {
-                    ?>
+                ?>
                     <div class="__menu_icon __Profile" onclick="changeImage()">
-                   <a href="./edit_profile.php?edit=<?php echo $edit["id_admin"] ?>"><img src="<?php echo $edit["image"] ?>" alt="" ></a> 
-                    <br>
-                    <h5><?php echo $edit["full_name"] ?></h5>
-                   
+                        <a href="./edit_profile.php?edit=<?php echo $edit["id_admin"] ?>"><img src="<?php echo $edit["image"] ?>" alt=""></a>
+                        <br>
+                        <h5><?php echo $edit["full_name"] ?></h5>
+
                     </div>
-                    <?php
+                <?php
                 }
-               ?>
+                ?>
                 <div class="__menu_icon __menu__ _menu_home__" onclick="changeHome()">
                     <i class="fa-solid fa-house"></i>
                     <p>HOME</p>
@@ -77,7 +77,7 @@ $row = $edit->Profile();
                 <div class="__menu_icon __menu__ __menu_course__" onclick="changeCourse()">
                     <i class="fa-solid fa-book"></i>
                     <p>COURSES</p>
-</div>
+                </div>
                 <div class="__menu_icon __menu__ __menu_Order__" onclick="changeOder()">
                     <i class="fa-sharp fa-solid fa-cart-shopping"></i>
                     <p>ORDERS</p>
@@ -98,4 +98,5 @@ $row = $edit->Profile();
 <script src="../../Public/Js/change_page.js"></script>
 <script src="../../Public/Js/email.js"></script>
 <script src="../../Public/Js/form.js"></script>
+
 </html>

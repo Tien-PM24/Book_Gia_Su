@@ -23,14 +23,14 @@ $row_stu = $student->showStudent();
 </head>
 
 <body>
-  <div class="table table-striped table-dark table_position" style="width:1000px">
-    <table>
+  <div class="table_position" >
+    <table class="table table-bordered">
       <thead>
         <tr>
-          <th scope="col">STT</th>
-          <th scope="col">Name</th>
-          <th scope="col">Email</th>
-          <th scope="col">Adress</th>
+          <th  scope="col">STT</th>
+          <th style="width: 200px;" scope="col">Name</th>
+          <th style="width: 400px;"scope="col">Email</th>
+          <th style="width: 200px;"scope="col">Adress</th>
           <th scope="col">Job_Title</th>
           <th scope="col">Image</th>
         </tr>
