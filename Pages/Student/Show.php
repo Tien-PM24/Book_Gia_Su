@@ -50,9 +50,6 @@
         <h2 class="card-name"><?php echo $row["full_name"] ?></h2>
         <h2 class="card-desc"><?php echo $row["job_title"] ?></h2>
         <div class="card-button-wrap">
-            <button class="card-btn card-btn--secondary">
-                Button
-            </button>
             <button class="card-btn card-btn--primary">
             <a href="edit.php?ID_student=<?php echo $row['id_student'] ?>">
                             Sửa

@@ -9,9 +9,10 @@ FROM student_teacher
 INNER JOIN student ON student.id_student = student_teacher.id_student
 INNER JOIN teacher ON teacher.id_teacher = student_teacher.id_teacher
 LEFT JOIN teacher_course ON teacher_course.id_teacher = student_teacher.id_teacher
-LEFT JOIN stu_course on stu_course.id_student=student.id_student
-LEFT JOIN course on stu_course.id_course=course.id_course
+LEFT JOIN payment on payment.id_student=student.id_student
+LEFT JOIN course on payment.id_course=course.id_course
 WHERE teacher.email = '$emailUser'";
+
 
 
 $stm=mysqli_query($ketnoi,$sql);

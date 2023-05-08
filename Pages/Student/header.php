@@ -8,49 +8,38 @@ $sql = "SELECT image, email from student,picture_stu
 $stm = mysqli_query($ketnoi, $sql);
 ?>
 
+<link rel="stylesheet" href="../../styles/Student/header.css">
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link rel="stylesheet" href="../../Styles/Student/header.css">
-<div class="container-header">
-  <div class="logo">
-    <a href="product.php"><img src="../../Asset/images/logo (1).png" alt="" height="100"></a>
-  </div>
-  <div class="nav-item">
-    <nav>
-      <ul class="menu">
-        <li><a href="../../src/views/product.php">Home</a></li>
-        <li class="profileColor"><a href="./Show.php">Profile</a></li>
-        <li><a href="./Course.php">Courses</a></li>
-        <li><a href="">Tutors</a></li>
-        <li class="classColor"><a href="./class.php">Class</a></li>
-      </ul>
-    </nav>
-  </div>
-  <div class="search-item">
-    <div class="search-item">
-        <form class="example" action="" style="margin:auto;max-width:300px">
-          <input type="text" placeholder="Search.." name="search">
-          <button type="submit"><i class="fa fa-search"></i></button>
-        </form>
+
+<div class="container_menu_teacher">
+    <div class="logo">
+        <img src="../../../../Asset/images/logo (1).png" alt="">
     </div>
-  </div>
-  <div class="tap-right">
+    <div class="container__list__menu">
+        <div class="item">
+            <a href="../../src/views/product.php">
+                <p>Home Page</p>
+            </a>
+        </div>
+        <div class="item itemProfile">
+            <a href="../../Pages/Student/Show.php">
+                <p>Profile</p>
+            </a>
+        </div>
+        <div class="item itemOder">
+            <a href="../../Pages/Student/class.php">
+                <p>Class</p>
+            </a>
+        </div>
+        
+    </div>
     <?php
-    while($row=mysqli_fetch_assoc($stm)){
+        while ($row = mysqli_fetch_assoc($stm)) {
         ?>
-        <div class="personal-profile">
-      <a href=""><img id="Image" src="../../Asset/Picture/Student/<?php echo $row['image'] ?>" alt="" height="25"></a>
-    </div>
-    <?php
-    }
-    ?>
-  </div>
+            <div class="profile">
+              <a href=""><img id="Image" src="../../Asset/Picture/Student/<?php echo $row['image'] ?>" alt="" height="25"></a>
+            </div>
+        <?php
+        }
+        ?>
 </div>
-<style>
-.personal-profile a img{
-  width: 50px;
-  height: 50px;
-  border-radius: 50px;
-  object-fit: cover;
-}
-</style>

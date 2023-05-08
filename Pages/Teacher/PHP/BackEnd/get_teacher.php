@@ -34,7 +34,7 @@ $result = mysqli_query($conn, $sql);
          />
         </div>
         <div class="card-avatar">
-        <img src="../../../../Asset/Picture/Teacher/<?php echo $row['image'] ?>" alt="">
+        <img src="../../../../Asset/Picture/Teacher/<?php echo $row['Image'] ?>" alt="">
         </div>
         </div>
         <div class="card-body">

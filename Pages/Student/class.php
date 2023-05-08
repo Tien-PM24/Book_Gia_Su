@@ -6,33 +6,30 @@ include "./conncect.php";
 ?>
 <body style="margin-top: 110px;">
     <?php
-$sql = "SELECT Image,Name,Price 
-from course,stu_course,student
-where course.ID_course=stu_course.ID_course 
-and student.ID_student=stu_course.ID_student
-and student.Email='$emailUser'";
+$sql = "SELECT image,name,payment.price 
+from course,payment,student
+where course.id_course=payment.id_course 
+and student.id_student=payment.id_student
+and student.email='$emailUser'";
 
 $result = mysqli_query($conn, $sql);
 if(mysqli_num_rows($result)){
-?>
-<div class="container">
-<div class="row">
+?>   
+<div class="container--gird">
   <?php while ($row = mysqli_fetch_assoc($result)) { ?>
-    <div class="col-md-3">
-      <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="../../Asset/Picture/Course/<?php echo $row["image"] ?>" alt="">
-        <div class="card-body">
-          <h5 class="card-title"><?php echo $row["name"] ?></h5>
+    <div class="product-card">
+      <img src="../../Asset/Picture/Course/<?php echo $row["image"] ?>" alt="Product Image" class="product-card__image">
+      <div class="product-card__info">
+        <h3 class="product-card__name"><?php echo $row["name"] ?></h3><br>
+        <div class="product-card__buttons">
         </div>
       </div>
     </div>
-  <?php } 
-  }else{
+  
+  <?php }}else{
     echo "<h1 class='text-center'>Bạn chưa đăng ký khóa học nào</h1>";
   }
   ?>
-</div>
-</div>
 
 
 </body>
@@ -41,12 +38,11 @@ if(mysqli_num_rows($result)){
 <html lang="en">
   <head>
     <title>Title</title>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../styles/product.css">
   </head>
   <body>
       

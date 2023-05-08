@@ -12,6 +12,104 @@
 </head>
 
 <style> 
+* {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+.container--gird {
+display: grid;
+grid-template-columns: 1fr 1fr 1fr 1fr;
+gap: 15px;
+}
+
+.product-card {
+display: flex;
+flex-direction: column;
+width: 300px;
+background: #eae3e4;
+border: 1px solid #ccc;
+border-radius: 5px;
+margin-left: 20px;
+padding: 10px;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.background--teacher {
+background: #FE7A15;
+}
+
+.background--teacher--course {
+background: #D45769;
+}
+
+.product-card__image {
+width: 100%;
+height: 400px;
+object-fit: cover;
+border-radius: 5px;
+margin-bottom: 10px;
+}
+
+.background--course {
+background: #FA9284;
+}
+
+.product-card__info {
+flex: 1;
+}
+
+.product-card__name {
+font-size: 18px;
+margin-bottom: 5px;
+}
+
+.product-card__description {
+font-size: 14px;
+margin-bottom: 10px;
+}
+
+.product-card__buttons {
+display: flex;
+justify-content: space-between;
+}
+
+.product-card__button {
+padding: 5px 10px;
+border: none;
+border-radius: 5px;
+font-size: 14px;
+cursor: pointer;
+}
+
+.product-card__button--primary {
+background-color: #007bff;
+color: #fff;
+width: 45%;
+height: 40px;
+}
+
+.product-card__button--secondary {
+background-color: #6c757d;
+color: #fff;
+width: 45%;
+height: 40px;
+}
+
+.product-card__button--primary--teacher {
+display: flex;
+justify-content: center;
+text-align: center;
+align-items: center;
+background: #007bff;
+width: 300px;
+height: 40px;
+}
+
+h1 {
+    margin-left: 10px;
+}
+
 .col-md-6 img{
     width: 265px;
     height: 380px;
@@ -72,27 +170,24 @@
                 <?php endif; ?>
             </div>
         </div>
+        <br />
+        <br />
         <h3>Các khóa học của tôi</h3>
-        <div class="row">
-            <?php
-            $courses = array();
-            while ($row = $result->fetch_assoc()) {
-                $courses[] = $row;
-            }
-            foreach ($courses as $course) : ?>
-                <div class="col-md-3">
-                    <div class="card">
-                        <img src="../../Asset/Picture/Course/<?php echo $course["img_course"] ?>" alt="">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title"><?php echo $course["name"] ?></h5>
-                        <a href="#" class="btn btn-primary">Join</a>
-                        <button type="button" class="btn btn-success ml-3" data-toggle="modal" data-target="#exampleModalCenter" onclick="location.href='../../src/views/detail_course.php?id=<?php echo $course['id_course']; ?>'">
-                            Details
-                        </button>
-                    </div>
+          <div class="container--gird">
+            <?php while ($row = mysqli_fetch_assoc($result)) { ?>
+              <div class="product-card">
+                <img src="../../Asset/Picture/Course/<?php echo $row["img_course"] ?>" alt="Product Image" class="product-card__image">
+                <div class="product-card__info">
+                  <h3 class="product-card__name"><?php echo $row["name"] ?></h3><br>
+                  <div class="product-card__buttons">
+                    <Button>Đăng ký</Button>
+                    <button type="button" class="btn btn-success ml-3" data-toggle="modal" data-target="#exampleModalCenter" onclick="location.href='../../src/views/detail_course.php?id=<?php echo $course['id_course']; ?>'">
+                                Details
+                    </button>
+                  </div>
                 </div>
-            <?php endforeach; ?>
+              </div>
+            <?php } ?>
         </div>
     </div>
 </body>

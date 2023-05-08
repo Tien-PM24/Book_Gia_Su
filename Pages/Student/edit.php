@@ -4,7 +4,7 @@ include "./conncect.php";
 $emailUser = $_SESSION['user'];
 if(isset($_GET['ID_student'])) {
   $id=$_GET['ID_student'];
-  $sql = "SELECT student.id_student as id_student, Image,full_name,email,address from picture_stu,student
+  $sql = "SELECT student.id_student as id_student, image,full_name,email,address from picture_stu,student
             where student.id_student=picture_stu.id_student and  student.email = '$emailUser' and student.id_student=$id";
   $result = mysqli_query($conn, $sql);
   $row=mysqli_fetch_assoc($result);
