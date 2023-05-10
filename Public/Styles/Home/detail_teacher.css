@@ -1,0 +1,268 @@
+.teacher-detail {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 50px;
+margin-left: 400px;
+}
+
+.teacher-image img {
+    width: 300px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 8%;
+    margin-right: 30px;
+}
+
+.teacher-info {
+    flex: 1;
+}
+
+.teacher-info h1 {
+    font-size: 32px;
+    margin: 0;
+}
+
+.teacher-info p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.teacher-info ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.teacher-info li {
+    margin-right: 20px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.teacher-info li:last-child {
+    margin-right: 0;
+}
+
+.teacher-info li img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+* {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+.container--gird {
+display: grid;
+grid-template-columns: 1fr 1fr 1fr 1fr;
+gap: 15px;
+}
+
+.product-card {
+display: flex;
+flex-direction: column;
+width: 300px;
+background: #eae3e4;
+border: 1px solid #ccc;
+border-radius: 5px;
+margin-left: 20px;
+padding: 10px;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.background--teacher {
+background: #FE7A15;
+}
+
+.background--teacher--course {
+background: #D45769;
+}
+
+.product-card__image {
+width: 100%;
+height: 400px;
+object-fit: cover;
+border-radius: 5px;
+margin-bottom: 10px;
+}
+
+.background--course {
+background: #FA9284;
+}
+
+.product-card__info {
+flex: 1;
+}
+
+.product-card__name {
+font-size: 18px;
+margin-bottom: 5px;
+}
+
+.product-card__description {
+font-size: 14px;
+margin-bottom: 10px;
+}
+
+.product-card__buttons {
+display: flex;
+justify-content: space-between;
+}
+
+.product-card__button {
+padding: 5px 10px;
+border: none;
+border-radius: 5px;
+font-size: 14px;
+cursor: pointer;
+}
+
+.product-card__button--primary {
+background-color: #007bff;
+color: #fff;
+width: 45%;
+height: 40px;
+}
+
+.product-card__button--secondary {
+background-color: #6c757d;
+color: #fff;
+width: 45%;
+height: 40px;
+}
+
+.product-card__button--primary--teacher {
+display: flex;
+justify-content: center;
+text-align: center;
+align-items: center;
+background: #007bff;
+width: 300px;
+height: 40px;
+}
+
+h1 {
+    margin-left: 10px;
+}
+
+  .card {
+    position: relative;
+    overflow: hidden;
+    margin-top: 30px;
+    text-align: center;
+  }
+
+  .card .card-img-top {
+    display: block;
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .card-img-top:hover {
+    transition: .5s;
+    transform: scale(1.1);
+  }
+
+
+  button:hover {
+    color: #7ec9fa;
+    box-shadow: 0 0 15px #0197fc;
+    text-shadow: 0 0 15px #0197fc;
+  }
+
+  .col-md-3 img{
+    width: 265px;
+    height: 380px;
+    object-fit: cover;
+    transform-origin: bottom left;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  @media screen and (max-width: 1864px) {
+    .col-md-3 img{
+    width: 345px;
+    height: 420px;
+    object-fit: cover;
+    transform-origin: bottom left;
+    }
+
+}
+
+.card-body a{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.card-img-top {
+  height: 300px;
+  object-fit: cover;
+}
+.container {
+border: 1px solid #ccc;
+padding: 10px;
+margin-bottom: 20px;
+}
+h2 {
+font-size: 24px;
+margin-bottom: 10px;
+}
+.comment-name {
+font-weight: bold;
+margin-bottom: 5px;
+}
+.comment-content {
+margin-bottom: 10px;
+}
+.container-comment {
+  background-color: #f7f7f7;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.row-comment {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.col-comment {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+textarea.form-control {
+  resize: none;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+button.btn.btn-primary {
+  background-color: #069d86;
+  border: none;
+  padding: 10px 20px;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button.btn.btn-primary:hover {
+  background-color: #2ecc71;
+}
