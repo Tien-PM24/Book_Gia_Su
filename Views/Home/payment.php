@@ -40,7 +40,7 @@ class Payment extends ConnectDB {
                     window.location.href = './course_page.php';
                   </script>";
         } else {
-            $sql3 = "INSERT INTO payment (id_course, id_student, price, payment_day) 
+            $sql3 = "INSERT INTO payment (id_course, id_student, price, payment_date) 
                     VALUES ('$id_course', '$id_student', '$price', NOW())";
             $result3 = mysqli_query($conn, $sql3);
     
