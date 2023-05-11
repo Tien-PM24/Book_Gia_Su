@@ -6,7 +6,7 @@
 
 ?>
 <div class="form-container">
-  <form action="./execute_profile.php" method="post" enctype="multipart/form-data">
+  <form action="./execute_image.php" method="post" enctype="multipart/form-data">
     <div class="form-group">
       <label for="avatar">Select your avatar:</label>
       <input type="file" name="avatar" id="avatar">
