@@ -40,8 +40,6 @@ class Admin extends DataBase
             ";
         $sql_student = $this->Connect()->query($sql_stu);
         $Student = array();
-
-
         while ($row = $sql_student->fetch()) {
             $Student[] = $row;
         }
@@ -56,6 +54,7 @@ class Admin extends DataBase
             ON teacher.id_teacher = picture_teacher.id_teacher
             ";
         $sqlTeacher = $this->Connect()->query($sqlTeach);
+        $sqlTeacher->execute();
         $Teacher = array();
         while ($row = $sqlTeacher->fetch()) {
             $Teacher[] = $row;
@@ -133,10 +132,9 @@ $pdo->query("set foreign_key_checks=0");
         left join picture_teacher on picture_teacher.id_teacher=student_teacher.id_teacher
         left join picture_stu on picture_stu.id_student = student_teacher.id_student";
 
-
         $stm = $this->Connect()->prepare($sql);
+        $stm->execute();
         $Order = array();
-
         while ($row = $stm->fetch()) {
             $Order[] = $row;
         }
@@ -152,7 +150,8 @@ $pdo->query("set foreign_key_checks=0");
 
     public function Profile(){
         $sql="SELECT * from admin";
-        $stm=$this->Connect()->query($sql);
+        $stm=$this->Connect()->prepare($sql);
+        $stm->execute();
         $Admin=array();
         while ($row=$stm->fetch()) {
             $Admin[]=$row;
