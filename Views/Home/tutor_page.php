@@ -51,4 +51,8 @@
     include "./footer.php";
     ?> 
 </body>
+<script>
+    var tutor=document.querySelector('.tutor_page');
+    tutor.style.borderBottom="2px solid black";
+</script>
 </html>

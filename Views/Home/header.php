@@ -27,9 +27,9 @@ include "../../Database/connectBS.php";
       <div class="nav-item">
         <nav>
           <ul class="menu">
-            <li><a href="./index.php">Home</a></li>
-            <li><a href="./tutor_page.php">Tutors</a></li>
-            <li><a href="./course_page.php">Courses</a></li>
+            <li class="home"><a href="./index.php">Home</a></li>
+            <li class="tutor_page"><a href="./tutor_page.php">Tutors</a></li>
+            <li class="course_page"><a href="./course_page.php">Courses</a></li>
             <li><a href="#">Class</a></li>
             <li><a href="#">Contact</a></li>
           </ul>
@@ -70,8 +70,11 @@ include "../../Database/connectBS.php";
             }
           }
           ?>
+         
         </div>
+        
       </div>
+      <div onclick="Logout()"><i class="fa-solid fa-right-from-bracket"></i></div>
     </div>
   </header>
 
@@ -108,6 +111,10 @@ include "../../Database/connectBS.php";
 
       ?>
     });
+
+    function Logout(){
+      window.location.href = '../../index.php'
+    }
   </script>
   <style>
     #Image {

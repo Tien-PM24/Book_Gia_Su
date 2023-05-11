@@ -10,6 +10,7 @@ img {
     min-height: 3px;
     left: 20%;
     top: 20%;
+    position: sticky;
 
   }
 

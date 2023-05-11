@@ -98,5 +98,9 @@ $row = $edit->Profile();
 <script src="../../Public/Js/change_page.js"></script>
 <script src="../../Public/Js/email.js"></script>
 <script src="../../Public/Js/form.js"></script>
-
+<script>
+    function logout(){
+    window.location.href="../../index.php"
+}
+</script>
 </html>
