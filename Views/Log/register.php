@@ -14,6 +14,7 @@ include "../Email/src/SMTP.php";
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
   <title>Regester account</title>
 </head>
+
 <body>
 
   <?php ini_set('display_errors', 0) ?>
@@ -55,8 +56,7 @@ include "../Email/src/SMTP.php";
             </div>
             <div class="form-item">
               <label for="password">Confirm password</label>
-              <input type="password" name="Confirm_password" id="address"
-                value="<?php echo $_POST['Confirm_password'] ?>">
+              <input type="password" name="Confirm_password" id="address" value="<?php echo $_POST['Confirm_password'] ?>">
               <i class="toggle-password fas fa-eye"></i>
             </div>
           </div>
@@ -75,14 +75,14 @@ include "../Email/src/SMTP.php";
 include '../../Database/connectBS.php';
 // global $conn;
 if (isset($_POST["btn"])) {
-   
+
   $email = $_POST["email"];
 
   $password = $_POST["password"];
   $Confirm_password = $_POST['Confirm_password'];
   $name = ucwords($_POST["name"]);
   $job_title = $_POST["job_title"];
-$address = $_POST["address"];
+  $address = $_POST["address"];
 
   $check_teacher_query = "SELECT * FROM teacher WHERE email='$email'";
   $result_teacher = mysqli_query($conn, $check_teacher_query);
@@ -105,12 +105,8 @@ $address = $_POST["address"];
   //một biểu thức chính trong PHP được sử dụng để xác thực xem một chuỗi có khớp với định dạng của một địa chỉ email hợp lệ hay không
   elseif (!preg_match('/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/', $email)) { //[a-zA-Z0-9._%+-] đại diện tên người dùng [a-zA-Z0-9.-] Điều này đại diện cho phần tên miền của địa chỉ email
     echo "<script> swal.fire('lỗi!','Địa chỉ email không hợp lệ','error') </script>";
-
-
   } elseif ($password !== $Confirm_password) {
     echo "<script> swal.fire('lỗi!','Xác thực mật khẩu không chính xác!','error') </script>";
-
-
   } elseif (isset($_POST["job_title"]) && $_POST["job_title"] == "teacher") {
     if ($count_teacher > 0) {
       // Notify user that the email already exists in the teacher table
@@ -134,7 +130,6 @@ $address = $_POST["address"];
     $_SESSION['job_title'] = $job_title;
     $_SESSION['address'] = $address;
     header("location:../../Views/Teacher/payment.php");
-
   } else {
 
     if ($count_student > 0) {
@@ -147,7 +142,7 @@ $address = $_POST["address"];
     $_SESSION['email'] = $email;
     $userEmail = $_SESSION['email'];
     if (!isset($_SESSION['name']))
-    $_SESSION['name'] = [];
+      $_SESSION['name'] = [];
     $_SESSION['name'] = $name;
     $name = $_SESSION['name'];
     $email = new PHPMailer\PHPMailer\PHPMailer();
@@ -162,22 +157,21 @@ $address = $_POST["address"];
     $email->setFrom('hovandideveloper@gmail.com', 'KingDom');
     $email->addAddress($userEmail);
     $email->Subject = "welcome to KingDom";
-    $email->Body = "Cảm ơn " . $name . " đã tin tưởng và chọn website của chúng tôi để học tập.";
+    $email->Body = "Cảm ơn " .$name. " đã tin tưởng và chọn website của chúng tôi để học tập.";
     if (!$email->send()) {
       echo "fail";
     } else {
       $sql = "INSERT INTO student (full_name, email, password, job_title, address) values ('$name', '$userEmail', '$password','$job_title', '$address')";
-      mysqli_query($conn, $sql);
-    }
-
-  }
-  if (!empty($sql)) { //Điều này sẽ đảm bảo rằng truy vấn chỉ được thực thi nếu $sql không trống và sẽ ngăn thông báo lỗi xảy ra. tại vì nếu $sql trống thì sẽ báo lỗi
-    if (mysqli_query($conn, $sql)) {
+      mysqli_query($conn, $sql); 
       header('location:../../index.php');
-    } else {
-      echo "Add failed data";
     }
   }
+  // if (!empty($sql)){ //Điều này sẽ đảm bảo rằng truy vấn chỉ được thực thi nếu $sql không trống và sẽ ngăn thông báo lỗi xảy ra. tại vì nếu $sql trống thì sẽ báo lỗi
+  //   if (mysqli_query($conn, $sql)) {
+     
+  //   } else {
+  //     echo "Add failed data";
+  //   }
+  // }
 }
 ?>
-<img src="" alt="">
