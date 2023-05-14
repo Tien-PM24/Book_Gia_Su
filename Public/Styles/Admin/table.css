@@ -9,8 +9,8 @@ img {
     position: absolute;
     min-height: 3px;
     left: 20%;
-    top: 20%;
-    position: sticky;
+    top: 25%;
+    /* position: sticky; */
 
   }
 

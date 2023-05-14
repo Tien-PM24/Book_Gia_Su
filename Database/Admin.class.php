@@ -89,7 +89,7 @@ class Admin extends DataBase
 
     public function countOrder()
     {
-        $sql = "SELECT COUNT(*) AS count_order from student_teacher";
+        $sql = "SELECT COUNT(*) AS count_order from payment";
         $stm = $this->Connect()->query($sql);
         $row = $stm->fetch();
         return $row['count_order'];

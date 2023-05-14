@@ -10,6 +10,7 @@
     top: 0;
     left: 0;
     z-index: 1;
+    width: 1600px;
   }
   .container__tap__bar .__modol {
     display: flex;
@@ -21,7 +22,7 @@
     color: #fff;
     justify-content: center;
     align-items: center;
-    
+    z-index: 1;
   }
   .container__tap__bar .fa-solid {
     display: flex;

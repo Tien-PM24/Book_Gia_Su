@@ -39,13 +39,13 @@ if(isset($_POST['payment'])){
     $row2 = mysqli_fetch_assoc($result2);
     $id_teacher=$row2['id_teacher'];
 
-    $sql3="SELECT id_student from payment where id_student=$id_student";
+    $sql3="SELECT id_student from payment where id_student=$id_student and id_course=$id_course";
     $result3 = mysqli_query($conn, $sql3);
     $row3 = mysqli_fetch_assoc($result3);
-    $sql4="SELECT distinct id_student from payment where id_course=$id_course";
-    $result4 = mysqli_query($conn, $sql4);
-    $row4= mysqli_fetch_assoc($result4);
-    $numrow= mysqli_num_rows($result4);
+    // $sql4="SELECT distinct id_student from payment where id_course=$id_course";
+    // $result4 = mysqli_query($conn, $sql4);
+    // $row4= mysqli_fetch_assoc($result4);
+    // $numrow= mysqli_num_rows($result4);
     if($id_student===$row3['id_student'] ){
         echo "<script>swal.fire('Lỗi','Đã đã đăng ký khóa học này','error')</script>";
     }else if($emailUser===$row1['email']){
