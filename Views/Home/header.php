@@ -1,4 +1,8 @@
-<?php session_start();
+<?php 
+session_start();
+if(!$_SESSION['user']){
+  header("location:../../index.php");
+}
 $emailUser = $_SESSION['user'];
 include "../../Database/connectBS.php";
 ?>
