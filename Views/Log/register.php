@@ -5,7 +5,6 @@ include "../Email/src/SMTP.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -73,7 +72,7 @@ include "../Email/src/SMTP.php";
 
 <?php
 include '../../Database/connectBS.php';
-// global $conn;
+
 if (isset($_POST["btn"])) {
 
   $email = $_POST["email"];

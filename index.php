@@ -40,7 +40,7 @@ session_start();
                     </div>
                 </form>
                 <div class="forget-password_and_create_newaccount">
-                    <a id="forget-password" href="#">Forget password?</a>
+                    <a id="forget-password" href="./Views/Log/confirm-email.php">Forget password?</a>
                     <a id="create-account" href="./Views/Log/register.php">Create account?</a>
                 </div>
                 <div class="login-form-footer">
