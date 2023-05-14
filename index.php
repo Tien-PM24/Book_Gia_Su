@@ -85,7 +85,6 @@ if (isset($_POST["btn"])) {
                     $stm2 = mysqli_query($conn, $sql2);
                     $picture_stu = mysqli_fetch_assoc($stm2);
                     if (!$picture_stu) {
-
                         $sql1 = "INSERT INTO picture_stu (id_student, image) VALUES ('$id', 'icon.png')";
                         $stm3 = mysqli_query($conn, $sql1);
                     }
