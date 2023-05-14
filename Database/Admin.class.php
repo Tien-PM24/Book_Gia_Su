@@ -80,7 +80,7 @@ class Admin extends DataBase
     }
     public function countCourse()
     {
-        $sql = "SELECT COUNT(*) AS course from course";
+        $sql = "SELECT COUNT(*) AS course from payment";
         $stm = $this->Connect()->prepare($sql);
         $stm->execute();
         $row = $stm->fetch();
