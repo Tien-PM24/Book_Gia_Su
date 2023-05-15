@@ -59,7 +59,4 @@
         ?>
 </html>
 
-<script>
-   var profile=document.querySelector('.profileColor');
-   profile.style.background="white";
-</script>
+

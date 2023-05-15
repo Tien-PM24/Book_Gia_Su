@@ -61,7 +61,10 @@
 
 
 </body>
-
+<script>
+  var course_page=document.querySelector(".course_page");
+  course_page.style.borderBottom="2px solid black"
+</script>
 </html>
 
 <?php include "./footer.php" ?>

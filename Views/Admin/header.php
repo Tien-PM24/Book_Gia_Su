@@ -87,16 +87,20 @@ $row = $edit->Profile();
                     <p>SEARCH</p>
                 </div>
             </div>
-            <div class="container__show_detail">
+            <!-- <div class="container__show_detail">
                 <div class="__detail_home_">
                     <p>DASHBOARD</p>
                 </div>
-            </div>
+            </div> -->
         </div>
     </section>
 </body>
 <script src="../../Public/Js/change_page.js"></script>
 <script src="../../Public/Js/email.js"></script>
 <script src="../../Public/Js/form.js"></script>
-
+<script>
+    function logout(){
+    window.location.href="../../index.php"
+}
+</script>
 </html>

@@ -266,3 +266,28 @@ button.btn.btn-primary {
 button.btn.btn-primary:hover {
   background-color: #2ecc71;
 }
+.container1 {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.comment {
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #f5f5f5;
+}
+
+.comment-name {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.comment-content {
+  font-size: 16px;
+  line-height: 1.5;
+  padding: 10px;
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  color: #0077FF;
+}

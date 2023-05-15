@@ -66,4 +66,8 @@
 ?>
    
 </body>
+<script>
+  var home=document.querySelector('.home');
+  home.style.borderBottom="2px solid black";
+</script>
 </html>

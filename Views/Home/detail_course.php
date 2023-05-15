@@ -5,6 +5,7 @@ include "./header.php";
 <html>
 
 <head>
+    <link rel="stylesheet" href="../../Public/Styles/Home/index.css">
     <link rel="stylesheet" href="../../Public/Styles/Home/detal.css">
 </head>
 
@@ -23,15 +24,15 @@ include "./header.php";
     }
     .content__mota{
         position: absolute;
-        left: 35%;
+        left: 26%;
         top: 15%;
     }
 </style>
 
 <body>
     <div class="container">
-        <div class="row">
-            <div class="col-md-6 left">
+        <div class="product-card">
+            <div class="product-card__info">
                 <?php
                 class ShowDetail extends ConnectDB
                 {
@@ -65,10 +66,10 @@ include "./header.php";
                 $row = $showDetail->getCourse($id);
                 ?>
 
-                <img src="../../Public/Images/Course/<?php echo $row["image"] ?>" alt="" height="350" id="img-fluid">
+                <img src="../../Public/Images/Course/<?php echo $row["image"] ?>" alt="" width="300" height="400" id="img-fluid">
 
                 <br />
-                <button class="btn btn-success" onclick="location.href='./payment.php?id=<?php echo $row['id_course']; ?>'">Book now</button>
+                <button class="product-card__button product-card__button--primary--teacher" onclick="location.href='./payment.php?id=<?php echo $row['id_course']; ?>'">Book now</button>
             </div>
             <div class="content__mota">
                 <h3><?php echo $row['name']; ?></h3> <br>
