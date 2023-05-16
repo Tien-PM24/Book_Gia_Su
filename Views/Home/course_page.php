@@ -1,5 +1,6 @@
 <?php include "./header.php" ?>
 <html>
+
 <head>
   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> -->
@@ -50,21 +51,23 @@
             </div>
           </div>
         </div>
-    <?php }
+  <?php }
     }
   }
 
   // create instance of ShowDB class and call getAllCourseByName() method
   $show = new ShowDB();
   $show->getAllCourseByName();
-    ?>
+  ?>
 
 
 </body>
 <script>
-  var course_page=document.querySelector(".course_page");
-  course_page.style.borderBottom="2px solid black"
+  var course_page = document.querySelector(".course_page");
+  course_page.style.borderBottom = "4px solid orangered";
+  course_page.style.borderRadius = "2px"
 </script>
+
 </html>
 
 <?php include "./footer.php" ?>

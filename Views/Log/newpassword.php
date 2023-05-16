@@ -14,12 +14,13 @@ include "../../Database/connectBS.php";
 <body>
     <div class="container">
         <form action="./newpassword.php" method="post" class="form">
+            <br>
             <div class="div">
-                <b><label for="">New password</label></b>
+                <b><label for="">New password</label></b> <br>
                 <input type="password" name="pass">
             </div><br>
             <div class="div">
-                <b><label for="">Confirm Password</label></b>
+                <b><label for="">Confirm Password</label></b> <br>
                 <input type="password" name="password">
             </div><br>
             <input type="submit" value="Save" class="btn" name="btn">
@@ -65,10 +66,10 @@ include "../../Database/connectBS.php";
 ?>
 <style>
     .container{
-        border: 1px solid;
+        border: none;
         margin-left: 600px;
         margin-top: 150px;
-        width: 300px;
+        width: 400px;
         height: 220px;
         background-color: yellow;
         border-radius: 8px;
@@ -78,13 +79,14 @@ include "../../Database/connectBS.php";
         margin-left: 15px;
     }
     .div input{
-        width: 250px;
-        height: 30px;
+        width: 350px;
+        height: 40px;
         outline: none;
         border: none;
+        border-radius: 2px;
     }
     .btn{
-        margin-left: 80px;
+        margin-left: 130px;
         width: 60px;
         height: 30px;
         justify-content: center;

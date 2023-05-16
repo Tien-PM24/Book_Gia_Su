@@ -24,6 +24,7 @@ $row = $student->showTeacher();
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="../../Public/Styles/Admin/table.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </head>
 
 <body>
@@ -72,4 +73,10 @@ $row = $student->showTeacher();
 <script>
     var User = document.querySelector(".__menu_User__");
     User.style.background = "#FFA500";
+
+    var warning=document.querySelector('.btn-danger')
+    warning.addEventListener('click',function(e){
+      e.preventDefault();
+      swal.fire("Thành công","Tài khoản đã được khóa","success")
+    })
 </script>

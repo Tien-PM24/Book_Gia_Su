@@ -24,7 +24,7 @@ $stm = mysqli_query($conn, $sql);
         </div>
         <div class="item itemProfile">
             <a href="./teacher_profile.php">
-                <p>Personal profile</p>
+                <p>profile</p>
             </a>
         </div>
         <div class="item itemService">

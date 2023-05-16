@@ -33,7 +33,7 @@ class Admin extends DataBase
 
     public function showStudent()
     {
-        $sql_stu = "SELECT full_name, email, job_title, address,image
+        $sql_stu = "SELECT full_name, email, job_title, address,image,is_locked
             FROM student 
             LEFT JOIN picture_stu
             ON student.id_student = picture_stu.id_student
@@ -147,7 +147,6 @@ $pdo->query("set foreign_key_checks=0");
         $stm=$this->Connect()->prepare($sql);
         $stm->execute([$image,$ID]);
     }
-
     public function Profile(){
         $sql="SELECT * from admin";
         $stm=$this->Connect()->prepare($sql);
@@ -178,7 +177,38 @@ $pdo->query("set foreign_key_checks=0");
         return $Search;
 
     }
+
+    function unlockAccount($email)
+    {
+       $sql="SELECT * from student where email=?";
+       $stm=$this->Connect()->prepare($sql);
+       $stm->execute([$email]);
+       $row=$stm->fetch();
+       if($row){
+        $lock=$row['email'];
+        $sql1="UPDATE student set is_locked='1' where email=?";
+        $stm1=$this->Connect()->prepare($sql1);
+        $stm1->execute([$lock]);
+        $row1=$stm->fetch();
+        return $row1;
+       }
+    }
+
+    function openAccount($email)
+    {
+       $sql="SELECT * from student where email=?";
+       $stm=$this->Connect()->prepare($sql);
+       $stm->execute([$email]);
+       $row=$stm->fetch();
+       if($row){
+        $lock=$row['email'];
+        $sql1="UPDATE student set is_locked='0' where email=?";
+        $stm1=$this->Connect()->prepare($sql1);
+        $stm1->execute([$lock]);
+        $row1=$stm->fetch();
+        return $row1;
+       }
 }
 
     
-?>
+}

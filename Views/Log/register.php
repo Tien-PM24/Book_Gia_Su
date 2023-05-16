@@ -165,12 +165,5 @@ if (isset($_POST["btn"])) {
       header('location:../../index.php');
     }
   }
-  // if (!empty($sql)){ //Điều này sẽ đảm bảo rằng truy vấn chỉ được thực thi nếu $sql không trống và sẽ ngăn thông báo lỗi xảy ra. tại vì nếu $sql trống thì sẽ báo lỗi
-  //   if (mysqli_query($conn, $sql)) {
-     
-  //   } else {
-  //     echo "Add failed data";
-  //   }
-  // }
 }
 ?>

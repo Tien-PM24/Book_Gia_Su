@@ -68,6 +68,8 @@
 </body>
 <script>
   var home=document.querySelector('.home');
-  home.style.borderBottom="2px solid black";
+  home.style.borderBottom="4px solid orangered";
+  home.style.borderRadius="2px"
+
 </script>
 </html>

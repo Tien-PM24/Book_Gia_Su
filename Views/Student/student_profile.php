@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Student</title>
     <link rel="stylesheet" href="../../Public/Styles/Student/profile.css">
    
 </head>
@@ -58,5 +58,9 @@
         }
         ?>
 </html>
+<script>
+    var a=document.querySelector(".itemProfile")
+    a.style.border="1px soild"
+</script>
 
 

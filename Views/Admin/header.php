@@ -87,11 +87,11 @@ $row = $edit->Profile();
                     <p>SEARCH</p>
                 </div>
             </div>
-            <!-- <div class="container__show_detail">
+            <div class="container__show_detail">
                 <div class="__detail_home_">
                     <p>DASHBOARD</p>
                 </div>
-            </div> -->
+            </div>
         </div>
     </section>
 </body>

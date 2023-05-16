@@ -1,12 +1,33 @@
 <?php
 include "./header.php";
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+</head>
+<body>
 <?php
-// include "../../../../Database/Admin.class.php";
-
 $student = new Admin();
 $row_stu = $student->showStudent();
+if (isset($_GET['email'])) {
+  $email = $_GET['email'];
+  $student->unlockAccount($email);
+  echo "<script> swal.fire('Thành công', 'Tài khoản đã được khóa', 'success')</script>";
+}
+if (isset($_GET['open'])) {
+  $email = $_GET['open'];
+  $student->openAccount($email);
+  echo "<script> swal.fire('Thành công', 'Tài khoản đã được mở', 'success')</script>";
+}
+
 ?>
+</body>
+</html>
+
 
 <!doctype html>
 <html lang="en">
@@ -16,20 +37,22 @@ $row_stu = $student->showStudent();
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<link rel="stylesheet" href="../../Public/Styles/Admin/table.css">
+  <link rel="stylesheet" href="../../Public/Styles/Admin/table.css">
+  
 </head>
 
 <body>
-  <div class="table_position" >
+  <div class="table_position">
     <table class="table table-bordered" style="width:1200px">
       <thead>
         <tr>
-          <th  scope="col">STT</th>
+          <th scope="col">STT</th>
           <th style="width: 200px;" scope="col">Name</th>
-          <th style="width: 400px;"scope="col">Email</th>
-          <th style="width: 200px;"scope="col">Adress</th>
+          <th style="width: 400px;" scope="col">Email</th>
+          <th style="width: 200px;" scope="col">Adress</th>
           <th scope="col">Job_Title</th>
           <th scope="col">Image</th>
+          <th scope="col">Action</th>
         </tr>
       </thead>
       <tbody>
@@ -44,6 +67,18 @@ $row_stu = $student->showStudent();
             <td><?php echo $student['address'] ?></td>
             <td><?php echo $student['job_title'] ?></td>
             <td><img src="../../Public/Images/Student/<?php echo $student['image'] ?>" alt=""></td>
+            <?php
+            if ($student['is_locked'] === 1) {
+            ?>
+              <td><a class="btn btn-success" href="./student.php?open=<?php echo $student['email'] ?>">OPEN</a></td>
+            <?php
+            } else {
+            ?>
+              <td><a class="btn btn-danger" href="./student.php?email=<?php echo $student['email'] ?>">LOCK</a></td>
+            <?php
+            }
+            ?>
+
           </tr>
         <?php
           $i++;
@@ -61,6 +96,6 @@ $row_stu = $student->showStudent();
 
 </html>
 <script>
-    var Home = document.querySelector(".__Menu_comment__");
-    Home.style.background = "#FFA500";
+  var Home = document.querySelector(".__Menu_comment__");
+  Home.style.background = "#FFA500";
 </script>

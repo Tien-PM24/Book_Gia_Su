@@ -16,7 +16,7 @@ $stm = mysqli_query($conn, $sql);
         <img src="../../Public/Images/Student/logo.png" alt="">
     </div>
     <div class="container__list__menu">
-        <div class="item">
+        <div class="item ">
             <a href="../../Views/Home/index.php">
                 <p>Home Page</p>
             </a>
