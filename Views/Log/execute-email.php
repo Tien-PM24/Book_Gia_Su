@@ -65,7 +65,7 @@ if (isset($_POST['confirm'] )) {
                 echo 'Error sending email: ' . $email->ErrorInfo;
             } else {
                 $erro=1;
-                header("location:./entercode");
+                header("location:./entercode.php");
 
             }
         }else{

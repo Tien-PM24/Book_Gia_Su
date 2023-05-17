@@ -39,27 +39,27 @@ include "../../Database/connectBS.php";
                             <select name="Name" class="form-control form-control-lg" aria-label="Default select example">
                                 <option value="">-- Chọn môn học --</option>
                                 <optgroup label="Toán">
-                                    <option value="Toán lớp 6">Toán lớp 6</option>
-                                    <option value="Toán lớp 7">Toán lớp 7</option>
-                                    <option value="Toán lớp 8">Toán lớp 8</option>
-                                    <option value="Toán lớp 6">Toán lớp 9</option>
+                                    <option value="Toán 6">Toán 6</option>
+                                    <option value="Toán 7">Toán 7</option>
+                                    <option value="Toán 8">Toán 8</option>
+                                    <option value="Toán 6">Toán 9</option>
                                 </optgroup>
                                 <optgroup label="Vật Lý">
-                                    <option value="Vật lý lớp 6">Vật lý lớp 6</option>
-                                    <option value="Vật lý lớp 7">Vật lý lớp 7</option>
-                                    <option value="Vật lý lớp 8">Vật lý lớp 8</option>
-                                    <option value="Vật lý lớp 9">Vật lý lớp 9</option>
+                                    <option value="VậtLý 6">Vật Lý 6</option>
+                                    <option value="VậtLý 7">Vật Lý 7</option>
+                                    <option value="VậtLý 8">Vật Lý 8</option>
+                                    <option value="VậtLý 9">Vật Lý 9</option>
                                 </optgroup>
                                 <optgroup label="Hóa Học">
             
-                                    <option value="Hóa học lớp 8">Hóa học lớp 8</option>
-                                    <option value="Hóa học lớp 9">Hóa học lớp 9</option>
+                                    <option value="Hóa Học 8">Hóa Học 8</option>
+                                    <option value="Hóa Học 9">Hóa Học 9</option>
                                 </optgroup>
                                 <optgroup label="Sinh Học">
-                                    <option value="Sinh học lớp 6">Sinh học lớp 6</option>
-                                    <option value="Sinh học lớp 7">Sinh học lớp 7</option>
-                                    <option value="Sinh học lớp 8">Sinh học lớp 8</option>
-                                    <option value="Sinh học lớp 9">Sinh học lớp 9</option>
+                                    <option value="Sinh Học 6">Sinh Học 6</option>
+                                    <option value="Sinh Học 7">Sinh Học 7</option>
+                                    <option value="Sinh Học 8">Sinh Học 8</option>
+                                    <option value="Sinh Học 9">Sinh Học 9</option>
                                 </optgroup>
                                 <!-- Thêm các optgroup và option cho các môn khác -->
                             </select>

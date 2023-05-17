@@ -25,7 +25,7 @@
       </style>
     </head>
       <body>
-      <div class="form-wrapper">
+      <div class="form-wrapper" style="margin-top:100px;">
       <form method="post">
         <input type="text" name="search" placeholder="Tìm kiếm...">
         <button type="submit" name="submit">Tìm kiếm</button>

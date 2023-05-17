@@ -35,7 +35,7 @@ include "../../Database/connectBS.php";
             <li class="tutor_page"><a href="./tutor_page.php">Tutors</a></li>
             <li class="course_page"><a href="./course_page.php">Courses</a></li>
             <li><a href="#">Class</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="./contact.php">Contact</a></li>
           </ul>
         </nav>
       </div>

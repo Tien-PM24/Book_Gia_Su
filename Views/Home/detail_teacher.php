@@ -62,6 +62,8 @@ if (isset($_GET['detai_teacher'])) {
                         </div>
                       </div>
                     <?php } ?>
+
+
             </div>
           </div>
 

@@ -1,11 +1,8 @@
 <?php include "./header.php" ?>
 <html>
 <head>
-  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> -->
   <link rel="stylesheet" href="../../Public/Styles/Home/index.css">
 </head>
-
 <body>
   <?php
   include "../../Database/connectDB.php";
@@ -15,18 +12,18 @@
     public function getAllCourseByName()
     {
       $conn = $this->connection;
-      $sql = "SELECT DISTINCT name FROM course";
+      $sql = "SELECT DISTINCT REGEXP_REPLACE(name, '[0-9]', '') AS subject FROM course;";
       $nameResult = $conn->query($sql);
 
       while ($nameRow = mysqli_fetch_assoc($nameResult)) {
-        $name = $nameRow['name'];
+        $name = $nameRow['subject'];
   ?>
 
         <div class="container">
-          <h2>Các khóa học về <?php echo preg_replace('/\d+/', '', $name); ?></h2>
+          <h2>Các khóa học về <?php echo $name; ?></h2>
           <div class="row">
             <?php
-            $sql = "SELECT * FROM course WHERE name='$name' GROUP BY name";
+            $sql = "SELECT course.id_course, course.name, course.price, course.body, course.image FROM course WHERE course.name LIKE '$name%'";
 
             $result = $conn->query($sql);
 
@@ -53,18 +50,13 @@
     <?php }
     }
   }
-
-  // create instance of ShowDB class and call getAllCourseByName() method
   $show = new ShowDB();
   $show->getAllCourseByName();
     ?>
-
-
 </body>
 <script>
   var course_page=document.querySelector(".course_page");
   course_page.style.borderBottom="2px solid black"
 </script>
 </html>
-
 <?php include "./footer.php" ?>
