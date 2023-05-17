@@ -27,7 +27,7 @@
           <h2>Các khóa học về <?php echo preg_replace('/\d+/', '', $name); ?></h2>
           <div class="row">
             <?php
-            $sql = "SELECT * FROM course WHERE name='$name'";
+            $sql = "SELECT * FROM course WHERE name='$name' GROUP BY name";
 
             $result = $conn->query($sql);
 
