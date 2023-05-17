@@ -1,5 +1,8 @@
 <?php
   include "./header.php";
+  include "../Email/src/Exception.php";
+include "../Email/src/SMTP.php";
+include "../Email/src/PHPMailer.php";
   if(isset($_GET['delete'])){
     $delete=$_GET['delete'];
     $student=new Admin();
@@ -7,14 +10,27 @@
   }
 
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+  <title>Teacher</title>
+</head>
+<body>
 <?php
 $student = new Admin();
 $row = $student->showTeacher();
-
+if (isset($_GET['emailteach'])) {
+  $email = $_GET['emailteach'];
+  $student->wanrningStudent($email);
+  // echo "<script> swal.fire('Thành công', 'Tài khoản đã được mở', 'success')</script>";
+}
 ?>
-<style>
-
-</style>
+</body>
+</html>
 <!doctype html>
 <html lang="en">
 
@@ -24,7 +40,7 @@ $row = $student->showTeacher();
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="../../Public/Styles/Admin/table.css">
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+ 
 </head>
 
 <body>
@@ -54,7 +70,10 @@ $row = $student->showTeacher();
             <td class="c"><?php echo $student['address'] ?></td>
             <td><?php echo $student['job_title'] ?></td>
             <td><img src="../../Public/Images/Teacher/<?php echo $student['image'] ?>" alt=""></td>
-            <td><a class="btn btn-danger" href="./teacher.php?delete=<?php echo $student['id_teacher'] ?>">Delete</a></td>
+            <td class="d-flex">
+              <a class="btn btn-danger " href="./teacher.php?delete=<?php echo $student['id_teacher'] ?>">Delete</a>
+              <a class="btn btn-warning ml-2" href="./teacher.php?emailteach=<?php echo $student['email'] ?>">Wanring</a>
+            </td>
           </tr>
         <?php
           $i++;
@@ -74,9 +93,5 @@ $row = $student->showTeacher();
     var User = document.querySelector(".__menu_User__");
     User.style.background = "#FFA500";
 
-    var warning=document.querySelector('.btn-danger')
-    warning.addEventListener('click',function(e){
-      e.preventDefault();
-      swal.fire("Thành công","Tài khoản đã được khóa","success")
-    })
+    
 </script>

@@ -1,5 +1,8 @@
 <?php
 include "./header.php";
+include "../Email/src/Exception.php";
+include "../Email/src/SMTP.php";
+include "../Email/src/PHPMailer.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,13 +18,19 @@ $student = new Admin();
 $row_stu = $student->showStudent();
 if (isset($_GET['email'])) {
   $email = $_GET['email'];
-  $student->unlockAccount($email);
+  $student->lockAccount($email);
   echo "<script> swal.fire('Thành công', 'Tài khoản đã được khóa', 'success')</script>";
 }
 if (isset($_GET['open'])) {
   $email = $_GET['open'];
   $student->openAccount($email);
   echo "<script> swal.fire('Thành công', 'Tài khoản đã được mở', 'success')</script>";
+}
+
+if (isset($_GET['emailstu'])) {
+  $email = $_GET['emailstu'];
+  $student->wanrningStudent($email);
+  // echo "<script> swal.fire('Thành công', 'Tài khoản đã được mở', 'success')</script>";
 }
 
 ?>
@@ -70,11 +79,18 @@ if (isset($_GET['open'])) {
             <?php
             if ($student['is_locked'] === 1) {
             ?>
-              <td><a class="btn btn-success" href="./student.php?open=<?php echo $student['email'] ?>">OPEN</a></td>
+              <td class="d-flex">
+                <a class="btn btn-success mr-2" href="./student.php?open=<?php echo $student['email'] ?>">OPEN</a>
+                <a class="btn btn-warning " href="./student.php?emailstu=<?php echo $student['email'] ?>">Wanring</a>
+              </td>
+
             <?php
             } else {
             ?>
-              <td><a class="btn btn-danger" href="./student.php?email=<?php echo $student['email'] ?>">LOCK</a></td>
+              <td>
+                <a class="btn btn-danger" href="./student.php?email=<?php echo $student['email'] ?>">LOCK</a>
+                <a class="btn btn-warning ml-1" href="./student.php?emailstu=<?php echo $student['email'] ?>">Wanring</a>
+              </td>
             <?php
             }
             ?>
