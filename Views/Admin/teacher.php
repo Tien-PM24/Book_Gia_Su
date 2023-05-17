@@ -53,7 +53,6 @@ if (isset($_GET['emailteach'])) {
           <th scope="col">Name</th>
           <th scope="col">Email</th>
           <th scope="col">Adress</th>
-          <th scope="col">Job_Title</th>
           <th scope="col">Image</th>
           <th scope="col">Action</th>
         </tr>
@@ -68,11 +67,11 @@ if (isset($_GET['emailteach'])) {
             <td class="a"><?php echo $student['full_name'] ?></td>
             <td class="b"><?php echo $student['email'] ?></td>
             <td class="c"><?php echo $student['address'] ?></td>
-            <td><?php echo $student['job_title'] ?></td>
             <td><img src="../../Public/Images/Teacher/<?php echo $student['image'] ?>" alt=""></td>
             <td class="d-flex">
               <a class="btn btn-danger " href="./teacher.php?delete=<?php echo $student['id_teacher'] ?>">Delete</a>
               <a class="btn btn-warning ml-2" href="./teacher.php?emailteach=<?php echo $student['email'] ?>">Wanring</a>
+              <a class="btn btn-success ml-2" href="./view_student.php?view=<?php echo $student['email'] ?>">View</a>
             </td>
           </tr>
         <?php
@@ -92,6 +91,4 @@ if (isset($_GET['emailteach'])) {
 <script>
     var User = document.querySelector(".__menu_User__");
     User.style.background = "#FFA500";
-
-    
 </script>

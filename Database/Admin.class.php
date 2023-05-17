@@ -18,7 +18,7 @@ class Admin extends DataBase
 
     public function showCourse()
     {
-        $sql = "SELECT course.id_course as id_course ,name,price,image,full_name
+        $sql = "SELECT course.id_course as id_course ,name,price,image,full_name,email
             FROM teacher_course
             Left JOIN course ON course.id_course = teacher_course.id_course
             Left JOIN teacher ON teacher.id_teacher = teacher_course.id_teacher";
@@ -119,6 +119,24 @@ class Admin extends DataBase
         }
     }
 
+    function viewOrder($email)
+    {
+        $sql = "SELECT DISTINCT student.full_name AS student,student.address AS address,student.email AS email,course.name AS Course
+        FROM student_teacher
+        INNER JOIN student ON student.id_student = student_teacher.id_student
+        INNER JOIN teacher ON teacher.id_teacher = student_teacher.id_teacher
+        LEFT JOIN teacher_course ON teacher_course.id_teacher = student_teacher.id_teacher
+        LEFT JOIN payment on payment.id_student=student.id_student
+        LEFT JOIN course on payment.id_course=course.id_course
+        where teacher.email=? ";
+        $stm = $this->Connect()->prepare($sql);
+        $stm->execute([$email]);
+        $View = array();
+        while ($row = $stm->fetch()) {
+            $View[] = $row;
+        }
+        return $View;
+    }
 
 
     public function getOrder()
@@ -184,12 +202,6 @@ class Admin extends DataBase
 
     function lockAccount($email)
     {
-        //    $sql="SELECT * from student where email=?";
-        //    $stm=$this->Connect()->prepare($sql);
-        //    $stm->execute([$email]);
-        //    $row=$stm->fetch();
-        //    if($row){
-        //     $lock=$row['email'];
         $sql1 = "UPDATE student set is_locked='1' where email=?";
         $stm1 = $this->Connect()->prepare($sql1);
         $stm1->execute([$email]);
@@ -199,12 +211,6 @@ class Admin extends DataBase
 
     function openAccount($email)
     {
-        //    $sql="SELECT * from student where email=?";
-        //    $stm=$this->Connect()->prepare($sql);
-        //    $stm->execute([$email]);
-        //    $row=$stm->fetch();
-        //    if($row){
-        //     $lock=$row['email'];
         $sql1 = "UPDATE student set is_locked='0' where email=?";
         $stm1 = $this->Connect()->prepare($sql1);
         $stm1->execute([$email]);

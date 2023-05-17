@@ -28,7 +28,6 @@
   
   .item {
     margin-left: 50px;
-    
     font-weight: 600;      
     width: 200px;
   }
@@ -36,7 +35,6 @@
   .item p{
      text-transform: uppercase;
      color: rgb(255, 255, 255);
-
      margin: 0;
      font-size: 1.4rem;
      
@@ -45,8 +43,8 @@
     text-decoration: none;
   }
   .item p:hover{
-      color: red;
       cursor: pointer;
+      
   }
 
   .item.active {

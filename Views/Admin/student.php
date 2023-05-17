@@ -59,7 +59,7 @@ if (isset($_GET['emailstu'])) {
           <th style="width: 200px;" scope="col">Name</th>
           <th style="width: 400px;" scope="col">Email</th>
           <th style="width: 200px;" scope="col">Adress</th>
-          <th scope="col">Job_Title</th>
+          <!-- <th scope="col">Job_Title</th> -->
           <th scope="col">Image</th>
           <th scope="col">Action</th>
         </tr>
@@ -74,7 +74,6 @@ if (isset($_GET['emailstu'])) {
             <td><?php echo $student['full_name'] ?></td>
             <td><?php echo $student['email'] ?></td>
             <td><?php echo $student['address'] ?></td>
-            <td><?php echo $student['job_title'] ?></td>
             <td><img src="../../Public/Images/Student/<?php echo $student['image'] ?>" alt=""></td>
             <?php
             if ($student['is_locked'] === 1) {

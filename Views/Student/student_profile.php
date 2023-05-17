@@ -1,5 +1,7 @@
 <?php
-?>
+       include "./header.php";
+       include "../../Database/connectBS.php";
+        ?>
 <!DOCTYPE html> 
 <html lang="en">
 
@@ -12,10 +14,7 @@
    
 </head>
 <header>
-        <?php
-       include "./header.php";
-       include "../../Database/connectBS.php";
-        ?>
+      
     </header>
 <body style="margin-top: 100px;">
    
@@ -58,9 +57,5 @@
         }
         ?>
 </html>
-<script>
-    var a=document.querySelector(".itemProfile")
-    a.style.border="1px soild"
-</script>
 
 

@@ -3,7 +3,6 @@ session_start();
 $emailUser=$_SESSION['user'];
 include "../../Database/connectBS.php";
 ?>
-
 <link rel="stylesheet" href="../../Public/Styles/Student/header.css">
 <?php
 $sql = "SELECT image, email from teacher,picture_teacher

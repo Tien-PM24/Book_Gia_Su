@@ -12,9 +12,11 @@ include "./header.php";
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="../../../../Styles/inc_styles/style.css">
-    <link rel="stylesheet" href="./style_course.css">
+    <!-- <link rel="stylesheet" href="../../../../Styles/inc_styles/style.css"> -->
+    <!-- <link rel="stylesheet" href="./style_course.css"> -->
     <link rel="stylesheet" href="../../Public/Styles/Teacher/teacher.css">
+    <link rel="stylesheet" href="../../Public//Styles/Student/header.css">
+
     <style>
         body{
             margin-top: 150px;
