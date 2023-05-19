@@ -16,11 +16,11 @@ include "../../Database/connectBS.php";
         <form action="./newpassword.php" method="post" class="form">
             <br>
             <div class="div">
-                <b><label for="">New password</label></b> <br>
+                <b><label for="">New password</label></b> <br><br>
                 <input type="password" name="pass">
             </div><br>
             <div class="div">
-                <b><label for="">Confirm Password</label></b> <br>
+                <b><label for="">Confirm Password</label></b> <br><br>
                 <input type="password" name="password">
             </div><br>
             <input type="submit" value="Save" class="btn" name="btn">
@@ -39,7 +39,7 @@ include "../../Database/connectBS.php";
         $password=$_POST['pass'];
 
 
-        if ($pass!="" && $password!="") {
+        if ($pass!="" && $password!="" && strlen($pass)>=8) {
             if($pass==$password){
                 if($row){
                     $update="UPDATE teacher
@@ -67,28 +67,28 @@ include "../../Database/connectBS.php";
 <style>
     .container{
         border: none;
-        margin-left: 600px;
+        margin-left: 550px;
         margin-top: 150px;
-        width: 400px;
-        height: 220px;
+        width: 500px;
+        height: 300px;
         background-color: yellow;
         border-radius: 8px;
     }
     .form{
         margin-top: 30px;
-        margin-left: 15px;
+        margin-left: 35px;
     }
     .div input{
-        width: 350px;
+        width: 400px;
         height: 40px;
         outline: none;
         border: none;
         border-radius: 2px;
     }
     .btn{
-        margin-left: 130px;
-        width: 60px;
-        height: 30px;
+        margin-left: 140px;
+        width: 80px;
+        height: 40px;
         justify-content: center;
         text-align: center;
         align-items: center;

@@ -9,12 +9,12 @@ include "./header.php";
     <title>Teacher</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
     <!-- <link rel="stylesheet" href="../../../../Styles/inc_styles/style.css"> -->
     <!-- <link rel="stylesheet" href="./style_course.css"> -->
-    <link rel="stylesheet" href="../../Public/Styles/Teacher/teacher.css">
+    <link rel="stylesheet" href="../../Public/Styles/Student/profile.css">
     <link rel="stylesheet" href="../../Public//Styles/Student/header.css">
 
     <style>
@@ -26,7 +26,6 @@ include "./header.php";
 <body>
    
     <div class="container">
-        <h2>Personal Profile</h2>
         <?php
         $sql = "SELECT distinct teacher.id_teacher as Teacher, teacher.email as Email,
         full_name,job_title, picture_teacher.image as Image
@@ -75,3 +74,11 @@ include "./header.php";
         text-decoration: none;
     }
 </style>
+<script>
+    var profile=document.querySelector(".itemProfile")
+    profile.style.borderBottom="4px solid orangered"
+    profile.style.width="100px"
+
+    var itemService=document.querySelector(".itemService")
+    itemService.style.marginLeft="100px"
+</script>

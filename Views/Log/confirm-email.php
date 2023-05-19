@@ -10,7 +10,7 @@
     <div class="container">
         <h1>Xác thực Email của bạn</h1>
         <form action="../../Views/Log/execute-email.php" method="post" class="form">
-            <b><label for="">Email</label></b>
+            <b><label for="">Email*</label></b> <br><br>
             <input type="email" class="email" name="confirmEmail">
             <div class="btn-confirm">
             <a href="../../index.php"><input type="button" value="Cancel" class="cancel"></a>
@@ -22,23 +22,25 @@
 
 <style>
     .container{
-        margin-left: 600px;
+        margin-left: 550px;
         margin-top: 150px;
-        border: 1px solid;
-        width: 400px;
-        height: 300px;
+        border: none;
+        width: 500px;
+        height: 400px;
         border-radius: 8px;
         background-color: yellow;
     }
     h1{
-        margin-left: 40px;
+        margin-left: 60px;
+        padding-top: 30px;
     }
     .email{
-        width: 350px;
-        height: 30px;
+        width: 400px;
+        height: 40px;
         outline: none;
-        border-radius: 2px;
+        border-radius: 8px;
         border: none;
+        margin-left: 20px;
     }
     .form{
         margin-top: 50px;
@@ -46,7 +48,7 @@
     }
     .btn-confirm{
         margin-top: 30px;
-        padding-left: 55px;
+        padding-left: 100px;
     }
     .btn-confirm input{
         width: 100px;
@@ -61,7 +63,7 @@
         color: wheat;
     }
     .confirm{
-        background-color: green;
+        background-color: orangered;
        text-transform: uppercase;
     }
 

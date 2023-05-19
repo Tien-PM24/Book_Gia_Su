@@ -28,9 +28,11 @@ $result = mysqli_query($conn, $sql);
 
 <?
 
-
-
-
-
 ?>
 <link rel="stylesheet" href="../../Public/Styles/Teacher/course.css">
+<script>
+  var profile=document.querySelector(".itemService")
+    profile.style.borderBottom="4px solid orangered"
+    profile.style.width="100px"
+   
+</script>

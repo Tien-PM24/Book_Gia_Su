@@ -22,7 +22,6 @@ if(isset($_GET['ID_student'])) {
 if(isset($_POST['update'])) {
   $id = $_GET['ID_student'];
   $fullname = $_POST['fullname'];
-  $email = $_POST['email'];
   $address = $_POST['address'];
   $avt=$_FILES['avt']['name'];
   if(!empty($avt)){
@@ -31,7 +30,7 @@ if(isset($_POST['update'])) {
     if($_FILES['avt']['size']<500000){
       move_uploaded_file($_FILES['avt']['tmp_name'],$taget_file);
       $sql = "UPDATE student,picture_stu 
-      SET full_name='$fullname', email='$email', address='$address', image='$avt'  
+      SET full_name='$fullname',address='$address', image='$avt'  
       where student.id_student=picture_stu.id_student 
       and  student.email = '$emailUser'  and student.id_student=$id";
       $result = mysqli_query($conn, $sql);
@@ -39,7 +38,7 @@ if(isset($_POST['update'])) {
     }
   }else{
     $sql = "UPDATE student,picture_stu 
-    SET full_name='$fullname', email='$email', address='$address'  
+    SET full_name='$fullname', address='$address'  
     where student.id_student=picture_stu.id_student 
     and  student.email = '$emailUser'  and student.id_student=$id";
     $result = mysqli_query($conn, $sql);
@@ -55,10 +54,6 @@ if(isset($_POST['update'])) {
   <div>
     <label for="fullname">Họ và tên:</label>
     <input type="text" id="fullname" name="fullname" value="<?php echo $fullname; ?>">
-  </div>
-  <div>
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" value="<?php echo $email; ?>" >
   </div>
   <div>
     <label for="address">Địa chỉ:</label>

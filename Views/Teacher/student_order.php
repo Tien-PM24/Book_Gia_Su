@@ -44,3 +44,9 @@ if (mysqli_num_rows($stm)>0) {
       margin-left: 450px;
     }
   </style>
+
+  <script>
+    var profile=document.querySelector(".itemOder")
+    profile.style.borderBottom="4px solid orangered"
+    profile.style.width="60px"
+  </script>

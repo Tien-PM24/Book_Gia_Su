@@ -121,14 +121,14 @@ class Admin extends DataBase
 
     function viewOrder($email)
     {
-        $sql = "SELECT DISTINCT student.full_name AS student,student.address AS address,student.email AS email,course.name AS Course
+        $sql = "SELECT DISTINCT student.full_name AS student, student.address AS address, student.email AS email, course.name AS Course
         FROM student_teacher
         INNER JOIN student ON student.id_student = student_teacher.id_student
         INNER JOIN teacher ON teacher.id_teacher = student_teacher.id_teacher
         LEFT JOIN teacher_course ON teacher_course.id_teacher = student_teacher.id_teacher
-        LEFT JOIN payment on payment.id_student=student.id_student
-        LEFT JOIN course on payment.id_course=course.id_course
-        where teacher.email=? ";
+        LEFT JOIN payment ON payment.id_student = student.id_student 
+        LEFT JOIN course ON payment.id_course = course.id_course 
+        WHERE teacher.email =? and teacher_course.id_course=course.id_course;";
         $stm = $this->Connect()->prepare($sql);
         $stm->execute([$email]);
         $View = array();

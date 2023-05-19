@@ -56,6 +56,18 @@
 <?php
         }
         ?>
+        <script>
+            var profile=document.querySelector(".itemProfile")
+            // profile.addEventListener("click",function(){
+            //     alert("hello")
+            // })
+            profile.style.borderBottom="4px solid orangered"
+            profile.style.width="100px"
+            profile.style.marginLeft="60px"
+
+            var profiles= document.querySelector(".itemOder")
+            profiles.style.marginLeft="130px"
+        </script>
 </html>
 
 

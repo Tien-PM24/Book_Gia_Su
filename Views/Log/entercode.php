@@ -13,16 +13,16 @@ $email=$_SESSION['emails'];
 </head>
 <body>
     <div class="container">
-        <h1>Enter your code</h1>
+        <h1>Nhập mã code</h1>
         <form action="./entercode.php" method="post" class="form">
-            <b><label for="">Code</label></b>
+            <b><label for="">Code</label></b><br><br>
             <input type="number" class="email" name="code">
             <!-- <input type="hidden" class="email" name="confirmEmail" value="<?php  ?>"> -->
             <div class="btn-confirm">
             <a href="../../index.php"><input type="button" value="Cancel" class="cancel"></a>
             <input type="submit" value="Confirm" class="confirm" name="confirs">
             </div><br>
-            <a href="./execute-email.php?confirm=<?php echo $email ?>">Gửi lại mã</a>
+            <a class="send--code" href="./execute-email.php?confirm=<?php echo $email ?>">Gửi lại mã</a>
         </form>
     </div>
 </body>
@@ -41,23 +41,25 @@ $email=$_SESSION['emails'];
 ?>
 <style>
     .container{
-        margin-left: 600px;
+        margin-left: 550px;
         margin-top: 150px;
         border: none;
-        width: 400px;
-        height: 300px;
+        width: 500px;
+        height: 400px;
         border-radius: 8px;
         background-color: yellow;
     }
     h1{
-        margin-left: 60px;
+        margin-left: 120px;
+        padding-top: 30px;
     }
     .email{
-        width: 350px;
-        height: 30px;
+        width: 400px;
+        height: 40px;
         outline: none;
-        border-radius: 2px;
+        border-radius: 8px;
         border: none;
+        margin-left: 20px;
     }
     .form{
         margin-top: 50px;
@@ -65,7 +67,7 @@ $email=$_SESSION['emails'];
     }
     .btn-confirm{
         margin-top: 30px;
-        padding-left: 50px;
+        padding-left: 100px;
     }
     .btn-confirm input{
         width: 100px;
@@ -80,12 +82,11 @@ $email=$_SESSION['emails'];
         color: wheat;
     }
     .confirm{
-        background-color: green;
+        background-color: orangered;
        text-transform: uppercase;
     }
-    .send{
-        background-color:orangered;
-       text-transform: uppercase;
+    .send--code{
+        margin-left: 150px;
     }
 
 </style>

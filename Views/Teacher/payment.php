@@ -27,7 +27,7 @@
           <form action="./executePayment.php" method="post">
           <div class="modal-footer">
             <button type="submit"  class="btn btn-success" data-dismiss="modal" name="btn">Send</button>
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel </button>
+            <a href="../../index.php"><button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel </button></a>
           </div>
           </form>
   </div>

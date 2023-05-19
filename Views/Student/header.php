@@ -18,7 +18,7 @@ $stm = mysqli_query($conn, $sql);
     <div class="container__list__menu">
         <div class="item ">
             <a href="../../Views/Home/index.php">
-                <p>Home Page</p>
+                <p>Home</p>
             </a>
         </div>
         <div class="item itemProfile">

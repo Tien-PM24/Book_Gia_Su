@@ -32,10 +32,6 @@
     </div>
     <br><br>
     <div class="div_price">
-        <label for="name"><b>Password:</b> </label><br>
-        <input type="text" id="name" name="password" value="<?php echo $row['Password'] ?>" required>
-    </div>
-    <div class="div_price">
         <label for="name"><b>Address:</b> </label><br>
         <input type="text" id="name" name="address" value="<?php echo $row['Address'] ?>" required>
     </div>
