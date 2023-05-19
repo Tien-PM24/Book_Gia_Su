@@ -69,17 +69,20 @@ if (isset($_POST["btn"])) {
         $sqlstu = "SELECT * from student";
         $sqlteach = "SELECT * from teacher";
         $sqladmin = "SELECT * from admin";
-
         $stm1 = mysqli_query($conn, $sqlstu);
         $stm2 = mysqli_query($conn, $sqlteach);
         $stm3 = mysqli_query($conn, $sqladmin);
-// Lọc qua bảng student
+        
         while ($row = mysqli_fetch_assoc($stm1)) {
             if ($accout == $row['email'] && $password == $row['password']) {
-
                 $_SESSION['user'] = $accout;
                 $emailUser = $_SESSION['user'];
-                if ($emailUser == $row['email']) {
+                
+                if($row['is_locked']==="1"){
+                    echo "<script>swal.fire('Lỗi!','Tài khoản của bạn đã bị khóa','error') </script>";
+                    exit;
+                }
+                 else if ($emailUser == $row['email']) {
                     $id = $row['id_student'];
                     $sql2 = "SELECT * FROM picture_stu WHERE id_student = '$id'";
                     $stm2 = mysqli_query($conn, $sql2);
@@ -89,7 +92,7 @@ if (isset($_POST["btn"])) {
                         $stm3 = mysqli_query($conn, $sql1);
                     }
                     header("location:./Views/Home/index.php");
-                    exit;
+                    
                 }
             }
         }
@@ -98,7 +101,7 @@ if (isset($_POST["btn"])) {
             if ($accout == $row['email'] && $password == $row['password']) {
                 $_SESSION['user'] = $accout;
                 $emailUser = $_SESSION['user'];
-                if ($emailUser == $row['email']) {
+               if ($emailUser == $row['email']) {
                     $id = $row['id_teacher'];
                     $sql2 = "SELECT * FROM picture_teacher WHERE id_teacher = '$id'";
                     $stm2 = mysqli_query($conn, $sql2);

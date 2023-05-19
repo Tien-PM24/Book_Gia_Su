@@ -13,7 +13,7 @@ $email=$_SESSION['emails'];
 </head>
 <body>
     <div class="container">
-        <h1>Enter your cod</h1>
+        <h1>Enter your code</h1>
         <form action="./entercode.php" method="post" class="form">
             <b><label for="">Code</label></b>
             <input type="number" class="email" name="code">
@@ -21,8 +21,8 @@ $email=$_SESSION['emails'];
             <div class="btn-confirm">
             <a href="../../index.php"><input type="button" value="Cancel" class="cancel"></a>
             <input type="submit" value="Confirm" class="confirm" name="confirs">
-            <a href="./execute-email.php?confirm=<?php echo $email ?>">gui lai ma</a>
-            </div>
+            </div><br>
+            <a href="./execute-email.php?confirm=<?php echo $email ?>">Gửi lại mã</a>
         </form>
     </div>
 </body>
@@ -43,14 +43,14 @@ $email=$_SESSION['emails'];
     .container{
         margin-left: 600px;
         margin-top: 150px;
-        border: 1px solid;
+        border: none;
         width: 400px;
         height: 300px;
         border-radius: 8px;
         background-color: yellow;
     }
     h1{
-        margin-left: 40px;
+        margin-left: 60px;
     }
     .email{
         width: 350px;
@@ -65,7 +65,7 @@ $email=$_SESSION['emails'];
     }
     .btn-confirm{
         margin-top: 30px;
-        padding-left: 30px;
+        padding-left: 50px;
     }
     .btn-confirm input{
         width: 100px;

@@ -1,5 +1,7 @@
 <?php
-?>
+       include "./header.php";
+       include "../../Database/connectBS.php";
+        ?>
 <!DOCTYPE html> 
 <html lang="en">
 
@@ -7,15 +9,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Student</title>
     <link rel="stylesheet" href="../../Public/Styles/Student/profile.css">
    
 </head>
 <header>
-        <?php
-       include "./header.php";
-       include "../../Database/connectBS.php";
-        ?>
+      
     </header>
 <body style="margin-top: 100px;">
    

@@ -3,7 +3,6 @@ session_start();
 $emailUser=$_SESSION['user'];
 include "../../Database/connectBS.php";
 ?>
-
 <link rel="stylesheet" href="../../Public/Styles/Student/header.css">
 <?php
 $sql = "SELECT image, email from teacher,picture_teacher
@@ -24,7 +23,7 @@ $stm = mysqli_query($conn, $sql);
         </div>
         <div class="item itemProfile">
             <a href="./teacher_profile.php">
-                <p>Personal profile</p>
+                <p>profile</p>
             </a>
         </div>
         <div class="item itemService">

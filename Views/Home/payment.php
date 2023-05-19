@@ -54,12 +54,10 @@ if(isset($_POST['payment'])){
         $result3 = mysqli_query($conn, $sql3);
 
         $sql4="INSERT into student_teacher(id_teacher,id_student)
-        values ('$id_teacher','$id_student')
-        ";
+        values ('$id_teacher','$id_student')";
          $result4 = mysqli_query($conn, $sql4);
-
          echo "<script>swal.fire('Thành công','Đã đã đăng ký thành công khóa học này','success')</script>";
-    }else{
+    }else if($id_student!=$row3['id_student']){
         echo "<script>swal.fire('Lỗi','Vì bạn là giáo viên nên bạn không thể đăng ký','error')<>";
     }
 }
@@ -72,8 +70,8 @@ if(isset($_POST['payment'])){
                 <img src="../../Public/Images/Course/<?php echo $row['image']; ?>" alt="" class="img-fluid" height="40">
             </div>
             <div class="product-card__name">
-                <h4>Bạn có chắc chắn mua khóa hoạc này với giá: <?php echo number_format($row['price']); ?> vnd</h4>
-                <form method="POST">
+                <h4>Bạn có chắc chắn mua khóa học này với giá: <?php echo number_format($row['price']); ?> vnd</h4>
+                <form action="" method="POST" c>
                     <input type="hidden" name="id_course" value="<?php echo $id; ?>">
                     <input type="hidden" name="price" value="<?php echo $row['price']; ?>">
                     <button name="payment" type="submit" class="product-card__button product-card__button--primary--teacher">Đồng ý</button>
@@ -101,3 +99,9 @@ border-radius: 5px;
     }
 
 </style>
+<!-- <script>
+    var alerts=document.querySelector(".product-card__button--primary--teacher")
+    alerts.addEventListener("click",function(e){
+        e.preventDefault()
+    })
+</script> -->

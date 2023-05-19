@@ -3,6 +3,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,8 +14,10 @@
 
 <body>
     <?php
-    class ShowTutor extends ConnectDB {
-        function getAllTutor () {
+    class ShowTutor extends ConnectDB
+    {
+        function getAllTutor()
+        {
             //error_reporting(0);
             $conn = $this->connection;
             $sql = "SELECT DISTINCT teacher.id_teacher,teacher.full_name, picture_teacher.image
@@ -23,25 +26,25 @@
                     AND teacher.id_teacher = picture_teacher.id_teacher;
                     ";
             $result = $conn->query($sql);
-            ?> 
+    ?>
 
-        
-                <div class="container--gird">
-                    <?php while ($row = mysqli_fetch_assoc($result)) { ?>
+
+            <div class="container--gird">
+                <?php while ($row = mysqli_fetch_assoc($result)) { ?>
                     <div class="product-card">
                         <img src="../../Public/Images/Teacher/<?php echo $row["image"] ?>" alt="Product Image" class="product-card__image">
                         <div class="product-card__info">
-                        <h3 class="product-card__name"><?php echo $row["full_name"] ?></h3><br>
-                        <div class="product-card__buttons">
-                        <button class="product-card__button product-card__button--primary--teacher" onclick="location.href='./detail_teacher.php?detai_teacher=<?php echo $row['id_teacher'];?>'">View profile</button>
-                        </div>
+                            <h3 class="product-card__name"><?php echo $row["full_name"] ?></h3><br>
+                            <div class="product-card__buttons">
+                                <button class="product-card__button product-card__button--primary--teacher" onclick="location.href='./detail_teacher.php?detai_teacher=<?php echo $row['id_teacher']; ?>'">View profile</button>
+                            </div>
                         </div>
                     </div>
-                    <?php } ?>
+                <?php } ?>
 
-                </div>
             </div>
-            <?php
+            </div>
+    <?php
         }
     }
 
@@ -49,10 +52,12 @@
     $showTutor->getAllTutor();
 
     include "./footer.php";
-    ?> 
+    ?>
 </body>
 <script>
-    var tutor=document.querySelector('.tutor_page');
-    tutor.style.borderBottom="2px solid black";
+    var tutor = document.querySelector('.tutor_page');
+    tutor.style.borderBottom = "4px solid orangered";
+    tutor.style.borderRadius = "2px"
 </script>
+
 </html>

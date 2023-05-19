@@ -78,20 +78,20 @@ $row = $edit->Profile();
                     <i class="fa-solid fa-book"></i>
                     <p>COURSES</p>
                 </div>
-                <div class="__menu_icon __menu__ __menu_Order__" onclick="changeOder()">
+                <!-- <div class="__menu_icon __menu__ __menu_Order__" onclick="changeOder()">
                     <i class="fa-sharp fa-solid fa-cart-shopping"></i>
                     <p>ORDERS</p>
-                </div>
+                </div> -->
                 <div class="__menu_icon __menu__ __menu_search__" onclick="changeSearch()">
                     <i class="fa-solid fa-magnifying-glass"></i>
                     <p>SEARCH</p>
                 </div>
             </div>
-            <!-- <div class="container__show_detail">
+            <div class="container__show_detail">
                 <div class="__detail_home_">
                     <p>DASHBOARD</p>
                 </div>
-            </div> -->
+            </div>
         </div>
     </section>
 </body>
