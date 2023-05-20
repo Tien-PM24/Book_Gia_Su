@@ -15,11 +15,11 @@
 <?php
 include "./header.php";
 include "../../Database/connectBS.php";
-if(isset($_GET['id'])) {
+if(isset($_GET['id'])) {  //Kiểm tra xem có tham số "id" được truyền trong URL hay không
     $id=$_GET['id'];
     $sql = "SELECT * FROM course WHERE id_course = $id";
     $result = mysqli_query ($conn,$sql);
-    $row = mysqli_fetch_assoc($result);
+    $row = mysqli_fetch_assoc($result);  //Lấy một dòng dữ liệu kết quả từ biến $result
 }
 
 if(isset($_POST['payment'])){

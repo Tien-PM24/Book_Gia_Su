@@ -3,7 +3,7 @@ include "../../Database/connectBS.php";
 session_start();
   $emailUser=$_SESSION['user'];
 if(isset($_POST['btn'])){
-  $tutor_id = $_POST['id_teacher'];
+  $tutor_id = $_POST['id_teacher']; // Lấy giá trị của trường "id_teacher" từ biểu mẫu gửi đi và gán cho biến $tutor_id. Đây là ID của giáo viên mà người dùng muốn bình luận.
   $content = $_POST["comment-content"];
   if (!empty($content)) {
     $sql1="SELECT id_student as ID from student where email='$emailUser'";

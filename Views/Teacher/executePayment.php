@@ -24,7 +24,7 @@ if (isset($_POST['btn'])) {
     $email->Port = '587';
     $email->setFrom('hovandideveloper@gmail.com', 'KingDom');
     $email->addAddress($userEmail);
-    $email->Subject = "welcome to KingDom";
+    $email->Subject = "Chào mừng bạn đến với trang web của chúng tôi";
     $email->Body = "Cảm ơn " . $name . " đã chọn website của chúng tôi để giảng dạy";
     if (!$email->send()){
       echo "fail";
@@ -37,5 +37,4 @@ if (isset($_POST['btn'])) {
       }
   }
   
-
 ?>

@@ -14,6 +14,7 @@ include "../Email/src/SMTP.php";
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
   <title>Regester account</title>
 </head>
+
 <body>
 
   <?php ini_set('display_errors', 0) ?>
@@ -75,18 +76,18 @@ include "../Email/src/SMTP.php";
 include '../../Database/connectBS.php';
 // global $conn;
 if (isset($_POST["btn"])) {
-   
+
   $email = $_POST["email"];
 
   $password = $_POST["password"];
   $Confirm_password = $_POST['Confirm_password'];
   $name = ucwords($_POST["name"]);
   $job_title = $_POST["job_title"];
-$address = $_POST["address"];
+  $address = $_POST["address"];
 
   $check_teacher_query = "SELECT * FROM teacher WHERE email='$email'";
   $result_teacher = mysqli_query($conn, $check_teacher_query);
-  $count_teacher = mysqli_num_rows($result_teacher);
+  $count_teacher = mysqli_num_rows($result_teacher); //Sử dụng hàm mysqli_num_rows để đếm số hàng (số giáo viên) trong kết quả truy vấn
 
   $check_student_query = "SELECT * FROM student WHERE email='$email'";
   $result_student = mysqli_query($conn, $check_student_query);
@@ -98,7 +99,7 @@ $address = $_POST["address"];
   }
 
   if (!preg_match('/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/', $password)) { // preg_match: là một hàm trong PHP được sử dụng để kiểm tra xem một chuỗi có khớp với một biểu thức chính quy hay không
-    echo "<script> swal.fire('Lỗi!','Mật khẩu phải có 8 ký tự và chưa hoa, thường', 'error') </script>";
+    echo "<script> swal.fire('Lỗi!','Mật khẩu phải có 8 ký tự và chứa hoa, thường', 'error') </script>";
     return;
   }
 
@@ -147,7 +148,7 @@ $address = $_POST["address"];
     $_SESSION['email'] = $email;
     $userEmail = $_SESSION['email'];
     if (!isset($_SESSION['name']))
-    $_SESSION['name'] = [];
+      $_SESSION['name'] = [];
     $_SESSION['name'] = $name;
     $name = $_SESSION['name'];
     $email = new PHPMailer\PHPMailer\PHPMailer();
@@ -161,7 +162,7 @@ $address = $_POST["address"];
     $email->Port = '587';
     $email->setFrom('hovandideveloper@gmail.com', 'KingDom');
     $email->addAddress($userEmail);
-    $email->Subject = "welcome to KingDom";
+    $email->Subject = "Chào bạn đã đến với trang web của chúng tôi";
     $email->Body = "Cảm ơn " . $name . " đã tin tưởng và chọn website của chúng tôi để học tập.";
     if (!$email->send()) {
       echo "fail";
@@ -171,13 +172,9 @@ $address = $_POST["address"];
     }
 
   }
-  if (!empty($sql)) { //Điều này sẽ đảm bảo rằng truy vấn chỉ được thực thi nếu $sql không trống và sẽ ngăn thông báo lỗi xảy ra. tại vì nếu $sql trống thì sẽ báo lỗi
-    if (mysqli_query($conn, $sql)) {
-      header('location:../../index.php');
-    } else {
-      echo "Add failed data";
-    }
-  }
+  header('location:../../index.php');
+} else {
+  echo "Add failed data";
 }
+
 ?>
-<img src="" alt="">

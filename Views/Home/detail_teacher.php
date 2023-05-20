@@ -74,7 +74,7 @@ $stm = mysqli_query($conn,$sql);
  ?>
 
 
-<div class="container">
+<div class="container1">
   <h2>Comment</h2>
   <?php while ($row = mysqli_fetch_assoc($stm)) { ?>
     <div class="comment">

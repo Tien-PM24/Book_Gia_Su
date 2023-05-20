@@ -65,14 +65,14 @@ error_reporting(0);
 if (isset($_POST["btn"])) {
     $accout = $_POST["email"];
     $password = $_POST["password"];
-    if ($password !="" && $accout !="") {
-        $sqlstu = "SELECT * from student";
-        $sqlteach = "SELECT * from teacher";
-        $sqladmin = "SELECT * from admin";
+        if ($password !="" && $accout !="") {
+            $sqlstu = "SELECT * from student";
+            $sqlteach = "SELECT * from teacher";
+            $sqladmin = "SELECT * from admin";
 
-        $stm1 = mysqli_query($conn, $sqlstu);
-        $stm2 = mysqli_query($conn, $sqlteach);
-        $stm3 = mysqli_query($conn, $sqladmin);
+            $stm1 = mysqli_query($conn, $sqlstu);
+            $stm2 = mysqli_query($conn, $sqlteach);
+            $stm3 = mysqli_query($conn, $sqladmin);
 // Lọc qua bảng student
         while ($row = mysqli_fetch_assoc($stm1)) {
             if ($accout == $row['email'] && $password == $row['password']) {
